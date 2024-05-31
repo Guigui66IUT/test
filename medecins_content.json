@@ -1,0 +1,21 @@
+[
+    {
+        "name": "Dr Dagmar Rungen",
+        "image": "medecins\\Dr_Dagmar_Rungen\\dr1.jpg",
+        "doctolib": "https://www.doctolib.fr/maison-de-sante/ille-sur-tet/cabinet-medical-d-ille-sur-tet",
+        "texts": [
+            "test1",
+            "test2"
+        ],
+        "pdf": "medecins\\Dr_Dagmar_Rungen\\dr1.pdf"
+    },
+    {
+        "name": "Dr Th\u00e9o BERTOGNA",
+        "image": "medecins\\Dr_Th\u00e9o_BERTOGNA\\dr1 copy.jpg",
+        "doctolib": null,
+        "texts": [
+            "test1"
+        ],
+        "pdf": null
+    }
+]
