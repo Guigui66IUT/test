@@ -48,9 +48,9 @@
 }
 
 .card img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover; /* Assurez-vous que l'image couvre entièrement l'espace disponible */
+    width: 100%; /* L'image prendra 100% de la largeur du conteneur */
+    height: auto; /* La hauteur s'ajustera automatiquement pour garder les proportions */
+    object-fit: contain; /* Assurez-vous que l'image est contenue sans distorsion */
 }
 
 .card p {
