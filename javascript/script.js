@@ -71,6 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(files => {
             const vessel = document.getElementById('vessel');
 
+			alert(files);
+
             files.forEach(filename => {
                 const card = document.createElement('div');
                 card.classList.add('card');
