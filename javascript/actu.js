@@ -3,13 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     fetch('../../file_list.json')
         .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
             console.log('Fetching file_list.json');
             return response.json();
         })
         .then(files => {
             console.log('Files received:', files);
             const vessel = document.getElementById('vessel');
-            alert("cc");
 
             files.forEach(filename => {
                 console.log('Processing file:', filename);

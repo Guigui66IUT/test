@@ -27,8 +27,11 @@
 
 
 .vessel {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
     gap: 20px;
+    width: 80%;
+    margin: auto;
 }
 
 .card {
