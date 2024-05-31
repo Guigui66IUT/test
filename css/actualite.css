@@ -28,8 +28,8 @@
 
 .vessel {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
-    gap: 50px;
+    grid-template-columns: repeat(3, 1fr); /* Deux colonnes */
+    gap: 5vw; /* Gap basé sur 5% de la largeur de la fenêtre d'affichage */
     width: 30%;
     margin: auto;
 }
