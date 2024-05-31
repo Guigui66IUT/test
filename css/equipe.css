@@ -1,0 +1,221 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+	/*========== Colors ==========*/
+	/*Color mode HSL(hue, saturation, lightness)*/
+	--first-color: #274DFF;
+	--title-color: hsl(0, 0%, 15%);
+	--text-color: hsl(0, 0%, 35%);
+	--body-color: hsl(0, 0%, 95%);
+	--container-color: rgba(202, 234, 244, 0.8);
+
+	/*========== Font and typography ==========*/
+	/*.5rem = 8px | 1rem = 16px ...*/
+	--body-font: "Poppins", sans-serif;
+	--h2-font-size: 2rem;
+	--small-font-size: 1.125rem;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1120px) {
+	:root {
+		--h2-font-size: 2.25rem;
+		--small-font-size: 1.25rem;
+	}
+}
+
+/*=============== BASE ===============*/
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/*=============== CARD ===============*/
+.container {
+	display: grid;
+	place-items: center;
+	margin-inline: 1.5rem;
+	padding-top: 0rem;
+	/* Reduced padding-top */
+	padding-bottom: 5rem;
+	/* Retain original padding-bottom */
+}
+
+.card__container {
+	display: grid;
+	row-gap: 3rem;
+	/* Reduce row-gap to bring images closer */
+}
+
+.card__article {
+	position: relative;
+	overflow: visible;
+	/* Ensuring overflow is visible */
+}
+
+.card__article:hover {
+	cursor: pointer;
+}
+
+.card__article:hover .card__data {
+		height: auto;
+		bottom: 0;
+		background-color: var(--container-color);
+		transition: height 0.8s ease-in-out, bottom 0.8s ease-in-out; /* Durée de transition plus longue */
+}
+
+
+.card__article:hover p {
+	opacity: 1;
+	visibility: visible;
+}
+
+.card__img {
+	width: 500px;
+	border-radius: 1.5rem;
+	display: block;
+}
+
+.card__data {
+	width: 420px;
+	height: 150px;
+	/* Initial smaller height */
+	background-color: var(--container-color);
+	padding: 1.5rem 2rem;
+	/* Reduced padding */
+	box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+	border-radius: 1rem;
+	position: absolute;
+	bottom: 0rem;
+	/* Adjusted to bring it closer to the image */
+	left: 0;
+	right: 0;
+	margin-inline: auto;
+	opacity: 1;
+	/* Set opacity to 1 to always show */
+	transition: height 0.8s ease, bottom 0.8s ease;
+	/* Smooth transition */
+	overflow: hidden;
+	/* Ensure content that exceeds the height is hidden */
+}
+
+.card__data p {
+	font-size: var(--small-font-size);
+	color: var(--text-color);
+	margin: 0.1rem;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.card__description {
+	display: block;
+	font-size: var(--small-font-size);
+	margin-bottom: .25rem;
+}
+
+.card__title {
+	font-size: var(--h2-font-size);
+	font-weight: 500;
+	color: var(--title-color);
+	margin-bottom: .75rem;
+}
+
+.text {
+	margin-top: 0.8rem;
+	/* Adjust the value as needed */
+}
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+	.container {
+		margin-inline: 1rem;
+	}
+
+	.card__data {
+		width: 320px;
+		padding: 1rem;
+	}
+}
+
+/* For medium devices */
+@media screen and (min-width: 768px) {
+	.card__container {
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 1.5rem;
+	}
+}
+
+/* For large devices */
+@media screen and (min-width: 1120px) {
+	.container {
+		height: 100vh;
+	}
+
+	.card__container {
+		grid-template-columns: repeat(2, 1fr);
+		/* Adjusted to only allow 2 columns */
+	}
+
+	.card__img {
+		width: 550px;
+	}
+
+	.card__data {
+		width: 460px;
+		padding-inline: 2rem;
+		/* Reduced padding */
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.button-container {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.doctolib-logo {
+	width: auto;
+	height: 100%; /* La hauteur du logo est égale à la hauteur du conteneur */
+	margin-right: 10px; /* Espace entre le logo et le bouton */
+}
+
+.btn-take-appointment {
+	display: inline-block;
+	background-color: red;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 5px;
+	text-decoration: none;
+	height: 100%; /* La hauteur du bouton est égale à la hauteur du conteneur */
+	line-height: normal; /* Réinitialiser la hauteur de ligne */
+}

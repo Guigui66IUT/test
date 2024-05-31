@@ -1,0 +1,121 @@
+.card {
+    position: relative;
+    height: 400px;
+    width: 290px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.front-face, .back-face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(img/logo-kine.png);
+    color: white;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.contents {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%) translateZ(60px) scale(0.94);
+}
+
+.front-face {
+    transform: rotateY(0deg);
+}
+
+.back-face {
+    transform: rotateY(180deg);
+    background: linear-gradient(45deg, black 0%, grey 100%);
+}
+
+.front p {
+    font-size: 28px;
+    margin: 0;
+}
+
+.front span {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.front p.bottom-bar::after {
+    content: '';
+    display: block;
+    background: white;
+    height: 2px;
+    width: 150px;
+    margin-inline: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.back h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.back span {
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.icons i {
+    height: 40px;
+    width: 40px;
+    background: white;
+    color: blue;
+    font-size: 20px;
+    border-radius: 50%;
+    line-height: 40px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.card:hover > .front-face {
+    transform: rotateY(-180deg);
+}
+
+.card:hover > .back-face {
+    transform: rotateY(0deg);
+}
+
+
+<div class="card">
+		<div class="front-face">
+				<div class="contents front">
+						<p>Kinésithérapeute</p>
+						<p class="bottom-bar"></p>
+						<span>Mme Nicole KIRCHGAESSNER</span>
+				</div>
+		</div>
+		<div class="back-face">
+				<div class="contents back">
+						<h2>CHECK MY CODE</h2>
+						<span>Follow pour plus</span>
+						<div class="icons">
+								<a href="#">
+										<i class="fa-brands fa-facebook-f"></i>
+								</a>
+								<a href="#">
+										<i class="fa-brands fa-twitter"></i>
+								</a>
+								<a href="#">
+										<i class="fa-brands fa-instagram"></i>
+								</a>
+						</div>
+				</div>
+		</div>
+</div>

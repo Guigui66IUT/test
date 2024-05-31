@@ -1,0 +1,86 @@
+* {
+	box-sizing: border-box;
+}
+
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	/*pas de marge en fonction du navigateur*/
+	font-family: 'Source code pro', Calibri, serif;
+	font-size: 16px;
+	line-height: 22px;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* Menu */
+
+nav {
+	width: 100%;	/* Utilise la pleine largeur disponible */
+	background-color: #4682B4;	/* Couleur de fond */
+	font-weight: bold;	/* Texte en gras */
+	height: 10%;	/* Hauteur de la barre de navigation à 10% de la hauteur du parent (ici le body) */
+	display: flex;	/* Utiliser flexbox pour aligner les éléments */
+	align-items: center;	/* Centre les éléments verticalement */
+}
+
+nav ul {
+	display: flex;
+	/* Appliquer flexbox à ul également */
+	width: 100%;
+	/* Utiliser toute la largeur disponible */
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	/* Pas de puces */
+	overflow: hidden;
+}
+
+nav li {
+	float: none;
+	/* Pas besoin de float avec flexbox */
+}
+
+nav li:hover a {
+	padding: 15px 30px 20px 30px;
+	/* Réduit légèrement le padding quand survolé pour compenser la bordure ajoutée */
+}
+
+nav a {
+	display: inline-block;
+	text-decoration: none;
+	padding: 20px 30px;
+	/* Ajustez ceci si nécessaire pour l'alignement */
+	color: white;
+	font-size: 1.2em;
+}
+
+.menu:hover {
+	border-top: 5px solid #87CEFA;
+	background-color: rgba(173, 216, 230, 0.15);
+}
+
+.table {
+	display: table;
+	/* Affiche comme une table */
+	margin: 0 auto;
+	/* Centré horizontalement */
+	margin-left: 30%;
+	/* Décalage supplémentaire à gauche */
+}
+
+
+
+
+
+/* Sous-menu */
+
+.sous-menu {
+	display: none;
+}

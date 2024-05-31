@@ -1,0 +1,587 @@
+/* Styles de base pour les éléments HTML */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Source Code Pro', Calibri, serif;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+
+/* 														main-header 													*/
+nav {
+	width: 65%;
+}
+
+.main-header {
+	background: #4682B4;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 85px;
+	padding: 0 30px;
+	position: sticky;
+	width: 100%;
+	z-index: 1100;
+}
+
+.logo {
+	display: flex;
+	gap: 5vh;
+	align-items: center;
+}
+
+.logo img {
+	height: 8vh;
+	width: auto;
+}
+
+.logo h1 {
+	color: white;
+	font-size: 1.5em;
+	font-weight: 800;
+	margin: 0;
+}
+
+.main-header nav {
+	height: 100%;
+	/* Prend toute la hauteur de .main-header */
+	display: flex;
+	gap: 0;
+
+}
+
+.main-header nav a {
+	text-decoration: none;
+	color: white;
+	font-size: 1.2em;
+	font-weight: bold;
+	transition: 0.3s;
+	display: flex;
+	align-items: center;
+	padding: 0 15px;
+	height: 100%;
+	/* Prend toute la hauteur de l'en-tête */
+	position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-header nav a:last-child {
+	margin-left: auto;
+	/* Met le lien "Contact" tout à droite */
+}
+
+
+/* Styles pour le menu déroulant */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	background-color: #4682B4;
+	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 250px;
+}
+
+.dropdown-menu li {
+	padding: 0;
+}
+
+.dropdown-menu li a {
+	color: white;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	/* Prend toute la largeur de .dropdown-menu */
+	padding: 15px 16px;
+	/* Ajouter du padding au lien lui-même */
+	box-sizing: border-box;
+	/* Assurer que le padding est inclus dans la largeur */
+}
+
+.dropdown-menu li a:hover {
+	background-color: #1E3F66;
+	/* Couleur de fond au survol */
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+.dropdown:hover .dropdown-toggle {
+	background-color: #1E3F66;
+}
+
+
+
+.main-header nav a:hover,
+.main-header nav a.active {
+	background-color: #1E3F66;
+	/* Couleur de fond au survol */
+}
+
+/* Pour appliquer la classe active au lien actuellement sélectionné */
+.active {
+	background-color: #1E3F66;
+	/* Même couleur que sur le hover */
+}
+
+
+
+
+
+input {
+	display: none;
+}
+
+@media (max-width: 1235px) {
+	.main-header nav {
+		position: absolute;
+		top: 85px;
+		background: #4682B4;
+		left: 0;
+		flex-direction: column;
+		width: 100%;
+		align-items: center;
+
+		height: 0;
+		transition: 0.5s;
+		overflow: hidden;
+	}
+
+	.main-header nav a:last-child {
+		margin-left: 0;
+		/* Met le lien "Contact" tout à droite */
+	}
+
+	.main-header nav a:nth-child(1) {
+		margin-top: 42px;
+	}
+
+	.main-header label {
+		width: 45px;
+		height: 30px;
+		position: relative;
+	}
+
+	.main-header label div {
+		width: 100%;
+		height: 5px;
+		background: white;
+		position: absolute;
+		transform: translateY(-50%);
+		border-radius: 99px;
+		transition: 0.3s;
+		transform: scale(1);
+	}
+
+	.main-header label div:nth-child(1) {
+		top: 0;
+	}
+
+	.main-header label div:nth-child(2) {
+		top: 50%;
+	}
+
+	.main-header label div:nth-child(3) {
+		top: 100%;
+	}
+
+	input:checked+.main-header nav {
+		height: 100vh;
+	}
+
+	input:checked+.main-header label div:nth-child(1) {
+		transform: rotate(45deg);
+		top: 50%;
+	}
+
+	input:checked+.main-header label div:nth-child(3) {
+		transform: rotate(-45deg);
+		top: 50%;
+	}
+
+	input:checked+.main-header label div:nth-child(2) {
+		transform: scale(0);
+		opacity: 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+/* 														secondary-header 													*/
+
+.secondary-header {
+	background-color: white;
+	border: 4px solid #1E3F66;
+	font-weight: bold;
+}
+
+.secondary-header nav ul.secondary-nav {
+	display: flex;
+	align-items: stretch;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.secondary-header .menu-logo {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-right: 20px;
+}
+
+.secondary-header .link-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
+}
+
+.secondary-header .link-container li {
+	height: 100%;
+	position: relative;
+	/* Pour positionner les pseudo-éléments */
+}
+
+.secondary-header .link-container li a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	padding: 0 10px;
+	/* Ajustez la largeur de l'espace autour du texte si nécessaire */
+	color: black;
+	text-decoration: none;
+}
+
+.secondary-header .link-container li:hover a,
+.secondary-header .link-container li.active a {
+	background-color: #1E3F66;
+	color: white;
+}
+
+.secondary-header .link-container li:hover::before,
+.secondary-header .link-container li.active::before,
+.secondary-header .link-container li:hover::after,
+.secondary-header .link-container li.active::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 1px;
+	background-color: grey;
+}
+
+
+.secondary-header .link-container li:first-child:hover::before,
+.secondary-header .link-container li:first-child.active::before,
+.secondary-header .link-container li:last-child:hover::after,
+.secondary-header .link-container li:last-child.active::after {
+	display: none;
+}
+
+
+
+.secondary-header .menu-logo img {
+	height: 8vh;
+	width: auto;
+	object-fit: cover;
+	margin-left: 20%;
+}
+
+.secondary-header .menu-logo h2 {
+	margin-left: 10%;
+	font-size: 1.2em;
+}
+
+.secondary-header li {
+	display: inline-block;
+}
+
+.secondary-header li:last-child {
+	margin-right: 0;
+}
+
+.secondary-header nav a {
+	display: block;
+	color: black;
+	text-decoration: none;
+	font-size: 1.1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.tertiary-header {
+	background-color: white;
+	border: 4px solid #1E3F66;
+	font-weight: bold;
+}
+
+.tertiary-header nav {
+	width: 100%;
+}
+
+.tertiary-header .menu-logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin-right: 20px;
+	text-align: center; /* Centrer horizontalement */
+}
+
+.tertiary-header .menu-logo img {
+	max-width: 100%; /* Taille maximale de l'image pour éviter le débordement */
+	height: 8vh;
+	width: auto;
+	object-fit: cover;
+}
+
+.tertiary-header .menu-logo h2 {
+	/* margin: 0; */
+	color: black;
+	font-size: 1.2em;
+	margin-left: 1%;
+}
+
+
+
+
+
+/* 														Titre 													*/
+
+.titre {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin-top: 20px;
+	/* Ajustez en fonction de vos besoins */
+}
+
+.titre h1 {
+	font-size: 2.5rem;
+	/* Ajustez la taille du texte selon vos préférences */
+	font-weight: bold;
+	color: #1E3F66;
+	margin: 0;
+	/* Supprime les marges par défaut */
+}
+
+
+
+
+
+
+
+
+/* 														slider 													*/
+.parent-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	/* Ensures children align at the top */
+	width: 100%;
+	position: relative;
+	gap: 0%;
+	/* Adds 2% space between the wrapper and intro */
+}
+
+.wrapper {
+	width: 58%;
+	/* Adjusted width to account for the 2% gap */
+	left: 10%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2.5%;
+	/* Aligns with the intro */
+}
+
+.slider-container {
+	position: relative;
+	width: 800px;
+	height: auto;
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+}
+
+.image-container img {
+	width: 800px;
+	height: auto;
+	max-height: 600px;
+}
+
+.btn {
+	position: absolute;
+	top: 50%;
+	color: white;
+	font-size: 1.6rem;
+	transform: translateY(-50%);
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+.btn.prev {
+	left: 10px;
+}
+
+.btn.next {
+	right: 10px;
+}
+
+.btn:hover {
+	opacity: 1;
+}
+
+.intro {
+	width: 40%;
+	margin-right: 3%;
+	margin-top: 2.5%;
+	/* Aligns with the wrapper */
+	display: flex;
+	flex-direction: column;
+
+}
+
+
+
+
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	background-color: #EDFAFF;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	/* Center align text within the card */
+}
+
+.card h2 {
+	font-size: 24px;
+	/* Change this value to adjust the size */
+	margin-bottom: 20px;
+	/* Space below the heading */
+}
+
+.card p {
+	width: 90%;
+	margin-left: 10%;
+	/* Center the element with 5% margin on both sides */
+	text-align: left;
+}
+
+
+.card .info-container {
+	display: flex;
+	justify-content: space-between;
+	background-color: #8FC9DF;
+	padding: 10px;
+	border-radius: 5px;
+	height: auto;
+}
+
+.info-group {
+	flex: 1;
+	margin: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.info {
+	width: 100%;
+	background-color: #1E3F66;
+	padding: 10px;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: white;
+}
+
+.info i {
+	margin-right: 16%;
+	color: inherit;
+}
+
+.info-text {
+	margin-top: 10px;
+	color: #333;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

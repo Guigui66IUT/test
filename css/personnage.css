@@ -1,0 +1,144 @@
+/* styles.css */
+.personnage {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+    margin-top: 3%; 
+}
+
+.button-section {
+	margin-bottom: 10px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.button-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #1E5478;
+	border-radius: 50px;
+	padding: 10px 20px;
+	width: 30%;
+	cursor: pointer;
+}
+
+.button-row div {
+	color: white;
+	font-size: 16px;
+}
+
+.button-row .left-text {
+	flex-grow: 1;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.button-row .learn-more {
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+.button-row .book-appointment {
+	background-color: #FF2A2A;
+	border: none;
+	border-radius: 50px;
+	color: white;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 1rem;
+}
+
+.collapsible-content {
+	display: none;
+	width: 30%;
+	background-color: #6A8A99;
+	border-radius: 20px;
+	padding: 20px;
+	margin: 0;
+	overflow: hidden;
+}
+
+.collapsible-content .content-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.collapsible-content img {
+	width: 35%;
+	height: auto;
+	display: block;
+	border-radius: 20px;
+	margin-right: 20px;
+}
+
+.collapsible-content .text-content {
+	flex-grow: 1;
+}
+
+.download-link {
+	display: inline-block;
+	padding: 10px 20px;
+	margin: 10px 0;
+	background-color: #007AA9;
+	/* Couleur de fond */
+	color: #fff;
+	/* Couleur du texte */
+	text-decoration: none;
+	/* Enlever la soulignement */
+	border-radius: 5px;
+	/* Bords arrondis */
+	font-size: 16px;
+	/* Taille de la police */
+	transition: background-color 0.3s;
+	/* Transition pour l'effet de survol */
+}
+
+.download-link:hover {
+	background-color: #0056b3;
+	/* Couleur de fond au survol */
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+
+	.button-row,
+	.collapsible-content {
+		width: 80%;
+	}
+}
+
+@media (max-width: 480px) {
+	.button-row {
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 10px;
+	}
+
+	.button-row .left-text {
+		margin-bottom: 10px;
+	}
+
+	.button-row .learn-more {
+		margin-right: 0;
+	}
+
+	.collapsible-content {
+		width: 100%;
+	}
+
+	.collapsible-content .content-wrapper {
+		flex-direction: column;
+	}
+
+	.collapsible-content img {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+}

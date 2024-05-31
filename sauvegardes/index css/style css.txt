@@ -1,0 +1,311 @@
+/* Styles de base pour les éléments HTML */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Source Code Pro', Calibri, serif;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+/* Styles généraux du nav et du wrapper */
+nav {
+	width: 100%;
+}
+
+.main-header nav a {
+	display: inline-block;
+	text-decoration: none;
+	color: white;
+	font-size: 1.3em;
+	padding: 20px;
+}
+
+
+
+.header-container {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	/* Adjust z-index as needed */
+}
+
+/* Styles spécifiques pour le main-header */
+.main-header {
+	/*border-top: 1px solid #87CEFA;*/
+	background-color: #4682B4;
+	font-weight: bold;
+	margin: auto;
+	z-index: 1100;
+}
+
+.main-header li {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+}
+
+.main-header li a {
+	display: block;
+	padding: 19px;
+}
+
+.main-header li:hover a,
+.main-header li.active a{
+	background-color: #1E3F66;
+}
+
+.main-header li:hover .sous-menu {
+	display: block;
+}
+
+/* Styles pour le sous-menu dans le main-header */
+.sous-menu {
+	display: none;
+	position: absolute;
+	background-color: #89B3E1;
+	width: 234px;
+	z-index: 1000;
+	/* s'assure qu'il est au-dessus des autres éléments */
+}
+
+.sous-menu li {
+	display: block;
+}
+
+/* Style des liens dans les sous-menus pour éviter les perturbations visuelles */
+.sous-menu a {
+	display: block;
+	padding: 10px;
+	color: white;
+	text-decoration: none;
+}
+
+.sous-menu li:hover a {
+	background-color: #89B3E1;
+}
+
+/* Styles pour le responsive menu */
+.hamburger {
+	display: none;
+	cursor: pointer;
+	font-size: 1.5em;
+}
+
+@media (max-width: 1024px) {
+	.wrapper {
+		width: 100%;
+		justify-content: space-between;
+		padding: 0 20px;
+	}
+
+	.main-header nav {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.hamburger {
+		display: block;
+		color: white;
+	}
+
+	.menu {
+		display: none;
+		flex-direction: column;
+		width: 100%;
+		background-color: #4682B4;
+	}
+
+	.menu li {
+		width: 100%;
+		text-align: left;
+	}
+
+	.menu.active {
+		display: flex;
+	}
+
+	.sous-menu {
+		position: static;
+		width: 100%;
+		background-color: #4682B4;
+	}
+}
+
+
+
+
+
+/* 														secondary-header 													*/
+
+
+
+.secondary-header {
+	background-color: white;
+	border: 4px solid #1E3F66;
+	font-weight: bold;
+
+}
+
+.secondary-header nav ul.secondary-nav {
+	display: flex;
+	align-items: center;
+	list-style: none;
+	padding: 0;
+	width: 100%;
+}
+
+.secondary-header .menu-logo {
+	flex-grow: 0;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-right: 20px;
+}
+
+.secondary-header .link-container {
+	display: flex;
+	justify-content: center;
+	/* Centre le conteneur des liens */
+	flex-grow: 1;
+	/* Permet au conteneur de prendre l'espace restant */
+	align-items: center;
+}
+
+.secondary-header .link-container li {
+	margin-right: 30px;
+	/* Ajustez selon le besoin pour plus d'espace entre les éléments */
+	margin-left: 30px;
+}
+
+
+
+
+
+.secondary-header .link-container li a {
+	display: block;
+	/* Assure que le lien remplit le contenu du <li> pour un meilleur effet de survol */
+	color: black;
+	/* Couleur initiale des liens */
+	text-decoration: none;
+	/* Enlève le soulignement */
+}
+
+.secondary-header .link-container li:hover a {
+	background-color: #1E3F66;
+	/* Change le fond en noir */
+
+	color: white;
+	/* Change la couleur du texte en blanc lors du survol */
+}
+
+
+
+
+
+
+
+
+
+
+
+.secondary-header .link-container li:last-child {
+	margin-right: 0;
+	/* Enlève la marge à droite du dernier élément pour éviter un décalage */
+}
+
+.secondary-header .menu-logo img {
+	height: 8vh;
+	width: auto;
+	object-fit: cover;
+	margin-left: 20%;
+}
+
+
+.secondary-header .menu-logo h2 {
+	margin-left: 10%;
+	font-size: 1.2em;
+}
+
+.secondary-header li {
+	display: inline-block;
+	/* Les éléments sont inline-block dans le conteneur flex */
+	margin-right: 10px;
+	/* Gère l'espacement entre les liens */
+}
+
+.secondary-header li:last-child {
+	margin-right: 0;
+	/* Aucun espace à droite du dernier élément */
+}
+
+.secondary-header nav a {
+	display: block;
+	color: black;
+	text-decoration: none;
+	font-size: 1.1em;
+}
+
+
+
+
+
+
+
+
+.wrapper {
+	margin: 0 auto;
+	width: 1000px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.slider-container {
+	position: relative;
+	width: 800px;
+	height: auto;
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	margin-top: 4%;
+}
+
+.image-container {
+	display: flex;
+	transition: transfrom 0.5s ease-in-out;
+}
+
+.image-container img {
+	width: 800px;
+	height: auto;
+}
+
+.btn {
+	position: absolute;
+	top: 50%;
+	color: white;
+	font-size: 1.6rem;
+	transform: translateY(-50%);
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+.btn.prev {
+	left: 10px;
+}
+
+.btn.next {
+	right: 10px;
+}
+
+.btn:hover {
+	opacity: 1;
+}

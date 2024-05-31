@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Maison de Santé Pluridisciplinaire</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="css/reset.css" rel="stylesheet" type="text/css" />
+
+
+	<link rel="icon" href="img/logo.jpg" type="image/png">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+		integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- permet d'avoir acces a font-awesome à distance pour les boutons suivants
+	voir vidéo :
+	https://www.youtube.com/watch?v=ki9c7IclXGk&ab_channel=BenBK
+	-->
+
+</head>
+
+<body>
+	<header class="main-header">
+		<nav class="wrapper">
+			<div>
+				<ul class="menu">
+
+					<li class="active"><a href="index.html">Accueil</a></li>
+					<li>
+						<a href="#">Professionnels de santé</a>
+						<ul class="sous-menu">
+							<li><a href="html/med.html">Médecin généraliste</a></li>
+							<li><a href="html/endo.html">Endocrinologue</a></li>
+							<li><a href="html/sage.html">Sage femme</a></li>
+							<li><a href="html/infi.html">Infirmier libéral</a></li>
+							<li><a href="html/podo/podo.html">Pédicure - Podologue</a></li>
+							<li><a href="html/kine/kine.html">Kinésithérapeute</a></li>
+							<li><a href="html/diet.html">Diététicienne</a></li>
+							<li><a href="html/psyc.html">Psychologue</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Projet de santé</a></li>
+					<li><a href="#">Actualités</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="https://rdvasos.fr/">SOS MÉDECINS 66</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+
+	<div class="wrapper">
+		<!-- Conteneur principal pour le carrousel -->
+		<div class="slider-container">
+			<div class="image-container">
+				<img src=" img/sliderinfirmier/1.jpg" alt="Image 1">
+				<img src="img/sliderinfirmier/2.jpg" alt="Image 2">
+				<img src="img/sliderinfirmier/3.jpg" alt="Image 3">
+				<img src="img/sliderinfirmier/4.jpg" alt="Image 4">
+				<img src="img/sliderinfirmier/5.png" alt="Image 5">
+			</div>
+			<i class="fa-solid fa-angles-left btn prev"></i>
+			<i class="fa-solid fa-angles-right btn next"></i>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+	<script src="javascript/script.js"></script>
+</body>
+
+</html>
