@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
     
-    fetch('../file_list.json')
+    fetch('../../file_list.json')
         .then(response => {
             console.log('Fetching file_list.json');
             return response.json();
