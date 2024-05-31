@@ -1,6 +1,6 @@
 import os
 
-def generate_medecins_html(directory='medecins', output='medecins.html'):
+def generate_medecins_html(directory='medecins', output='medecins_content.html'):
     medecins = []
 
     for medecin_name in os.listdir(directory):
@@ -29,30 +29,32 @@ def generate_medecins_html(directory='medecins', output='medecins.html'):
 
             medecins.append(medecin)
 
-    with open(output, 'w') as f:
-        f.write('<div class="personnage">\n')
-        for medecin in medecins:
-            f.write(f'''
-            <div class="button-section">
-                <div class="button-row">
-                    <div class="left-text">{medecin['name']}</div>
-                    <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
-                    <a href="{medecin['doctolib']}" target="_blank">
-                        <button class="book-appointment">Prendre rendez-vous</button>
-                    </a>
-                </div>
-                <div class="collapsible-content">
-                    <div class="content-wrapper">
-                        <img src="{medecin['image']}" alt="Profile Image" />
-                        <div class="text-content">
-                            {''.join([f'<p>{text}</p>' for text in medecin['texts']])}
-                            {f'<a href="{medecin["pdf"]}" download class="download-link">Autre</a>' if medecin['pdf'] else ''}
-                        </div>
+    html_content = '<div class="personnage">\n'
+    for medecin in medecins:
+        html_content += f'''
+        <div class="button-section">
+            <div class="button-row">
+                <div class="left-text">{medecin['name']}</div>
+                <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
+                <a href="{medecin['doctolib']}" target="_blank">
+                    <button class="book-appointment">Prendre rendez-vous</button>
+                </a>
+            </div>
+            <div class="collapsible-content">
+                <div class="content-wrapper">
+                    <img src="{medecin['image']}" alt="Profile Image" />
+                    <div class="text-content">
+                        {''.join([f'<p>{text}</p>' for text in medecin['texts']])}
+                        {f'<a href="{medecin["pdf"]}" download class="download-link">Autre</a>' if medecin['pdf'] else ''}
                     </div>
                 </div>
             </div>
-            ''')
-        f.write('</div>\n')
+        </div>
+        '''
+    html_content += '</div>\n'
+
+    with open(output, 'w') as f:
+        f.write(html_content)
 
 if __name__ == "__main__":
     generate_medecins_html()
