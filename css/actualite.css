@@ -51,6 +51,7 @@
     width: 100%; /* L'image prendra 100% de la largeur du conteneur */
     height: auto; /* La hauteur s'ajustera automatiquement pour garder les proportions */
     object-fit: contain; /* Assurez-vous que l'image est contenue sans distorsion */
+    border-radius: 15px; /* Arrondir les coins de l'image */
 }
 
 .card p {
