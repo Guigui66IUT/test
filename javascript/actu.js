@@ -1,13 +1,18 @@
-
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded and parsed');
+    
     fetch('../file_list.json')
-        .then(response => response.json())
+        .then(response => {
+            console.log('Fetching file_list.json');
+            return response.json();
+        })
         .then(files => {
+            console.log('Files received:', files);
             const vessel = document.getElementById('vessel');
 
-			alert(files);
-
             files.forEach(filename => {
+                console.log('Processing file:', filename);
+
                 const card = document.createElement('div');
                 card.classList.add('card');
                 card.onclick = () => downloadPDF(filename);
@@ -22,7 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.appendChild(img);
                 card.appendChild(p);
                 vessel.appendChild(card);
+
+                console.log('Card created for:', filename);
             });
+        })
+        .catch(error => {
+            console.error('Error fetching file_list.json:', error);
         });
 });
 
@@ -31,4 +41,5 @@ function downloadPDF(filename) {
     link.href = `../pdf/${filename}.pdf`;
     link.download = `${filename}.pdf`;
     link.click();
+    console.log('Download initiated for:', filename);
 }
