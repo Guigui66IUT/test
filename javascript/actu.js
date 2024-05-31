@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(files => {
             console.log('Files received:', files);
             const vessel = document.getElementById('vessel');
+            alert("cc");
 
             files.forEach(filename => {
                 console.log('Processing file:', filename);
