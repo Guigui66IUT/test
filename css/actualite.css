@@ -28,9 +28,9 @@
 
 .vessel {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Deux colonnes */
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
     gap: 5vw; /* Gap basé sur 5% de la largeur de la fenêtre d'affichage */
-    width: 30%;
+    width: 35%; /* Vous pouvez ajuster cette largeur selon vos besoins */
     margin: auto;
 }
 
@@ -41,16 +41,22 @@
     background-color: #e8f8f5;
     cursor: pointer;
     transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .card img {
     width: 100px;
     height: 100px;
+    object-fit: cover; /* Assurez-vous que l'image couvre entièrement l'espace disponible */
 }
 
 .card p {
     margin-top: 10px;
     font-weight: bold;
+    text-align: center;
 }
 
 .card:hover {
