@@ -29,8 +29,8 @@
 .vessel {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
-    gap: 20px;
-    width: 80%;
+    gap: 50px;
+    width: 40%;
     margin: auto;
 }
 
