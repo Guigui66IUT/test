@@ -3,7 +3,31 @@
         "name": "Dr Dagmar Rungen",
         "image": "medecins\\Dr_Dagmar_Rungen\\dr1.jpg",
         "doctolib": "https://www.doctolib.fr/maison-de-sante/ille-sur-tet/cabinet-medical-d-ille-sur-tet",
-        "texts": [],
+        "texts": [
+            {
+                "filename": "machin1.txt",
+                "content": [
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                ],
+                "order": 1
+            },
+            {
+                "filename": "Suivi des personnes adultes et enfants2.txt",
+                "content": [
+                    "s<g",
+                    "<sdg"
+                ],
+                "order": 2
+            },
+            {
+                "filename": "Horaires3.txt",
+                "content": [],
+                "order": 3
+            }
+        ],
         "pdf": {
             "path": "medecins\\Dr_Dagmar_Rungen\\additional.pdf",
             "name": "additional.pdf"
@@ -13,7 +37,15 @@
         "name": "Dr Theo BERTOGNA",
         "image": "medecins\\Dr_Theo_BERTOGNA\\dr1 copy.jpg",
         "doctolib": null,
-        "texts": [],
+        "texts": [
+            {
+                "filename": "test1.txt",
+                "content": [
+                    "Sp\u00c3\u00a9cialisation en m\u00c3\u00a9decine g\u00c3\u00a9n\u00c3\u00a9rale"
+                ],
+                "order": 1
+            }
+        ],
         "pdf": null
     }
 ]

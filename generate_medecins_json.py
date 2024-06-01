@@ -1,5 +1,6 @@
 import os
 import json
+import re
 
 def generate_medecins_json(directory='medecins', output='medecins_content.json'):
     medecins = []
@@ -22,18 +23,23 @@ def generate_medecins_json(directory='medecins', output='medecins_content.json')
                         medecin['doctolib'] = f.read().strip()
                 elif filename.endswith('.jpg') or filename.endswith('.png'):
                     medecin['image'] = file_path
-                elif filename.startswith('text') and filename.endswith('.txt'):
+                elif re.match(r'.*\d+\.txt$', filename):
                     with open(file_path, 'r') as f:
                         lines = f.readlines()
+                        num = int(re.findall(r'\d+', filename)[-1])
                         medecin['texts'].append({
                             'filename': filename,
-                            'content': [line.strip() for line in lines]
+                            'content': [line.strip() for line in lines],
+                            'order': num
                         })
                 elif filename.endswith('.pdf'):
                     medecin['pdf'] = {
                         'path': file_path,
                         'name': filename
                     }
+
+            # Trier les fichiers texte par numéro
+            medecin['texts'] = sorted(medecin['texts'], key=lambda x: x['order'])
 
             medecins.append(medecin)
 

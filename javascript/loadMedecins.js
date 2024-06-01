@@ -7,8 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
+            console.log("Data loaded:", data); // Ajout de journalisation
             const container = document.getElementById('medecins-container');
             data.forEach(medecin => {
+                console.log("Processing:", medecin); // Ajout de journalisation
                 const pdf = medecin.pdf ? `<a href="../../../${medecin.pdf.path}" download="${medecin.pdf.name}" class="download-link">Autre</a>` : '';
                 const textsHTML = medecin.texts.map(text => `
                     <h4>${text.filename}</h4>
