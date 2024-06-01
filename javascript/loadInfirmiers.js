@@ -7,9 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
-            // Trier les infirmiers par ordre alphabétique
-            data.sort((a, b) => a.name.localeCompare(b.name));
-            
             const container = document.getElementById('infirmiers-container');
             data.forEach(infirmier => {
                 const infirmierHTML = `
