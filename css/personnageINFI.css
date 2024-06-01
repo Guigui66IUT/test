@@ -1,4 +1,4 @@
-.personnage {
+.grid-container {
     margin-top: 3vh;
     display: grid;
     grid-template-columns: repeat(2, auto); /* Deux colonnes avec largeur automatique */
