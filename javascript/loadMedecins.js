@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const textsHTML = medecin.texts.map(text => `
                     <h4>${text.filename}</h4>
                     <ul>
-                        ${text.content.map(line => `<li>• ${line}</li>`).join('')}
+                        ${text.content.map(line => `<li>${line}</li>`).join('')}
                     </ul>
                 `).join('');
 
