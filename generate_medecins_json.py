@@ -26,7 +26,10 @@ def generate_medecins_json(directory='medecins', output='medecins_content.json')
                     with open(file_path, 'r') as f:
                         medecin['texts'].append(f.read().strip())
                 elif filename.endswith('.pdf'):
-                    medecin['pdf'] = file_path
+                    medecin['pdf'] = {
+                        'path': file_path,
+                        'name': filename
+                    }
 
             medecins.append(medecin)
 

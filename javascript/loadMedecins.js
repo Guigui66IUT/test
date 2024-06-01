@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             const container = document.getElementById('medecins-container');
             data.forEach(medecin => {
-                const pdfFilename = medecin.pdf ? medecin.pdf.split('/').pop() : '';
+                const pdf = medecin.pdf ? `<a href="${medecin.pdf.path}" download="${medecin.pdf.name}" class="download-link">Autre</a>` : '';
                 const medecinHTML = `
                     <div class="button-section">
                         <div class="button-row">
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <img src="${medecin.image}" alt="Profile Image" />
                                 <div class="text-content">
                                     ${medecin.texts.map(text => `<p>${text}</p>`).join('')}
-                                    ${medecin.pdf ? `<a href="${medecin.pdf}" download="${pdfFilename}" class="download-link">Autre</a>` : ''}
+                                    ${pdf}
                                 </div>
                             </div>
                         </div>
