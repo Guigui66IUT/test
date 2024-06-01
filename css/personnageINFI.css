@@ -6,7 +6,6 @@
 }
 
 .button-section {
-    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +18,7 @@
     background-color: #1E5478;
     border-radius: 50px;
     padding: 10px 20px;
-    width: 100%; /* Ajustez cette largeur en fonction de votre mise en page */
+    width: 100%; /* Assurez-vous que les noms ont suffisamment d'espace */
     cursor: pointer;
     white-space: nowrap; /* Empêche le texte de se casser sur plusieurs lignes */
     overflow: hidden; /* Cache tout texte qui dépasse les limites du conteneur */
