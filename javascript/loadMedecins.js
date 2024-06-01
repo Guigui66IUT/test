@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('../../medecins_content.json')
-        .then(response => response.json())
+    fetch('../../../medecins_content.json') // Chemin correct pour atteindre la racine du projet
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
         .then(data => {
             const container = document.getElementById('medecins-container');
             data.forEach(medecin => {
