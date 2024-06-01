@@ -1,15 +1,16 @@
 .personnage {
     margin-top: 3vh;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
-    gap: 20px; /* Espacement entre les éléments */
+    grid-template-columns: repeat(2, auto); /* Deux colonnes avec largeur automatique */
+    gap: 10px; /* Réduire l'espacement entre les éléments */
+    justify-content: center; /* Centre les colonnes */
 }
 
 .button-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2vh; /* Espacement vertical entre les éléments */
+    margin-bottom: 1vh; /* Espacement vertical entre les éléments */
 }
 
 .button-row {
@@ -19,7 +20,7 @@
     background-color: #1E5478;
     border-radius: 50px;
     padding: 10px 20px;
-    width: 70%; /* Ajustez cette largeur pour réduire la largeur de l'élément */
+    width: 200px; /* Réduire la largeur pour ajuster la taille des éléments */
     cursor: pointer;
     white-space: nowrap; /* Empêche le texte de se casser sur plusieurs lignes */
     overflow: hidden; /* Cache tout texte qui dépasse les limites du conteneur */
