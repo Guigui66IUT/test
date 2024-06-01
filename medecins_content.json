@@ -1,7 +1,7 @@
 [
     {
         "name": "Dr Véronique BRUDY",
-        "image": null,
+        "image": "medecins\\Dr_Véronique_BRUDY\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/veronique-brudy",
         "texts": [
             {
@@ -24,7 +24,7 @@
     },
     {
         "name": "Dr Jean-François MERCIER",
-        "image": null,
+        "image": "medecins\\Dr Jean-François MERCIER\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/jean-francois-mercier",
         "texts": [
             {
@@ -47,7 +47,7 @@
     },
     {
         "name": "Dr Amandine MINAUD",
-        "image": null,
+        "image": "medecins\\Dr Amandine MINAUD\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/amandine-minaud",
         "texts": [
             {
@@ -70,7 +70,7 @@
     },
     {
         "name": "Dr Eloise ROUBY",
-        "image": null,
+        "image": "medecins\\Dr Eloise ROUBY\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/jarnac/eloise-rouby",
         "texts": [
             {
@@ -138,7 +138,7 @@
     },
     {
         "name": "Dr Jean-Pascal SASTOURNÉ",
-        "image": null,
+        "image": "medecins\\Dr Jean-Pascal SASTOURNÉ\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/jean-pascal-sastourne",
         "texts": [
             {
