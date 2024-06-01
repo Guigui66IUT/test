@@ -19,12 +19,12 @@ def generate_medecins_json(directory='medecins', output='medecins_content.json')
             for filename in os.listdir(medecin_path):
                 file_path = os.path.join(medecin_path, filename)
                 if filename == 'doctolib.txt':
-                    with open(file_path, 'r') as f:
+                    with open(file_path, 'r', encoding='utf-8') as f:
                         medecin['doctolib'] = f.read().strip()
                 elif filename.endswith('.jpg') or filename.endswith('.png'):
                     medecin['image'] = file_path
                 elif re.match(r'.*\d+\.txt$', filename):
-                    with open(file_path, 'r') as f:
+                    with open(file_path, 'r', encoding='utf-8') as f:
                         lines = f.readlines()
                         num = int(re.findall(r'\d+', filename)[-1])
                         text_name = re.sub(r'\d+\.txt$', '', filename)  # Supprime les chiffres et .txt
@@ -44,8 +44,8 @@ def generate_medecins_json(directory='medecins', output='medecins_content.json')
 
             medecins.append(medecin)
 
-    with open(output, 'w') as f:
-        json.dump(medecins, f, indent=4)
+    with open(output, 'w', encoding='utf-8') as f:
+        json.dump(medecins, f, indent=4, ensure_ascii=False)
 
 if __name__ == "__main__":
     generate_medecins_json()

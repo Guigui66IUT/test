@@ -5,15 +5,15 @@
         "doctolib": "https://www.doctolib.fr/maison-de-sante/ille-sur-tet/cabinet-medical-d-ille-sur-tet",
         "texts": [
             {
-                "filename": "Sp\u00e9cialisations, comp\u00e9tences et services",
+                "filename": "Spécialisations, compétences et services",
                 "content": [
-                    "Sp\u00c3\u00a9cialisation en m\u00c3\u00a9decine g\u00c3\u00a9n\u00c3\u00a9rale",
+                    "Spécialisation en médecine générale",
                     "Suivi des personnes adultes et enfants",
-                    "Capacit\u00c3\u00a9 en apn\u00c3\u00a9e de sommeil",
-                    "Cryoth\u00c3\u00a9rapie",
-                    "Frottis gyn\u00c3\u00a9cologique",
-                    "Hom\u00c3\u00a9opathie",
-                    "Formation en m\u00c3\u00a9decine tropicale",
+                    "Capacité en apnée de sommeil",
+                    "Cryothérapie",
+                    "Frottis gynécologique",
+                    "Homéopathie",
+                    "Formation en médecine tropicale",
                     "MBSR (gestion de stress par des techniques de pleine conscience)"
                 ],
                 "order": 1
@@ -22,8 +22,8 @@
                 "filename": "Rendez-vous",
                 "content": [
                     "Consultation sur rendez-vous",
-                    "Visites \u00c3\u00a0 domicile (uniquement pour personnes alit\u00c3\u00a9s)",
-                    "T\u00c3\u00a9l\u00c3\u00a9consultations"
+                    "Visites à domicile (uniquement pour personnes alités)",
+                    "Téléconsultations"
                 ],
                 "order": 2
             },
@@ -52,7 +52,7 @@
             {
                 "filename": "test",
                 "content": [
-                    "Sp\u00c3\u00a9cialisation en m\u00c3\u00a9decine g\u00c3\u00a9n\u00c3\u00a9rale"
+                    "Spécialisation en médecine générale"
                 ],
                 "order": 1
             }
