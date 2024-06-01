@@ -1,7 +1,7 @@
 [
     {
         "name": "Dr Véronique BRUDY",
-        "image": "medecins\\Dr_Véronique_BRUDY\\logo-med.png",
+        "image": "medecins\\Dr Véronique BRUDY\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/veronique-brudy",
         "texts": [
             {
@@ -93,7 +93,7 @@
     },
     {
         "name": "Dr Dagmar RUNGEN",
-        "image": "medecins\\Dr_Dagmar_RUNGEN\\dr1.jpg",
+        "image": "medecins\\Dr Dagmar RUNGEN\\dr1.jpg",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/dagmar-rungen",
         "texts": [
             {
@@ -132,7 +132,7 @@
             }
         ],
         "pdf": {
-            "path": "medecins\\Dr_Dagmar_RUNGEN\\additional.pdf",
+            "path": "medecins\\Dr Dagmar RUNGEN\\additional.pdf",
             "name": "additional.pdf"
         }
     },
