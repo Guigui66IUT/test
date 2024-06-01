@@ -48,7 +48,17 @@
         "name": "Dr Theo BERTOGNA",
         "image": "medecins\\Dr_Theo_BERTOGNA\\theo.jpg",
         "doctolib": null,
-        "texts": [],
+        "texts": [
+            {
+                "filename": "Master en BG itude",
+                "content": [
+                    "bdg",
+                    "gros charo",
+                    "gros muscles"
+                ],
+                "order": 1
+            }
+        ],
         "pdf": null
     }
 ]
