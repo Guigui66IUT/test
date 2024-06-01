@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('medecins-container');
             data.forEach(medecin => {
                 const pdf = medecin.pdf ? `<a href="../../../${medecin.pdf.path}" download="${medecin.pdf.name}" class="download-link">Autre</a>` : '';
+                const textsHTML = medecin.texts.map(text => `
+                    <h4>${text.filename}</h4>
+                    <ul>
+                        ${text.content.map(line => `<li>• ${line}</li>`).join('')}
+                    </ul>
+                `).join('');
+
                 const medecinHTML = `
                     <div class="button-section">
                         <div class="button-row">
@@ -23,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="content-wrapper">
                                 <img src="../../../${medecin.image}" alt="Profile Image" />
                                 <div class="text-content">
-                                    ${medecin.texts.map(text => `<p>${text}</p>`).join('')}
+                                    ${textsHTML}
                                     ${pdf}
                                 </div>
                             </div>

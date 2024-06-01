@@ -14,7 +14,12 @@
         "image": "medecins\\Dr_Theo_BERTOGNA\\dr1 copy.jpg",
         "doctolib": null,
         "texts": [
-            "test1"
+            {
+                "filename": "texte1 copy.txt",
+                "content": [
+                    "test1"
+                ]
+            }
         ],
         "pdf": null
     }

@@ -24,7 +24,11 @@ def generate_medecins_json(directory='medecins', output='medecins_content.json')
                     medecin['image'] = file_path
                 elif filename.startswith('text') and filename.endswith('.txt'):
                     with open(file_path, 'r') as f:
-                        medecin['texts'].append(f.read().strip())
+                        lines = f.readlines()
+                        medecin['texts'].append({
+                            'filename': filename,
+                            'content': [line.strip() for line in lines]
+                        })
                 elif filename.endswith('.pdf'):
                     medecin['pdf'] = {
                         'path': file_path,
