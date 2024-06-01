@@ -90,125 +90,13 @@
 
 
 	<div class="personnage">
-        <div class="button-section">
-            <div class="button-row">
-                <div class="left-text">Dr Dagmar Rungen</div>
-                <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
-                <a href="https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/dagmar-rungen" target="_blank">
-                    <button class="book-appointment">Prendre rendez-vous</button>
-                </a>
-            </div>
-            <div class="collapsible-content">
-                <div class="content-wrapper">
-                    <img src="../../../img/medecin/dr1.jpg" alt="Profile Image" />
-                    <div class="text-content">
-                        <h3>Spécialisations, compétences et services :</h3>
-                        <ul>
-                            <li>Spécialisation en médecine générale</li>
-                            <li>Suivi des personnes adultes et enfants</li>
-                            <li>Capacité en apnée de sommeil</li>
-                            <li>Cryothérapie</li>
-                            <li>Frottis gynécologique</li>
-                            <li>Homéopathie</li>
-                            <li>Formation en médecine tropicale</li>
-                            <li>MBSR (gestion de stress par des techniques de pleine conscience)</li>
-                        </ul>
-
-                        <h3>Rendez-vous :</h3>
-                        <ul>
-                            <li>Consultation sur rendez-vous</li>
-                            <li>Visites à domicile (uniquement pour personnes alités)</li>
-                            <li>Téléconsultations</li>
-                        </ul>
-                        <h3>Horaires au cabinet :</h3>
-                        <ul>
-                            <li>Lundi 9-12.30</li>
-                            <li>Mardi 9-12.30 & 15-18.30</li>
-                            <li>Mercredi 9-12.30</li>
-                            <li>Jeudi 9-12.30 & 15-18.30</li>
-                            <li>Vendredi de 10-12.30</li>
-                        </ul>
-                        <a href="path/to/yourfile.pdf" download class="download-link">Autre</a>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="button-section">
-            <div class="button-row">
-                <div class="left-text">Dr Véronique BRUDY</div>
-                <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
-                <button class="book-appointment">Prendre rendez-vous</button>
-            </div>
-            <div class="collapsible-content">
-                <div class="content-wrapper">
-                    <img src="/mnt/data/image.png" alt="Profile Image" />
-                    <div class="text-content">
-                        <p>This is the text about Mr Machinbidule. You can add more details here as needed.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="button-section">
-            <div class="button-row">
-                <div class="left-text">Dr Jean-François MERCIER</div>
-                <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
-                <button class="book-appointment">Prendre rendez-vous</button>
-            </div>
-            <div class="collapsible-content">
-                <div class="content-wrapper">
-                    <img src="/mnt/data/image.png" alt="Profile Image" />
-                    <div class="text-content">
-                        <p>This is the text about Mr Machinbidule. You can add more details here as needed.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="button-section">
-            <div class="button-row">
-                <div class="left-text">Dr Amandine MINAUD</div>
-                <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
-                <button class="book-appointment">Prendre rendez-vous</button>
-            </div>
-            <div class="collapsible-content">
-                <div class="content-wrapper">
-                    <img src="/mnt/data/image.png" alt="Profile Image" />
-                    <div class="text-content">
-                        <p>This is the text about Mr Machinbidule. You can add more details here as needed.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="button-section">
-            <div class="button-row">
-                <div class="left-text">Dr Eloise Rouby</div>
-                <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
-                <button class="book-appointment">Prendre rendez-vous</button>
-            </div>
-            <div class="collapsible-content">
-                <div class="content-wrapper">
-                    <img src="/mnt/data/image.png" alt="Profile Image" />
-                    <div class="text-content">
-                        <p>This is the text about Mr Machinbidule. You can add more details here as needed.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="button-section">
-            <div class="button-row">
-                <div class="left-text">Dr Jean-Pascal SASTOURNÉ</div>
-                <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
-                <button class="book-appointment">Prendre rendez-vous</button>
-            </div>
-            <div class="collapsible-content">
-                <div class="content-wrapper">
-                    <img src="/mnt/data/image.png" alt="Profile Image" />
-                    <div class="text-content">
-                        <p>This is the text about Mr Machinbidule. You can add more details here as needed.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="content">
+            <!-- Autres contenus de votre page -->
+        
+            <!-- Conteneur pour les médecins -->
+            <div id="medecins-container"></div>
+        
+            <!-- Autres contenus de votre page -->
         </div>
     </div>
 
@@ -224,7 +112,9 @@
 
 
 
-	<script src="../../../javascript/script.js"></script>
+	
+    <script src="../../../javascript/toggle.js"></script> <!-- Assurez-vous que ce chemin est correct -->
+    <script src="../../../javascript/loadMedecins.js"></script> <!-- Assurez-vous que ce chemin est correct -->
 </body>
 
 </html>
