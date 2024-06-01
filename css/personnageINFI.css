@@ -1,34 +1,38 @@
 .personnage {
-    margin-top: 3vh; 
+    margin-top: 3vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+    gap: 20px; /* Espacement entre les éléments */
 }
 
 .button-section {
-	margin-bottom: 10px;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .button-row {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	background-color: #1E5478;
-	border-radius: 50px;
-	padding: 10px 20px;
-	width: 10%;
-	cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1E5478;
+    border-radius: 50px;
+    padding: 10px 20px;
+    width: 100%; /* Ajustez cette largeur en fonction de votre mise en page */
+    cursor: pointer;
+    white-space: nowrap; /* Empêche le texte de se casser sur plusieurs lignes */
+    overflow: hidden; /* Cache tout texte qui dépasse les limites du conteneur */
+    text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est trop long */
 }
 
 .button-row div {
-	color: white;
-	font-size: 16px;
+    color: white;
+    font-size: 16px;
 }
 
 .button-row .left-text {
-	flex-grow: 1;
-	font-weight: bold;
-	font-size: 1.2rem;
+    flex-grow: 1;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
-
