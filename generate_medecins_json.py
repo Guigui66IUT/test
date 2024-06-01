@@ -2,6 +2,10 @@ import os
 import json
 import re
 
+def get_last_name(full_name):
+    # Assume the last word in the full name is the last name
+    return full_name.split()[-1]
+
 def generate_medecins_json(directory='medecins', output='medecins_content.json'):
     medecins = []
 
@@ -43,6 +47,9 @@ def generate_medecins_json(directory='medecins', output='medecins_content.json')
             medecin['texts'] = sorted(medecin['texts'], key=lambda x: x['order'])
 
             medecins.append(medecin)
+
+    # Trier les médecins par nom de famille
+    medecins = sorted(medecins, key=lambda x: get_last_name(x['name']))
 
     with open(output, 'w', encoding='utf-8') as f:
         json.dump(medecins, f, indent=4, ensure_ascii=False)

@@ -1,5 +1,52 @@
 [
     {
+        "name": "Dr Theo BERTOGNA",
+        "image": "medecins\\Dr_Theo_BERTOGNA\\theo.jpg",
+        "doctolib": null,
+        "texts": [
+            {
+                "filename": "Master en BG itude",
+                "content": [
+                    "bdg",
+                    "gros charo",
+                    "gros muscles"
+                ],
+                "order": 1
+            }
+        ],
+        "pdf": null
+    },
+    {
+        "name": "Dr Véronique BRUDY",
+        "image": null,
+        "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/dagmar-rungen",
+        "texts": [
+            {
+                "filename": "Spécialisations, compétences et services",
+                "content": [],
+                "order": 1
+            },
+            {
+                "filename": "Rendez-vous",
+                "content": [],
+                "order": 2
+            },
+            {
+                "filename": "Horaires au cabinet",
+                "content": [],
+                "order": 3
+            }
+        ],
+        "pdf": null
+    },
+    {
+        "name": "Dr Guillaume JUAN",
+        "image": null,
+        "doctolib": null,
+        "texts": [],
+        "pdf": null
+    },
+    {
         "name": "Dr Dagmar RUNGEN",
         "image": "medecins\\Dr_Dagmar_RUNGEN\\dr1.jpg",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/dagmar-rungen",
@@ -43,52 +90,5 @@
             "path": "medecins\\Dr_Dagmar_RUNGEN\\additional.pdf",
             "name": "additional.pdf"
         }
-    },
-    {
-        "name": "Dr Guillaume JUAN",
-        "image": null,
-        "doctolib": null,
-        "texts": [],
-        "pdf": null
-    },
-    {
-        "name": "Dr Theo BERTOGNA",
-        "image": "medecins\\Dr_Theo_BERTOGNA\\theo.jpg",
-        "doctolib": null,
-        "texts": [
-            {
-                "filename": "Master en BG itude",
-                "content": [
-                    "bdg",
-                    "gros charo",
-                    "gros muscles"
-                ],
-                "order": 1
-            }
-        ],
-        "pdf": null
-    },
-    {
-        "name": "Dr Véronique BRUDY",
-        "image": null,
-        "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/dagmar-rungen",
-        "texts": [
-            {
-                "filename": "Spécialisations, compétences et services",
-                "content": [],
-                "order": 1
-            },
-            {
-                "filename": "Rendez-vous",
-                "content": [],
-                "order": 2
-            },
-            {
-                "filename": "Horaires au cabinet",
-                "content": [],
-                "order": 3
-            }
-        ],
-        "pdf": null
     }
 ]
