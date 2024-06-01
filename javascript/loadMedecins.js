@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('../../../medecins_content.json') // Chemin correct pour atteindre la racine du projet
+    fetch('../../../medecins_content.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <img src="${medecin.image}" alt="Profile Image" />
                                 <div class="text-content">
                                     ${medecin.texts.map(text => `<p>${text}</p>`).join('')}
-                                    ${medecin.pdf ? `<a href="${medecin.pdf}" download class="download-link">Autre</a>` : ''}
+                                    ${medecin.pdf ? `<a href="${medecin.pdf}" download="${medecin.pdf}" class="download-link">Autre</a>` : ''}
                                 </div>
                             </div>
                         </div>
