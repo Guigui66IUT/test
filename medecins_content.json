@@ -5,26 +5,37 @@
         "doctolib": "https://www.doctolib.fr/maison-de-sante/ille-sur-tet/cabinet-medical-d-ille-sur-tet",
         "texts": [
             {
-                "filename": "machin",
+                "filename": "Sp\u00e9cialisations, comp\u00e9tences et services",
                 "content": [
-                    "1",
-                    "2",
-                    "3",
-                    "4"
+                    "Sp\u00c3\u00a9cialisation en m\u00c3\u00a9decine g\u00c3\u00a9n\u00c3\u00a9rale",
+                    "Suivi des personnes adultes et enfants",
+                    "Capacit\u00c3\u00a9 en apn\u00c3\u00a9e de sommeil",
+                    "Cryoth\u00c3\u00a9rapie",
+                    "Frottis gyn\u00c3\u00a9cologique",
+                    "Hom\u00c3\u00a9opathie",
+                    "Formation en m\u00c3\u00a9decine tropicale",
+                    "MBSR (gestion de stress par des techniques de pleine conscience)"
                 ],
                 "order": 1
             },
             {
-                "filename": "Suivi des personnes adultes et enfants",
+                "filename": "Rendez-vous",
                 "content": [
-                    "s<g",
-                    "<sdg"
+                    "Consultation sur rendez-vous",
+                    "Visites \u00c3\u00a0 domicile (uniquement pour personnes alit\u00c3\u00a9s)",
+                    "T\u00c3\u00a9l\u00c3\u00a9consultations"
                 ],
                 "order": 2
             },
             {
-                "filename": "Horaires",
-                "content": [],
+                "filename": "Horaires au cabinet",
+                "content": [
+                    "Lundi 9-12.30",
+                    "Mardi 9-12.30 & 15-18.30",
+                    "Mercredi 9-12.30",
+                    "Jeudi 9-12.30 & 15-18.30",
+                    "Vendredi de 10-12.30"
+                ],
                 "order": 3
             }
         ],
