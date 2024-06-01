@@ -1,25 +1,8 @@
 [
     {
-        "name": "Dr Theo BERTOGNA",
-        "image": "medecins\\Dr_Theo_BERTOGNA\\theo.jpg",
-        "doctolib": null,
-        "texts": [
-            {
-                "filename": "Master en BG itude",
-                "content": [
-                    "bdg",
-                    "gros charo",
-                    "gros muscles"
-                ],
-                "order": 1
-            }
-        ],
-        "pdf": null
-    },
-    {
         "name": "Dr Véronique BRUDY",
         "image": null,
-        "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/dagmar-rungen",
+        "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/veronique-brudy",
         "texts": [
             {
                 "filename": "Spécialisations, compétences et services",
@@ -40,10 +23,72 @@
         "pdf": null
     },
     {
-        "name": "Dr Guillaume JUAN",
+        "name": "Dr Jean-François MERCIER",
         "image": null,
-        "doctolib": null,
-        "texts": [],
+        "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/jean-francois-mercier",
+        "texts": [
+            {
+                "filename": "Spécialisations, compétences et services",
+                "content": [],
+                "order": 1
+            },
+            {
+                "filename": "Rendez-vous",
+                "content": [],
+                "order": 2
+            },
+            {
+                "filename": "Horaires au cabinet",
+                "content": [],
+                "order": 3
+            }
+        ],
+        "pdf": null
+    },
+    {
+        "name": "Dr Amandine MINAUD",
+        "image": null,
+        "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/amandine-minaud",
+        "texts": [
+            {
+                "filename": "Spécialisations, compétences et services",
+                "content": [],
+                "order": 1
+            },
+            {
+                "filename": "Rendez-vous",
+                "content": [],
+                "order": 2
+            },
+            {
+                "filename": "Horaires au cabinet",
+                "content": [],
+                "order": 3
+            }
+        ],
+        "pdf": null
+    },
+    {
+        "name": "Dr Eloise ROUBY",
+        "image": null,
+        "doctolib": "https://www.doctolib.fr/medecin-generaliste/jarnac/eloise-rouby",
+        "texts": [
+            {
+                "filename": "Spécialisations, compétences et services",
+                "content": [],
+                "order": 1
+            },
+            {
+                "filename": "Rendez-vous",
+                "content": [],
+                "order": 2
+            },
+            {
+                "filename": "Horaires au cabinet",
+                "content": [],
+                "order": 3
+            }
+        ],
         "pdf": null
     },
     {
@@ -90,5 +135,28 @@
             "path": "medecins\\Dr_Dagmar_RUNGEN\\additional.pdf",
             "name": "additional.pdf"
         }
+    },
+    {
+        "name": "Dr Jean-Pascal SASTOURNÉ",
+        "image": null,
+        "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/jean-pascal-sastourne",
+        "texts": [
+            {
+                "filename": "Spécialisations, compétences et services",
+                "content": [],
+                "order": 1
+            },
+            {
+                "filename": "Rendez-vous",
+                "content": [],
+                "order": 2
+            },
+            {
+                "filename": "Horaires au cabinet",
+                "content": [],
+                "order": 3
+            }
+        ],
+        "pdf": null
     }
 ]
