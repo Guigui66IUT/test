@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             const container = document.getElementById('medecins-container');
             data.forEach(medecin => {
-                const pdf = medecin.pdf ? `<a href="${medecin.pdf.path}" download="${medecin.pdf.name}" class="download-link">Autre</a>` : '';
+                const pdf = medecin.pdf ? `<a href="../../../${medecin.pdf.path}" download="${medecin.pdf.name}" class="download-link">Autre</a>` : '';
                 const medecinHTML = `
                     <div class="button-section">
                         <div class="button-row">
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div class="collapsible-content">
                             <div class="content-wrapper">
-                                <img src="${medecin.image}" alt="Profile Image" />
+                                <img src="../../../${medecin.image}" alt="Profile Image" />
                                 <div class="text-content">
                                     ${medecin.texts.map(text => `<p>${text}</p>`).join('')}
                                     ${pdf}

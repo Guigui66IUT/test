@@ -3,13 +3,10 @@
         "name": "Dr Dagmar Rungen",
         "image": "medecins\\Dr_Dagmar_Rungen\\dr1.jpg",
         "doctolib": "https://www.doctolib.fr/maison-de-sante/ille-sur-tet/cabinet-medical-d-ille-sur-tet",
-        "texts": [
-            "test1",
-            "test2"
-        ],
+        "texts": [],
         "pdf": {
-            "path": "medecins\\Dr_Dagmar_Rungen\\dr1.pdf",
-            "name": "dr1.pdf"
+            "path": "medecins\\Dr_Dagmar_Rungen\\additional.pdf",
+            "name": "additional.pdf"
         }
     },
     {
