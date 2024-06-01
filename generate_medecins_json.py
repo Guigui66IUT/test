@@ -27,8 +27,9 @@ def generate_medecins_json(directory='medecins', output='medecins_content.json')
                     with open(file_path, 'r') as f:
                         lines = f.readlines()
                         num = int(re.findall(r'\d+', filename)[-1])
+                        text_name = re.sub(r'\d+\.txt$', '', filename)  # Supprime les chiffres et .txt
                         medecin['texts'].append({
-                            'filename': filename,
+                            'filename': text_name,
                             'content': [line.strip() for line in lines],
                             'order': num
                         })
