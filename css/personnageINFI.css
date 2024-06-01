@@ -19,7 +19,7 @@
     background-color: #1E5478;
     border-radius: 50px;
     padding: 10px 20px;
-    width: 25%; /* Utilisez toute la largeur de la colonne */
+    width: 100%; /* Utilisez toute la largeur de la colonne */
     cursor: pointer;
     white-space: nowrap; /* Empêche le texte de se casser sur plusieurs lignes */
     overflow: hidden; /* Cache tout texte qui dépasse les limites du conteneur */
