@@ -2,7 +2,7 @@
     {
         "name": "Dr Dagmar Rungen",
         "image": "medecins\\Dr_Dagmar_Rungen\\dr1.jpg",
-        "doctolib": "https://www.doctolib.fr/maison-de-sante/ille-sur-tet/cabinet-medical-d-ille-sur-tet",
+        "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/dagmar-rungen",
         "texts": [
             {
                 "filename": "Spécialisations, compétences et services",
@@ -46,17 +46,9 @@
     },
     {
         "name": "Dr Theo BERTOGNA",
-        "image": "medecins\\Dr_Theo_BERTOGNA\\dr1 copy.jpg",
+        "image": "medecins\\Dr_Theo_BERTOGNA\\theo.jpg",
         "doctolib": null,
-        "texts": [
-            {
-                "filename": "test",
-                "content": [
-                    "Spécialisation en médecine générale"
-                ],
-                "order": 1
-            }
-        ],
+        "texts": [],
         "pdf": null
     }
 ]
