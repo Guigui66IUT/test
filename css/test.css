@@ -404,13 +404,13 @@ input {
 	text-align: center;
 	margin-top: 20px;
 	/* Ajustez en fonction de vos besoins */
+	color: #1E3F66;
 }
 
 .titre h1 {
-	font-size: 2.5rem;
+	font-size: 2rem;
 	/* Ajustez la taille du texte selon vos préférences */
-	font-weight: bold;
-	color: #1E3F66;
+	font-weight: bold;	
 	margin: 0;
 	/* Supprime les marges par défaut */
 }
