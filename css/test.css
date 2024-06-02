@@ -402,8 +402,7 @@ input {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	margin-top: 20px;
-	/* Ajustez en fonction de vos besoins */
+	margin-top: 2vh;
 	color: #1E3F66;
 	font-weight: bold;
 }
