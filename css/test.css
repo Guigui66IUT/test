@@ -405,14 +405,17 @@ input {
 	margin-top: 20px;
 	/* Ajustez en fonction de vos besoins */
 	color: #1E3F66;
+	font-weight: bold;
 }
 
 .titre h1 {
-	font-size: 2rem;
-	/* Ajustez la taille du texte selon vos préférences */
-	font-weight: bold;	
+	font-size: 1.3rem;		
 	margin: 0;
-	/* Supprime les marges par défaut */
+}
+
+.titre p {
+	font-size: 1.1rem;
+	margin: 0;
 }
 
 
