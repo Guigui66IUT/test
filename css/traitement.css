@@ -67,9 +67,9 @@ h1 {
 	padding: 2.5rem;
 }
 
-.card:hover .card-content {
-	height: 80%; /* Hauteur agrandie sur hover */
-}
+/* .card:hover .card-content {
+	height: 80%; 
+} */
 
 @media (max-width: 1024px) {
 	.grid {
