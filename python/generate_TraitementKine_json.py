@@ -22,7 +22,7 @@ def generate_TraitementKine_json(directory=None, output=None):
 
                 medecin = {
                     'name': treatment_name,
-                    'image': os.path.join(directory, filename),
+                    'image': filename,  # Récupérer uniquement le nom de l'image
                     'order': order
                 }
                 medecins.append(medecin)

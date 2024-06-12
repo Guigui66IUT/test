@@ -1,62 +1,62 @@
 [
     {
         "name": "RHUMATOLOGIE",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../traitementkine\\rhumatologie_1.jpg",
+        "image": "rhumatologie_1.jpg",
         "order": 1
     },
     {
         "name": "AFFECTION NEUROLOGIQUE",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../traitementkine\\AFFECTION NEUROLOGIQUE_2.jpg",
+        "image": "AFFECTION NEUROLOGIQUE_2.jpg",
         "order": 2
     },
     {
         "name": "METHODE SOHIER",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../traitementkine\\METHODE SOHIER_3.jpg",
+        "image": "METHODE SOHIER_3.jpg",
         "order": 3
     },
     {
         "name": "ONDES DE CHOCS",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../traitementkine\\Ondes de chocs_4.jpg",
+        "image": "Ondes de chocs_4.jpg",
         "order": 4
     },
     {
         "name": "CANCER DU SEIN",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../traitementkine\\CANCER DU SEIN_5.jpg",
+        "image": "CANCER DU SEIN_5.jpg",
         "order": 5
     },
     {
         "name": "RÉÉDUCATION PÉRINÉRALE",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../traitementkine\\rééducation périnérale_6.jpg",
+        "image": "rééducation périnérale_6.jpg",
         "order": 6
     },
     {
         "name": "TRAUMATOLOGIE",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../traitementkine\\traumatologie_7.jpg",
+        "image": "traumatologie_7.jpg",
         "order": 7
     },
     {
         "name": "AFFECTION RESPIRATOIRE",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../traitementkine\\AFFECTION RESPIRATOIRE_8.jpg",
+        "image": "AFFECTION RESPIRATOIRE_8.jpg",
         "order": 8
     },
     {
         "name": "VERTIGE POSITIONNEL PAROXYSTIQUE BENIN VPPB",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../traitementkine\\VERTIGE POSITIONNEL PAROXYSTIQUE BENIN VPPB_9.jpg",
+        "image": "VERTIGE POSITIONNEL PAROXYSTIQUE BENIN VPPB_9.jpg",
         "order": 9
     },
     {
         "name": "DRAINAGE LYMPHATIQUE MANUEL ET BANDAGES",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../traitementkine\\Drainage lymphatique manuel et bandages_10.jpg",
+        "image": "Drainage lymphatique manuel et bandages_10.jpg",
         "order": 10
     },
     {
         "name": "RÉÉDUCATION SPORTIVE",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../traitementkine\\Rééducation sportive_11.jpg",
+        "image": "Rééducation sportive_11.jpg",
         "order": 11
     },
     {
         "name": "SCOLIOSE ET HYPERCYPHOSE",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../traitementkine\\Scoliose et Hypercyphose_12.jpg",
+        "image": "Scoliose et Hypercyphose_12.jpg",
         "order": 12
     }
 ]
