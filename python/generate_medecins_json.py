@@ -6,7 +6,7 @@ def get_last_name(full_name):
     # Récupérer le dernier mot avant le dernier espace comme nom de famille
     return full_name.rsplit(' ', 1)[0]
 
-def generate_medecins_json(directory='medecins', output='medecins_content.json'):
+def generate_medecins_json(directory='../medecins', output='../json/medecins_content.json'):
     medecins = []
 
     for medecin_name in os.listdir(directory):

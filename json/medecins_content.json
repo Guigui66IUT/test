@@ -1,7 +1,7 @@
 [
     {
         "name": "Dr Amandine MINAUD",
-        "image": "medecins\\Dr Amandine MINAUD\\logo-med.png",
+        "image": "../medecins\\Dr Amandine MINAUD\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/amandine-minaud",
         "texts": [
             {
@@ -24,7 +24,7 @@
     },
     {
         "name": "Dr Dagmar RUNGEN",
-        "image": "medecins\\Dr Dagmar RUNGEN\\dr1.jpg",
+        "image": "../medecins\\Dr Dagmar RUNGEN\\dr1.jpg",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/dagmar-rungen",
         "texts": [
             {
@@ -63,13 +63,13 @@
             }
         ],
         "pdf": {
-            "path": "medecins\\Dr Dagmar RUNGEN\\additional.pdf",
+            "path": "../medecins\\Dr Dagmar RUNGEN\\additional.pdf",
             "name": "additional.pdf"
         }
     },
     {
         "name": "Dr Eloise ROUBY",
-        "image": "medecins\\Dr Eloise ROUBY\\logo-med.png",
+        "image": "../medecins\\Dr Eloise ROUBY\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/jarnac/eloise-rouby",
         "texts": [
             {
@@ -92,7 +92,7 @@
     },
     {
         "name": "Dr Jean-François MERCIER",
-        "image": "medecins\\Dr Jean-François MERCIER\\logo-med.png",
+        "image": "../medecins\\Dr Jean-François MERCIER\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/jean-francois-mercier",
         "texts": [
             {
@@ -115,7 +115,7 @@
     },
     {
         "name": "Dr Jean-Pascal SASTOURNÉ",
-        "image": "medecins\\Dr Jean-Pascal SASTOURNÉ\\logo-med.png",
+        "image": "../medecins\\Dr Jean-Pascal SASTOURNÉ\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/jean-pascal-sastourne",
         "texts": [
             {
@@ -138,7 +138,7 @@
     },
     {
         "name": "Dr Véronique BRUDY",
-        "image": "medecins\\Dr Véronique BRUDY\\logo-med.png",
+        "image": "../medecins\\Dr Véronique BRUDY\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/veronique-brudy",
         "texts": [
             {

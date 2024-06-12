@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('../../../medecins_content.json')
+    fetch('../../../json/medecins_content.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('medecins-container');
             data.forEach(medecin => {
                 console.log("Processing:", medecin); // Ajout de journalisation
-                const pdf = medecin.pdf ? `<a href="../../../${medecin.pdf.path}" download="${medecin.pdf.name}" class="download-link">Autre</a>` : '';
+                const pdf = medecin.pdf ? `<a href="../../${medecin.pdf.path}" download="${medecin.pdf.name}" class="download-link">Autre</a>` : '';
                 const textsHTML = medecin.texts.map(text => `
                     <h4>${text.filename}</h4>
                     <ul>
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div class="collapsible-content">
                             <div class="content-wrapper">
-                                <img src="../../../${medecin.image}" alt="Profile Image" />
+                                <img src="../../${medecin.image}" alt="Profile Image" />
                                 <div class="text-content">
                                     ${textsHTML}
                                     ${pdf}

@@ -1,7 +1,7 @@
 import os
 import json
 
-def generate_infirmiers_json(input_file='infirmiers/noms.txt', output_file='infirmiers_content.json'):
+def generate_infirmiers_json(input_file='../infirmiers/noms.txt', output_file='../json/infirmiers_content.json'):
     infirmiers = []
     
     # Lire les noms depuis le fichier texte
