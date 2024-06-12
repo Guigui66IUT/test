@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div class="collapsible-content">
                             <div class="content-wrapper">
-                                <img src="../../medecins/${medecin.image}" alt="Profile Image" />
+                                <img src="../../../medecins/${medecin.image}" alt="Profile Image" />
                                 <div class="text-content">
                                     ${textsHTML}
                                     ${pdf}
