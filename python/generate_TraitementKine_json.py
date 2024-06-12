@@ -2,7 +2,14 @@ import os
 import json
 import re
 
-def generate_TraitementKine_json(directory='../traitementkine', output='../json/traitementkine_content.json'):
+def generate_TraitementKine_json(directory=None, output=None):
+    # Obtenir le répertoire du script en cours d'exécution
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+
+    # Définir les chemins par défaut si aucun n'est spécifié
+    directory = directory or os.path.join(script_directory, '../traitementkine')
+    output = output or os.path.join(script_directory, '../json/traitementkine_content.json')
+
     medecins = []
 
     for filename in os.listdir(directory):
@@ -26,6 +33,8 @@ def generate_TraitementKine_json(directory='../traitementkine', output='../json/
     # Écrire les données dans un fichier JSON
     with open(output, 'w', encoding='utf-8') as f:
         json.dump(medecins, f, indent=4, ensure_ascii=False)
+    
+    print(f'Fichier {output} généré avec succès.')
 
 if __name__ == "__main__":
     generate_TraitementKine_json()

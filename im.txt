@@ -1,0 +1,19 @@
+import os
+
+def execute_python_files(directory):
+    for filename in os.listdir(directory):
+        if filename.endswith(".py"):
+            filepath = os.path.join(directory, filename)
+            print(filename)
+            print("Executing file: {}".format(filepath))
+            try:
+                with open(filepath, 'r') as file:
+                    exec(file.read())
+            except Exception as e:
+                print("An error occurred while executing the file {}: {}".format(filepath, e))
+
+directory_path = "python"  # Using the folder name "python"
+execute_python_files(directory_path)
+
+with open("C:/Users/33667/Desktop/Site Kinesitherapeute - Copie/Site/python/generate_infirmiers_json.py",'r') as programme:
+    exec(programme.read())

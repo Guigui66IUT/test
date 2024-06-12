@@ -1,30 +1,22 @@
-import os
 import subprocess
+import os
 
-# Dossier contenant les scripts Python
-script_dir = "python"
-
-# Vérifiez si le dossier existe
-if not os.path.exists(script_dir):
-    print(f"Le dossier '{script_dir}' n'existe pas.")
-    exit(1)
-
-# Liste tous les fichiers dans le dossier
-scripts = [f for f in os.listdir(script_dir) if f.endswith('.py')]
-
-# Vérifiez s'il y a des scripts Python dans le dossier
-if not scripts:
-    print(f"Aucun script Python trouvé dans le dossier '{script_dir}'.")
-    exit(1)
-
-# Exécute chaque script
-for script in scripts:
-    script_path = os.path.join(script_dir, script)
-    print(f"Exécution de {script_path}")
+def execute_script(script_path):
     try:
-        result = subprocess.run(["python", script_path], check=True, capture_output=True, text=True)
+        result = subprocess.run(['python', script_path], check=True, capture_output=True, text=True)
+        print(f"Successfully executed {script_path}")
         print(result.stdout)
     except subprocess.CalledProcessError as e:
-        print(f"Erreur lors de l'exécution de {script_path} : {e.stderr}")
+        print(f"Error executing {script_path}: {e}")
+        print("Standard Output:\n", e.stdout)
+        print("Error Output:\n", e.stderr)
 
-print("Tous les scripts ont été exécutés.")
+if __name__ == "__main__":
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+    python_directory = os.path.join(script_directory, "python")
+
+    # Récupérer tous les fichiers Python dans le dossier "python"
+    scripts = [os.path.join(python_directory, f).replace("\\", "/") for f in os.listdir(python_directory) if f.endswith('.py')]
+
+    for script in scripts:
+        execute_script(script)

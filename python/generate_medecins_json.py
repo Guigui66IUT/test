@@ -4,9 +4,16 @@ import re
 
 def get_last_name(full_name):
     # Récupérer le dernier mot avant le dernier espace comme nom de famille
-    return full_name.rsplit(' ', 1)[0]
+    return full_name.rsplit(' ', 1)[-1]
 
-def generate_medecins_json(directory='../medecins', output='../json/medecins_content.json'):
+def generate_medecins_json(directory=None, output=None):
+    # Obtenir le répertoire du script en cours d'exécution
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+
+    # Définir les chemins par défaut si aucun n'est spécifié
+    directory = directory or os.path.join(script_directory, '../medecins')
+    output = output or os.path.join(script_directory, '../json/medecins_content.json')
+
     medecins = []
 
     for medecin_name in os.listdir(directory):
@@ -53,6 +60,8 @@ def generate_medecins_json(directory='../medecins', output='../json/medecins_con
 
     with open(output, 'w', encoding='utf-8') as f:
         json.dump(medecins, f, indent=4, ensure_ascii=False)
+
+    print(f'Fichier {output} généré avec succès.')
 
 if __name__ == "__main__":
     generate_medecins_json()
