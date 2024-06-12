@@ -1,7 +1,62 @@
 [
     {
-        "name": "VIEUX",
-        "image": "traitementkine\\vieux_1.jpg",
+        "name": "RHUMATOLOGIE",
+        "image": "traitementkine\\rhumatologie_1.jpg",
         "order": 1
+    },
+    {
+        "name": "AFFECTION NEUROLOGIQUE",
+        "image": "traitementkine\\AFFECTION NEUROLOGIQUE_2.jpg",
+        "order": 2
+    },
+    {
+        "name": "METHODE SOHIER",
+        "image": "traitementkine\\METHODE SOHIER_3.jpg",
+        "order": 3
+    },
+    {
+        "name": "ONDES DE CHOCS",
+        "image": "traitementkine\\Ondes de chocs_4.jpg",
+        "order": 4
+    },
+    {
+        "name": "CANCER DU SEIN",
+        "image": "traitementkine\\CANCER DU SEIN_5.jpg",
+        "order": 5
+    },
+    {
+        "name": "RÉÉDUCATION PÉRINÉRALE",
+        "image": "traitementkine\\rééducation périnérale_6.jpg",
+        "order": 6
+    },
+    {
+        "name": "TRAUMATOLOGIE",
+        "image": "traitementkine\\traumatologie_7.jpg",
+        "order": 7
+    },
+    {
+        "name": "AFFECTION RESPIRATOIRE",
+        "image": "traitementkine\\AFFECTION RESPIRATOIRE_8.jpg",
+        "order": 8
+    },
+    {
+        "name": "VERTIGE POSITIONNEL PAROXYSTIQUE BENIN VPPB",
+        "image": "traitementkine\\VERTIGE POSITIONNEL PAROXYSTIQUE BENIN VPPB_9.jpg",
+        "order": 9
+    },
+    {
+        "name": "DRAINAGE LYMPHATIQUE MANUEL ET BANDAGES",
+        "image": "traitementkine\\Drainage lymphatique manuel et bandages_10.jpg",
+        "order": 10
+    },
+    {
+        "name": "RÉÉDUCATION SPORTIVE",
+        "image": "traitementkine\\Rééducation sportive_11.jpg",
+        "order": 11
+    },
+    {
+        "name": "SCOLIOSE ET HYPERCYPHOSE",
+        "image": "traitementkine\\Scoliose et Hypercyphose_12.jpg",
+        "order": 12
     }
 ]
