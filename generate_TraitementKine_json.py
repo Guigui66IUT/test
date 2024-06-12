@@ -1,7 +1,7 @@
 import os
 import json
 
-def generate_medecins_json(directory='traitementkine', output='medecins_content.json'):
+def generate_medecins_json(directory='traitementkine', output='traitementkine_content.json'):
     medecins = []
 
     for filename in os.listdir(directory):
