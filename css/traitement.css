@@ -26,7 +26,7 @@ html {
   .img-box img {
 	display: block;
 	width: 100%; /* Adapter la largeur à 100% du conteneur */
-	height: 100%; /* Adapter la hauteur à 100% du conteneur */
+	height: auto; /* Adapter la hauteur à 100% du conteneur */
 	object-fit: cover;
   }
   
@@ -56,7 +56,10 @@ html {
 	position: relative;
   }
   
-  .card-content {
+  .card-content {  
+	display: flex; /* Utiliser Flexbox pour centrer le contenu */
+	align-items: center; /* Centrer verticalement */
+	justify-content: center; /* Centrer horizontalement */
     background-color: var(--text-color);
     color: #fff;
     padding: 1.2rem 0;
