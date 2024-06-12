@@ -18,4 +18,4 @@ def generate_medecins_json(directory='traitementkine', output='traitementkine_co
         json.dump(medecins, f, indent=4, ensure_ascii=False)
 
 if __name__ == "__main__":
-    generate_medecins_json()
+    generate_TraitementKine_json()
