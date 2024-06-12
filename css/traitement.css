@@ -12,29 +12,29 @@
 
 html {
 	scroll-behavior: smooth;
-  }
-  
-  h1 {
-	font-weight: bold;
-  }
-  
-  .img-box {
+}
+
+h1 {
+	font-weight: bold;	
+}
+
+.img-box {
 	width: 100%;
 	overflow: hidden;
-  }
-  
-  .img-box img {
+}
+
+.img-box img {
 	display: block;
 	width: 100%; /* Adapter la largeur à 100% du conteneur */
 	height: auto; /* Adapter la hauteur à 100% du conteneur */
 	object-fit: cover;
-  }
-  
-  .container {
+}
+
+.container {
 	margin-top: 2rem;
-  }
-  
-  .grid {
+}
+
+.grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	justify-content: center;
@@ -42,9 +42,9 @@ html {
 	text-align: center;
 	width: 50%;
 	margin: auto;
-  }
-  
-  .card {
+}
+
+.card {
 	display: flex; /* Utiliser Flexbox pour aligner le contenu */
 	flex-direction: column; /* Aligner le contenu en colonne */
 	justify-content: center; /* Aligner verticalement le contenu au centre */
@@ -54,36 +54,47 @@ html {
 	cursor: pointer;
 	transition: 0.2s;
 	position: relative;
-  }
-  
-  .card-content {  
+}
+
+.card-content {  
 	display: flex; /* Utiliser Flexbox pour centrer le contenu */
 	align-items: center; /* Centrer verticalement */
 	justify-content: center; /* Centrer horizontalement */
-    background-color: var(--text-color);
-    color: #fff;
-    padding: 1.2rem 0;
-    transition: height 0.7s ease;
-    flex-grow: 1; /* Permettre au contenu de s'étendre pour remplir l'espace disponible */
+	background-color: var(--text-color);
+	color: #fff;
+	padding: 1.2rem 0;
+	transition: height 0.7s ease;
+	flex-grow: 1; /* Permettre au contenu de s'étendre pour remplir l'espace disponible */
 }
 
-  
-  .card-content h1 {
+
+.card-content h1 {
 	font-size: 1.5rem;
 	font-weight: 600;
 	text-transform: capitalize;
 	margin: 0; /* Enlever les marges par défaut */
-  }
-  
-  @media (max-width: 1024px) {
+}
+
+@media (max-width: 1024px) {
 	.grid {
-	  grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.card-content h1 {
+		font-size: 1.2rem;
+	}
+}
+
+@media (max-width: 767px) {
+	.grid {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.card-content h1 {
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.card-content h1 {
+	  font-size: 0.8rem;
 	}
   }
-  
-  @media (max-width: 767px) {
-	.grid {
-	  grid-template-columns: repeat(1, 1fr);
-	}
-  }
-  
