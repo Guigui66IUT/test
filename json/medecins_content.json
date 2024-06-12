@@ -1,7 +1,7 @@
 [
     {
         "name": "Dr Véronique BRUDY",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../medecins\\Dr Véronique BRUDY\\logo-med.png",
+        "image": "Dr Véronique BRUDY\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/veronique-brudy",
         "texts": [
             {
@@ -24,7 +24,7 @@
     },
     {
         "name": "Dr Jean-François MERCIER",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../medecins\\Dr Jean-François MERCIER\\logo-med.png",
+        "image": "Dr Jean-François MERCIER\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/jean-francois-mercier",
         "texts": [
             {
@@ -47,7 +47,7 @@
     },
     {
         "name": "Dr Amandine MINAUD",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../medecins\\Dr Amandine MINAUD\\logo-med.png",
+        "image": "Dr Amandine MINAUD\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/amandine-minaud",
         "texts": [
             {
@@ -70,7 +70,7 @@
     },
     {
         "name": "Dr Eloise ROUBY",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../medecins\\Dr Eloise ROUBY\\logo-med.png",
+        "image": "Dr Eloise ROUBY\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/jarnac/eloise-rouby",
         "texts": [
             {
@@ -93,7 +93,7 @@
     },
     {
         "name": "Dr Dagmar RUNGEN",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../medecins\\Dr Dagmar RUNGEN\\dr1.jpg",
+        "image": "Dr Dagmar RUNGEN\\dr1.jpg",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/dagmar-rungen",
         "texts": [
             {
@@ -132,13 +132,13 @@
             }
         ],
         "pdf": {
-            "path": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../medecins\\Dr Dagmar RUNGEN\\additional.pdf",
+            "path": "Dr Dagmar RUNGEN\\additional.pdf",
             "name": "additional.pdf"
         }
     },
     {
         "name": "Dr Jean-Pascal SASTOURNÉ",
-        "image": "C:\\Users\\33667\\Desktop\\Site Kinesitherapeute - Copie\\Site\\python\\../medecins\\Dr Jean-Pascal SASTOURNÉ\\logo-med.png",
+        "image": "Dr Jean-Pascal SASTOURNÉ\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/jean-pascal-sastourne",
         "texts": [
             {

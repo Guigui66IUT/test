@@ -33,7 +33,7 @@ def generate_medecins_json(directory=None, output=None):
                     with open(file_path, 'r', encoding='utf-8') as f:
                         medecin['doctolib'] = f.read().strip()
                 elif filename.endswith('.jpg') or filename.endswith('.png'):
-                    medecin['image'] = file_path
+                    medecin['image'] = os.path.join(medecin_name, filename)
                 elif re.match(r'.*\d+\.txt$', filename):
                     with open(file_path, 'r', encoding='utf-8') as f:
                         lines = f.readlines()
@@ -46,7 +46,7 @@ def generate_medecins_json(directory=None, output=None):
                         })
                 elif filename.endswith('.pdf'):
                     medecin['pdf'] = {
-                        'path': file_path,
+                        'path': os.path.join(medecin_name, filename),
                         'name': filename
                     }
 
