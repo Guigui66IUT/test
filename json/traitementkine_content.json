@@ -58,5 +58,10 @@
         "name": "SCOLIOSE ET HYPERCYPHOSE",
         "image": "../traitementkine\\Scoliose et Hypercyphose_12.jpg",
         "order": 12
+    },
+    {
+        "name": "AFFECTION NEUROLOGIQUE",
+        "image": "../traitementkine\\AFFECTION NEUROLOGIQUE_13.jpg",
+        "order": 13
     }
 ]

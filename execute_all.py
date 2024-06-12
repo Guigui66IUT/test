@@ -1,28 +1,30 @@
-import time
+import os
 import subprocess
-from watchdog.observers import Observer
-from watchdog.events import FileSystemEventHandler
 
-class ExecuteAllHandler(FileSystemEventHandler):
-    def on_modified(self, event):
-        if event.src_path.endswith('.py'):
-            print(f"Modification détectée: {event.src_path}")
-            result = subprocess.run(['python', 'execute_all.py'], capture_output=True, text=True)
-            if result.returncode == 0:
-                print(f"Succès: execute_all.py exécuté")
-            else:
-                print(f"Erreur lors de l'exécution de execute_all.py: {result.stderr}")
+# Dossier contenant les scripts Python
+script_dir = "python"
 
-if __name__ == "__main__":
-    path = "python"
-    event_handler = ExecuteAllHandler()
-    observer = Observer()
-    observer.schedule(event_handler, path, recursive=False)
-    observer.start()
-    print(f"Surveillance des modifications dans le répertoire: {path}")
+# Vérifiez si le dossier existe
+if not os.path.exists(script_dir):
+    print(f"Le dossier '{script_dir}' n'existe pas.")
+    exit(1)
+
+# Liste tous les fichiers dans le dossier
+scripts = [f for f in os.listdir(script_dir) if f.endswith('.py')]
+
+# Vérifiez s'il y a des scripts Python dans le dossier
+if not scripts:
+    print(f"Aucun script Python trouvé dans le dossier '{script_dir}'.")
+    exit(1)
+
+# Exécute chaque script
+for script in scripts:
+    script_path = os.path.join(script_dir, script)
+    print(f"Exécution de {script_path}")
     try:
-        while True:
-            time.sleep(1)
-    except KeyboardInterrupt:
-        observer.stop()
-    observer.join()
+        result = subprocess.run(["python", script_path], check=True, capture_output=True, text=True)
+        print(result.stdout)
+    except subprocess.CalledProcessError as e:
+        print(f"Erreur lors de l'exécution de {script_path} : {e.stderr}")
+
+print("Tous les scripts ont été exécutés.")
