@@ -1,3 +1,15 @@
+:root {
+	/*========== Colors ==========*/
+	/*Color mode HSL(hue, saturation, lightness)*/
+	--text-color: hsl(0, 0%, 35%);
+
+}
+
+
+
+
+
+
 html {
 	scroll-behavior: smooth;
   }
@@ -45,7 +57,7 @@ html {
   }
   
   .card-content {
-    background-color: rgba(182, 182, 182, 0.5); /* Ajouter de la transparence */
+    background-color: var(--text-color);
     color: #fff;
     padding: 1.2rem 0;
     transition: height 0.7s ease;
