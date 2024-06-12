@@ -2,7 +2,7 @@ import os
 import json
 import re
 
-def generate_TraitementKine_json(directory='traitementkine', output='traitementkine_content.json'):
+def generate_TraitementKine_json(directory='../traitementkine', output='../json/traitementkine_content.json'):
     medecins = []
 
     for filename in os.listdir(directory):
