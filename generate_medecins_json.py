@@ -3,8 +3,8 @@ import json
 import re
 
 def get_last_name(full_name):
-    # Assume the last word in the full name is the last name
-    return full_name.split()[-1]
+    # Récupérer le dernier mot avant le dernier espace comme nom de famille
+    return full_name.rsplit(' ', 1)[0]
 
 def generate_medecins_json(directory='medecins', output='medecins_content.json'):
     medecins = []
