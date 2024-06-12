@@ -1,6 +1,7 @@
 [
     {
-        "name": "1 COPY",
-        "image": "traitementkine\\1 copy.jpg"
+        "name": "VIEUX",
+        "image": "traitementkine\\vieux_1.jpg",
+        "order": 1
     }
 ]
