@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('../../../traitementkine_content.json')
+    fetch('../../../json/traitementkine_content.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const medecinHTML = `
                     <div class="card">
                         <div class="img-box">
-                            <img src="../../../${medecin.image}" alt="${medecin.name}">
+                            <img src="../../${medecin.image}" alt="${medecin.name}">
                         </div>
                         <div class="card-content">
                             <h1 class="card-heading">${medecin.name}</h1>
