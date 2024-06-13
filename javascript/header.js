@@ -35,5 +35,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 link.classList.add('active');
             }
         });
+
+        // Ajoute la classe active au lien "Professionnels de santé" si on est dans une de ses pages
+        if (currentPath.includes('/html/profession/')) {
+            document.querySelector('a.dropdown-toggle').classList.add('active');
+        }
     }
 });
