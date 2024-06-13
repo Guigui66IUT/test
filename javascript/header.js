@@ -9,14 +9,17 @@ document.addEventListener("DOMContentLoaded", function() {
     function adjustPaths() {
         const header = document.getElementById('header');
         const links = header.querySelectorAll('a');
-        const depth = window.location.pathname.split('/').length - 3;
+        const depth = window.location.pathname.split('/').filter(part => part).length - 1;
 
         links.forEach(link => {
-            if (link.getAttribute('href').startsWith('/')) {
-                let path = link.getAttribute('href').substring(1);
+            let href = link.getAttribute('href');
+            if (href.startsWith('/')) {
+                href = href.substring(1);
+                let path = '';
                 for (let i = 0; i < depth; i++) {
-                    path = '../' + path;
+                    path += '../';
                 }
+                path += href;
                 link.setAttribute('href', path);
             }
         });
