@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(data => {
             document.getElementById('header').innerHTML = data;
             adjustPaths();
+            setActiveClass();
         });
 
     function adjustPaths() {
@@ -21,6 +22,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 path += href;
                 link.setAttribute('href', path);
+            }
+        });
+    }
+
+    function setActiveClass() {
+        const links = document.querySelectorAll('a');
+        const currentPath = window.location.pathname;
+
+        links.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
             }
         });
     }
