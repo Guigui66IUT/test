@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const currentPath = window.location.pathname;
 
         links.forEach(link => {
-            if (link.getAttribute('href') === currentPath) {
+            if (link.getAttribute('href').endsWith(currentPath)) {
                 link.classList.add('active');
             }
         });
