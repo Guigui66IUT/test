@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
     
-    fetch('../../../json/file_list.json')
+    fetch('../../json/file_list.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.onclick = () => downloadPDF(filename);
 
                 const img = document.createElement('img');
-                img.src = `../../../pdf/${filename}.jpg`; // Chemin de l'image
+                img.src = `../../pdf/${filename}.jpg`; // Chemin de l'image
                 img.alt = filename;
 
                 const p = document.createElement('p');
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function downloadPDF(filename) {
     const link = document.createElement('a');
-    link.href = `../../../pdf/${filename}.pdf`;
+    link.href = `../../pdf/${filename}.pdf`;
     link.download = `${filename}.pdf`;
     link.click();
     console.log('Download initiated for:', filename);
