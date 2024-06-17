@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const links = document.querySelectorAll('nav a');
         const currentPath = window.location.pathname;
 
+        // Variable pour suivre si un lien actif a été défini
         let activeLinkSet = false;
 
         links.forEach(link => {
@@ -44,7 +45,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Ajoute la classe active au lien "Professionnels de santé" si on est dans une de ses pages
         if (currentPath.includes('/html/profession/')) {
-            document.querySelector('a.dropdown-toggle').classList.add('active');
+            const dropdownToggle = document.querySelector('a.dropdown-toggle');
+            if (dropdownToggle) {
+                dropdownToggle.classList.add('active');
+            }
         }
     }
 });
