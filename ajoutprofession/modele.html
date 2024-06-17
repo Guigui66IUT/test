@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Maison de Santé Pluridisciplinaire</title>
+    <link href="/css/test.css" rel="stylesheet" type="text/css" />
+    <link href="/css/personnageMED.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="/css/reset.css" rel="stylesheet" type="text/css" /> -->
+
+    <link rel="icon" href="/img/logo.jpg" type="image/png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- permet d'avoir accès à font-awesome à distance pour les boutons suivants
+	voir vidéo :
+	https://www.youtube.com/watch?v=ki9c7IclXGk&ab_channel=BenBK
+	-->
+</head>
+
+<body>
+    <div class="header-container">
+        <!-- MOBILE SCREEN -->
+        <input type="checkbox" id="menu">
+        <!-- END MOBILE SCREEN -->
+
+        <header id="main-header"></header>
+
+        <header class="tertiary-header">
+            <nav>
+                <div class="menu-logo">
+                    <img id="profession-logo" src="/img/logo-med.png" alt="Logo">
+                    <h2 id="profession-title">Profession</h2>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+    <div class="personnage">
+        <!-- Autres contenus de votre page -->
+        <!-- Conteneur pour les professionnels -->
+        <div id="profession-container"></div>
+        <!-- Autres contenus de votre page -->
+    </div>
+
+    <script src="/javascript/header.js"></script>
+    <script src="/javascript/toggle.js"></script> <!-- Assurez-vous que ce chemin est correct -->
+    <script src="/javascript/loadMedecins.js"></script> <!-- Assurez-vous que ce chemin est correct -->
+    <script src="/javascript/dynamicContent.js"></script> <!-- Script pour le contenu dynamique -->
+</body>
+
+</html>

@@ -16,11 +16,30 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
-            // Vérifier si la page appartient à une profession
-            if (path.startsWith('/html/profession/')) {
+            if (window.location.pathname.startsWith('/html/profession/') || window.location.pathname.startsWith('/ajoutprofession/')) {
                 const professionalDropdown = document.querySelector('.dropdown > a');
                 professionalDropdown.classList.add('active');
             }
+
+            // Charger dynamiquement les nouvelles professions
+            fetch('/json/professions.json')
+                .then(response => response.json())
+                .then(professions => {
+                    const newProfessionsContainer = document.getElementById('new-professions');
+                    professions.forEach(profession => {
+                        const li = document.createElement('li');
+                        const a = document.createElement('a');
+                        a.href = `/ajoutprofession/${profession}/index.html`;
+                        a.textContent = profession.charAt(0).toUpperCase() + profession.slice(1);
+                        li.appendChild(a);
+                        newProfessionsContainer.appendChild(li);
+
+                        if (window.location.pathname.includes(profession)) {
+                            a.classList.add('active');
+                        }
+                    });
+                })
+                .catch(error => console.error('Error loading new professions:', error));
         })
         .catch(error => console.error('Error loading header:', error));
 });
