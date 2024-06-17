@@ -27,13 +27,18 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function setActiveClass() {
-        const links = document.querySelectorAll('a');
+        const links = document.querySelectorAll('nav a');
         const currentPath = window.location.pathname;
+
+        let activeLinkSet = false;
 
         links.forEach(link => {
             const linkPath = new URL(link.href).pathname;
-            if (linkPath === currentPath || (currentPath === '/' && linkPath === '/index.html')) {
+            if (!activeLinkSet && (linkPath === currentPath || (currentPath === '/' && linkPath === '/index.html'))) {
                 link.classList.add('active');
+                activeLinkSet = true;
+            } else {
+                link.classList.remove('active');
             }
         });
 
