@@ -29,12 +29,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     professions.forEach(profession => {
                         const li = document.createElement('li');
                         const a = document.createElement('a');
-                        a.href = `/ajoutprofession/${profession}/index.html`;
+                        a.href = `/ajoutprofession/modele.html?profession=${profession}`;
                         a.textContent = profession.charAt(0).toUpperCase() + profession.slice(1);
                         li.appendChild(a);
                         newProfessionsContainer.appendChild(li);
 
-                        if (window.location.pathname.includes(profession)) {
+                        if (window.location.search.includes(`profession=${profession}`)) {
                             a.classList.add('active');
                         }
                     });
