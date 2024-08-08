@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
-    
+
     fetch('../../json/file_list.json')
         .then(response => {
             if (!response.ok) {
@@ -13,25 +13,30 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Files received:', files);
             const vessel = document.getElementById('vessel');
 
-            files.forEach(filename => {
-                console.log('Processing file:', filename);
+            // Parcourir chaque clé du fichier JSON
+            Object.keys(files).forEach(month => {
+                console.log(`Processing files for ${month}`);
 
-                const card = document.createElement('div');
-                card.classList.add('card');
-                card.onclick = () => downloadPDF(filename);
+                files[month].forEach(filename => {
+                    console.log('Processing file:', filename);
 
-                const img = document.createElement('img');
-                img.src = `../../pdf/${filename}.jpg`; // Chemin de l'image
-                img.alt = filename;
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+                    card.onclick = () => downloadPDF(filename);
 
-                const p = document.createElement('p');
-                p.textContent = filename;
+                    const img = document.createElement('img');
+                    img.src = `../../pdf/${month}/${filename}.jpg`; // Chemin de l'image
+                    img.alt = filename;
 
-                card.appendChild(img);
-                card.appendChild(p);
-                vessel.appendChild(card);
+                    const p = document.createElement('p');
+                    p.textContent = filename;
 
-                console.log('Card created for:', filename);
+                    card.appendChild(img);
+                    card.appendChild(p);
+                    vessel.appendChild(card);
+
+                    console.log('Card created for:', filename);
+                });
             });
         })
         .catch(error => {
