@@ -22,10 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     const card = document.createElement('div');
                     card.classList.add('card');
-                    card.onclick = () => downloadPDF(filename);
+                    card.onclick = () => downloadPDF(month, filename);
 
                     const img = document.createElement('img');
-                    img.src = `../../pdf/${month}/${filename}.jpg`; // Chemin de l'image
+                    if (month === 'toujours') {
+                        img.src = `../../pdf/toujours/${filename}.jpg`; // Chemin de l'image pour "toujours"
+                    } else {
+                        img.src = `../../pdf/${month}/${filename}.jpg`; // Chemin de l'image pour les autres mois
+                    }
                     img.alt = filename;
 
                     const p = document.createElement('p');
@@ -44,9 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 });
 
-function downloadPDF(filename) {
+function downloadPDF(month, filename) {
     const link = document.createElement('a');
-    link.href = `../../pdf/${filename}.pdf`;
+    if (month === 'toujours') {
+        link.href = `../../pdf/toujours/${filename}.pdf`;
+    } else {
+        link.href = `../../pdf/${month}/${filename}.pdf`;
+    }
     link.download = `${filename}.pdf`;
     link.click();
     console.log('Download initiated for:', filename);
