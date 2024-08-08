@@ -1,7 +1,11 @@
 {
-    "aout": [
+    "toujours": [
         "diabetes",
-        "Tabac",
-        "dds"
+        "Tabac"
+    ],
+    "aout": [
+        "dds",
+        "diabetes",
+        "Tabac"
     ]
 }
