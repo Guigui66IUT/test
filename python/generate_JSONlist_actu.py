@@ -49,9 +49,7 @@ def generate_JSONlist_actu(directory=None, output=None):
         subdir_path = os.path.join(directory, subdir)
         if os.path.isdir(subdir_path) and subdir.lower() == current_month:
             month_files = [f.replace('.pdf', '') for f in os.listdir(subdir_path) if f.endswith('.pdf')]
-            # Exclure les fichiers qui sont déjà dans 'toujours'
-            month_files = [file for file in month_files if file not in always_files]
-            pdf_files[subdir] = month_files
+            pdf_files[subdir] = [file for file in month_files if file not in always_files]
             print(f"Fichiers dans '{subdir}': {pdf_files[subdir]}")
         elif subdir.lower() != 'toujours' and os.path.isdir(subdir_path):
             print(f"Ignoré le dossier: {subdir}")
@@ -59,7 +57,7 @@ def generate_JSONlist_actu(directory=None, output=None):
     # Écrire la liste des fichiers dans un fichier JSON
     with open(output, 'w', encoding='utf-8') as json_file:
         json.dump(pdf_files, json_file, indent=4, ensure_ascii=False)
-        
+
     print(f'Fichier {output} généré avec succès.')
 
 if __name__ == "__main__":
