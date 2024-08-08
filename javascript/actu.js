@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.onclick = () => downloadPDF(month, filename);
 
                     const img = document.createElement('img');
-                    if (month === 'toujours') {
-                        img.src = `../../pdf/toujours/${filename}.jpg`; // Chemin de l'image pour "toujours"
-                    } else {
-                        img.src = `../../pdf/${month}/${filename}.jpg`; // Chemin de l'image pour les autres mois
-                    }
+                    img.src = month === 'toujours' ? `../../pdf/toujours/${filename}.jpg` : `../../pdf/${month}/${filename}.jpg`;
                     img.alt = filename;
+                    img.onerror = () => {
+                        console.error(`Image not found: ${img.src}`);
+                        img.src = '../../img/placeholder.jpg'; // Chemin de l'image de remplacement si l'image n'est pas trouvée
+                    };
 
                     const p = document.createElement('p');
                     p.textContent = filename;
@@ -50,11 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function downloadPDF(month, filename) {
     const link = document.createElement('a');
-    if (month === 'toujours') {
-        link.href = `../../pdf/toujours/${filename}.pdf`;
-    } else {
-        link.href = `../../pdf/${month}/${filename}.pdf`;
-    }
+    link.href = month === 'toujours' ? `../../pdf/toujours/${filename}.pdf` : `../../pdf/${month}/${filename}.pdf`;
     link.download = `${filename}.pdf`;
     link.click();
     console.log('Download initiated for:', filename);
