@@ -1,11 +1,23 @@
 import os
 import json
-import locale
 from datetime import datetime
 
 def generate_JSONlist_actu(directory=None, output=None):
-    # Définir la locale en français
-    locale.setlocale(locale.LC_TIME, 'fr_FR.utf8')
+    # Mappage des noms de mois en anglais vers le français
+    months_translation = {
+        'january': 'janvier',
+        'february': 'fevrier',
+        'march': 'mars',
+        'april': 'avril',
+        'may': 'mai',
+        'june': 'juin',
+        'july': 'juillet',
+        'august': 'aout',
+        'september': 'septembre',
+        'october': 'octobre',
+        'november': 'novembre',
+        'december': 'decembre'
+    }
 
     # Obtenir le répertoire du script en cours d'exécution
     script_directory = os.path.dirname(os.path.abspath(__file__))
@@ -26,8 +38,9 @@ def generate_JSONlist_actu(directory=None, output=None):
     else:
         print(f"Le dossier 'toujours' n'existe pas dans {directory}")
 
-    # Obtenir le mois actuel en français
-    current_month = datetime.now().strftime('%B').lower()
+    # Obtenir le mois actuel en anglais et le traduire en français
+    current_month_english = datetime.now().strftime('%B').lower()
+    current_month = months_translation.get(current_month_english, current_month_english)
     print(f"Mois actuel: {current_month}")
 
     # Parcourir tous les dossiers dans le répertoire spécifié
@@ -46,7 +59,7 @@ def generate_JSONlist_actu(directory=None, output=None):
 
     # Écrire la liste des fichiers dans un fichier JSON
     with open(output, 'w') as json_file:
-        json.dump(pdf_files, json_file, indent=4)
+        json.dump(pdf_files, json_file, indent=4, ensure_ascii=False)
         
     print(f'Fichier {output} généré avec succès.')
 
