@@ -11,13 +11,14 @@ def generate_JSONlist_actu(directory=None, output=None):
     output = output or os.path.join(script_directory, '../json/file_list.json')
 
     # Initialiser la structure de données pour les fichiers PDF
-    pdf_files = {'toujours': []}
+    pdf_files = {}
+    always_files = []
     always_dir = os.path.join(directory, 'toujours')
 
     # Ajouter les fichiers du dossier "toujours"
     if os.path.exists(always_dir):
-        pdf_files['toujours'] = [f.replace('.pdf', '') for f in os.listdir(always_dir) if f.endswith('.pdf')]
-        print(f"Fichiers dans 'toujours': {pdf_files['toujours']}")
+        always_files = [f.replace('.pdf', '') for f in os.listdir(always_dir) if f.endswith('.pdf')]
+        print(f"Fichiers dans 'toujours': {always_files}")
     else:
         print(f"Le dossier 'toujours' n'existe pas dans {directory}")
 
@@ -29,10 +30,15 @@ def generate_JSONlist_actu(directory=None, output=None):
     for subdir in os.listdir(directory):
         subdir_path = os.path.join(directory, subdir)
         if os.path.isdir(subdir_path) and subdir.lower() == current_month:
-            pdf_files[subdir] = [f.replace('.pdf', '') for f in os.listdir(subdir_path) if f.endswith('.pdf')]
+            pdf_files[subdir] = always_files + [f.replace('.pdf', '') for f in os.listdir(subdir_path) if f.endswith('.pdf')]
             print(f"Fichiers dans '{subdir}': {pdf_files[subdir]}")
-        elif os.path.isdir(subdir_path):
+        elif subdir.lower() != 'toujours' and os.path.isdir(subdir_path):
             print(f"Ignoré le dossier: {subdir}")
+
+    # Si aucun fichier du mois actuel n'a été trouvé, inclure uniquement les fichiers 'toujours'
+    if not pdf_files:
+        pdf_files['toujours'] = always_files
+        print(f"Utilisation de fichiers 'toujours' uniquement: {always_files}")
 
     # Écrire la liste des fichiers dans un fichier JSON
     with open(output, 'w') as json_file:
