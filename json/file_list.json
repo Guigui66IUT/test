@@ -1,6 +1,7 @@
-[
-    "cs",
-    "dds",
-    "diabetes",
-    "Tabac"
-]
+{
+    "toujours": [
+        "dds",
+        "diabetes",
+        "Tabac"
+    ]
+}
