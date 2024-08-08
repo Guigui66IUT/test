@@ -1,8 +1,12 @@
 import os
 import json
+import locale
 from datetime import datetime
 
 def generate_JSONlist_actu(directory=None, output=None):
+    # Définir la locale en français
+    locale.setlocale(locale.LC_TIME, 'fr_FR.utf8')
+
     # Obtenir le répertoire du script en cours d'exécution
     script_directory = os.path.dirname(os.path.abspath(__file__))
 
@@ -22,7 +26,7 @@ def generate_JSONlist_actu(directory=None, output=None):
     else:
         print(f"Le dossier 'toujours' n'existe pas dans {directory}")
 
-    # Obtenir le mois actuel
+    # Obtenir le mois actuel en français
     current_month = datetime.now().strftime('%B').lower()
     print(f"Mois actuel: {current_month}")
 
