@@ -43,19 +43,16 @@ def generate_JSONlist_actu(directory=None, output=None):
     current_month = months_translation.get(current_month_english, current_month_english)
     print(f"Mois actuel: {current_month}")
 
-    # Parcourir tous les dossiers dans le répertoire spécifié
+    # Inclure les fichiers du mois actuel
     for subdir in os.listdir(directory):
         subdir_path = os.path.join(directory, subdir)
-        if os.path.isdir(subdir_path):
-            if subdir.lower() == current_month:
-                # Inclure les fichiers du mois actuel et ceux du dossier "toujours"
-                pdf_files[subdir] = always_files + [f.replace('.pdf', '') for f in os.listdir(subdir_path) if f.endswith('.pdf')]
-                print(f"Fichiers dans '{subdir}': {pdf_files[subdir]}")
-            elif subdir.lower() == 'toujours':
-                # Déjà inclus dans always_files, ne rien faire
-                continue
-            else:
-                print(f"Ignoré le dossier: {subdir}")
+        if os.path.isdir(subdir_path) and subdir.lower() == current_month:
+            pdf_files[subdir] = [f.replace('.pdf', '') for f in os.listdir(subdir_path) if f.endswith('.pdf')]
+            print(f"Fichiers dans '{subdir}': {pdf_files[subdir]}")
+    
+    # Ajouter les fichiers du dossier "toujours" à chaque clé
+    for month in pdf_files.keys():
+        pdf_files[month] = always_files + pdf_files[month]
 
     # Si aucun fichier du mois actuel n'a été trouvé, inclure uniquement les fichiers 'toujours'
     if not pdf_files:
