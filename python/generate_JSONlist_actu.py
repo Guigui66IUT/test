@@ -49,7 +49,7 @@ def generate_JSONlist_actu(directory=None, output=None):
         subdir_path = os.path.join(directory, subdir)
         if os.path.isdir(subdir_path) and subdir.lower() == current_month:
             month_files = [f.replace('.pdf', '') for f in os.listdir(subdir_path) if f.endswith('.pdf')]
-            pdf_files[subdir] = month_files + always_files
+            pdf_files[subdir] = month_files
             print(f"Fichiers dans '{subdir}': {pdf_files[subdir]}")
         elif subdir.lower() != 'toujours' and os.path.isdir(subdir_path):
             print(f"Ignoré le dossier: {subdir}")
