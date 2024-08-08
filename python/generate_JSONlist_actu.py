@@ -17,15 +17,22 @@ def generate_JSONlist_actu(directory=None, output=None):
     # Ajouter les fichiers du dossier "toujours"
     if os.path.exists(always_dir):
         pdf_files['toujours'] = [f.replace('.pdf', '') for f in os.listdir(always_dir) if f.endswith('.pdf')]
+        print(f"Fichiers dans 'toujours': {pdf_files['toujours']}")
+    else:
+        print(f"Le dossier 'toujours' n'existe pas dans {directory}")
 
     # Obtenir le mois actuel
     current_month = datetime.now().strftime('%B').lower()
+    print(f"Mois actuel: {current_month}")
 
     # Parcourir tous les dossiers dans le répertoire spécifié
     for subdir in os.listdir(directory):
         subdir_path = os.path.join(directory, subdir)
         if os.path.isdir(subdir_path) and subdir.lower() == current_month:
             pdf_files[subdir] = [f.replace('.pdf', '') for f in os.listdir(subdir_path) if f.endswith('.pdf')]
+            print(f"Fichiers dans '{subdir}': {pdf_files[subdir]}")
+        elif os.path.isdir(subdir_path):
+            print(f"Ignoré le dossier: {subdir}")
 
     # Écrire la liste des fichiers dans un fichier JSON
     with open(output, 'w') as json_file:
