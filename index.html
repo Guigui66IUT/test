@@ -22,18 +22,17 @@
   </section>
 
   <div class="parent-container">
+
     <div class="wrapper">
-      <div class="slider-container">
-        <div class="image-container">
-          <img src="img/accueil/1.jpg" alt="Image 1">
-          <img src="img/accueil/2.jpg" alt="Image 2">
-          <img src="img/accueil/3.jpg" alt="Image 3">
-          <img src="img/accueil/4.jpg" alt="Image 4">
-        </div>
-        <i class="fa-solid fa-angles-left btn prev"></i>
-        <i class="fa-solid fa-angles-right btn next"></i>
+      <div class="slider-container" data-img-path="img/accueil/slideracceuil/">
+          <div class="image-container" id="image-container">
+              <!-- Les images seront ajoutées ici par JavaScript -->
+          </div>
+          <i class="fa-solid fa-angles-left btn prev"></i>
+          <i class="fa-solid fa-angles-right btn next"></i>
       </div>
-    </div>
+  </div>
+  
 
     <div class="intro">
       <div class="card">
@@ -79,5 +78,8 @@
 
   <script src="/javascript/header.js"></script>
   <script src="/javascript/script.js"></script>
+  <script src="/javascript/load_slider_images.js"></script>
+
+
 </body>
 </html>
