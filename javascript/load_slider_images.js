@@ -6,7 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
 		const imageContainer = slider.querySelector('.image-container');
 		const dataImgPath = slider.getAttribute('data-img-path');
 		const dataPageName = slider.getAttribute('data-page-name') || 'index';
-		const jsonFile = `../../json/${dataPageName}_images.json`;
+		let jsonFile;
+
+		// Déterminer le chemin correct pour chaque page
+		if (dataPageName === 'index') {
+			jsonFile = `json/${dataPageName}_images.json`;
+		} else {
+			jsonFile = `../../json/${dataPageName}_images.json`;
+		}
 
 		// Charger le fichier JSON et ajouter les images
 		fetch(jsonFile)
