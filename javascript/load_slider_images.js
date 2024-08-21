@@ -1,17 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Récupérer l'attribut data-img-path qui contient le chemin des images
     const sliderContainer = document.querySelector('.slider-container');
-    const imgPath = sliderContainer.getAttribute('data-img-path');
+    const pageName = sliderContainer.getAttribute('data-page-name') || 'index';
+    const jsonFile = `../../json/${pageName}_images.json`;
 
-    // Charger le JSON contenant la liste des images
-    fetch('json/slider_images.json')
+    fetch(jsonFile)
         .then(response => response.json())
         .then(images => {
             const imageContainer = document.getElementById('image-container');
             
             images.forEach(image => {
                 const img = document.createElement('img');
-                img.src = `${imgPath}${image}`;
+                img.src = `${sliderContainer.getAttribute('data-img-path')}${image}`;
                 img.alt = image;
                 imageContainer.appendChild(img);
             });

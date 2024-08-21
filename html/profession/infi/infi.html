@@ -53,22 +53,18 @@
 	</div>
 
 	<div class="parent-container">
+
+		<!-- Carrousel -->
 		<div class="wrapper">
-			<!-- Conteneur principal pour le carrousel -->
-			<div class="slider-container">
-				<div class="image-container">
-					<img src="../../../img/infi/sliderinfi/1.png" alt="Image 1">
-					<img src="../../../img/infi/sliderinfi/2.png" alt="Image 2">
-					<img src="../../../img/infi/sliderinfi/3.png" alt="Image 3">
-					<img src="../../../img/infi/sliderinfi/4.png" alt="Image 4">
-					<img src="../../../img/infi/sliderinfi/5.png" alt="Image 5">
-					<img src="../../../img/infi/sliderinfi/6.png" alt="Image 6">
-					<img src="../../../img/infi/sliderinfi/7.png" alt="Image 7">
+			<div class="slider-container" data-img-path="img/infi/sliderinfi/">
+				<div class="image-container" id="image-container">
+					<!-- Les images seront ajoutées ici par JavaScript -->
 				</div>
 				<i class="fa-solid fa-angles-left btn prev"></i>
 				<i class="fa-solid fa-angles-right btn next"></i>
 			</div>
 		</div>
+	
 
 
 		<div class="intro">
@@ -110,7 +106,10 @@
 
 
 	<script src="../../../javascript/script.js"></script>
-	<script src="/javascript/header.js"></script>
+	<script src="/javascript/header.js"></script>	
+	<script src="../../../javascript/load_slider_images.js"></script>
+
+
 </body>
 
 </html>

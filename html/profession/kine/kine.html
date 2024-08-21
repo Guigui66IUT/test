@@ -52,24 +52,20 @@
 	</div>
 
 	<div class="parent-container">
+
+
+		<!-- Carrousel -->
 		<div class="wrapper">
-			<!-- Conteneur principal pour le carrousel -->
-			<div class="slider-container">
-				<div class="image-container">
-					<img src="../../../img/kine/sliderkine/1.jpg" alt="Image 1">
-					<img src="../../../img/kine/sliderkine/2.jpg" alt="Image 2">
-					<img src="../../../img/kine/sliderkine/3.jpg" alt="Image 3">
-					<img src="../../../img/kine/sliderkine/4.jpg" alt="Image 4">
-					<img src="../../../img/kine/sliderkine/5.jpg" alt="Image 5">
-					<img src="../../../img/kine/sliderkine/6.jpg" alt="Image 6">
-					<img src="../../../img/kine/sliderkine/7.jpg" alt="Image 7">
-					<img src="../../../img/kine/sliderkine/8.jpg" alt="Image 8">					
-					<img src="../../../img/kine/sliderkine/9.jpg" alt="Image 9">
+			<div class="slider-container" data-img-path="img/kine/sliderkine/">
+				<div class="image-container" id="image-container">
+					<!-- Les images seront ajoutées ici par JavaScript -->
 				</div>
 				<i class="fa-solid fa-angles-left btn prev"></i>
 				<i class="fa-solid fa-angles-right btn next"></i>
 			</div>
 		</div>
+	
+
 
 
 		<div class="intro">
@@ -119,6 +115,8 @@
 
 	<script src="../../../javascript/script.js"></script>
 	<script src="/javascript/header.js"></script>
+	<script src="../../../javascript/load_slider_images.js"></script>
+
 </body>
 
 </html>
