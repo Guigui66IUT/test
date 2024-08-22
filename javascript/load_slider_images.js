@@ -10,18 +10,23 @@ window.onload = function() {
         fetch(jsonFile)
             .then(response => response.json())
             .then(images => {
+                let imagesLoaded = 0;
                 images.forEach(image => {
                     const imgElement = document.createElement('img');
                     imgElement.src = `${dataImgPath}${image}`;
                     imgElement.alt = image;
+                    imgElement.onload = function() {
+                        imagesLoaded++;
+                        if (imagesLoaded === images.length) {
+                            // Toutes les images sont chargées
+                            adjustCardHeight();
+                        }
+                    };
                     imageContainer.appendChild(imgElement);
                 });
 
                 // Initialiser le carrousel après que les images ont été ajoutées
                 initializeCarousel(slider);
-
-                // Recalculer la hauteur après le chargement des images
-                adjustCardHeight();
             })
             .catch(error => console.error('Erreur de chargement des images:', error));
     });
@@ -73,17 +78,4 @@ window.onload = function() {
             card.style.height = wrapperHeight + 'px';
         });
     }
-
-    // Ré-ajuster la hauteur des cartes après que tout est chargé
-    adjustCardHeight();
 };
-
-// Fonction pour afficher/masquer le texte
-function toggleText(element) {
-    var content = element.parentElement.nextElementSibling;
-    if (content.style.display === "none" || content.style.display === "") {
-        content.style.display = "block";
-    } else {
-        content.style.display = "none";
-    }
-}
