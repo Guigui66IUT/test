@@ -1,5 +1,4 @@
 window.onload = function() {
-    // Charger les images dynamiquement
     const sliders = document.querySelectorAll('.slider-container');
 
     sliders.forEach(slider => {
@@ -18,7 +17,11 @@ window.onload = function() {
                     imageContainer.appendChild(imgElement);
                 });
 
+                // Initialiser le carrousel après que les images ont été ajoutées
                 initializeCarousel(slider);
+
+                // Recalculer la hauteur après le chargement des images
+                adjustCardHeight();
             })
             .catch(error => console.error('Erreur de chargement des images:', error));
     });
@@ -59,15 +62,20 @@ window.onload = function() {
         updateImg(); // Initialize the carousel
     }
 
-    // Ajuster la hauteur des cartes
-    const wrapperHeight = document.querySelector('.wrapper').offsetHeight;
-    console.log("Wrapper Height:", wrapperHeight);
+    // Fonction pour ajuster la hauteur des cartes
+    function adjustCardHeight() {
+        const wrapperHeight = document.querySelector('.wrapper').offsetHeight;
+        console.log("Wrapper Height (after images loaded):", wrapperHeight);
 
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(function(card) {
-        console.log("Setting card height to:", wrapperHeight);
-        card.style.height = wrapperHeight + 'px';
-    });
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(function(card) {
+            console.log("Setting card height to (after images loaded):", wrapperHeight);
+            card.style.height = wrapperHeight + 'px';
+        });
+    }
+
+    // Ré-ajuster la hauteur des cartes après que tout est chargé
+    adjustCardHeight();
 };
 
 // Fonction pour afficher/masquer le texte

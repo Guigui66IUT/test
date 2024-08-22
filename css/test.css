@@ -439,6 +439,7 @@ input {
 .wrapper {
 	width: 58%;
 	/* Adjusted width to account for the 2% gap */
+	min-height: 300px;
 	left: 10%;
 	display: flex;
 	align-items: center;
