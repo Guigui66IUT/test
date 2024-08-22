@@ -8,7 +8,6 @@ window.onload = function() {
         const dataPageName = slider.getAttribute('data-page-name') || 'index';
         const jsonFile = `/json/${dataPageName}_images.json`;
 
-        // Charger le fichier JSON et ajouter les images
         fetch(jsonFile)
             .then(response => response.json())
             .then(images => {
@@ -19,13 +18,11 @@ window.onload = function() {
                     imageContainer.appendChild(imgElement);
                 });
 
-                // Initialiser le carrousel après que les images ont été ajoutées
                 initializeCarousel(slider);
             })
             .catch(error => console.error('Erreur de chargement des images:', error));
     });
 
-    // Fonction pour initialiser le carrousel
     function initializeCarousel(slider) {
         const prevBtn = slider.querySelector('.prev');
         const nextBtn = slider.querySelector('.next');
@@ -64,8 +61,11 @@ window.onload = function() {
 
     // Ajuster la hauteur des cartes
     const wrapperHeight = document.querySelector('.wrapper').offsetHeight;
+    console.log("Wrapper Height:", wrapperHeight);
+
     const cards = document.querySelectorAll('.card');
     cards.forEach(function(card) {
+        console.log("Setting card height to:", wrapperHeight);
         card.style.height = wrapperHeight + 'px';
     });
 };
