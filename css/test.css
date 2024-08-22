@@ -459,14 +459,21 @@ input {
 
 .image-container {
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	transition: transform 0.5s ease-in-out;
+	width: 100%; /* S'assure que le conteneur prend toute la largeur du carrousel */
+	height: 100%; /* S'assure que le conteneur prend toute la hauteur disponible */
+	overflow: hidden; /* Cache toute partie de l'image qui pourrait dépasser */
 }
 
 .image-container img {
 	width: 800px;
 	height: auto;
 	max-height: 600px;
+	object-fit: contain; /* Assure que l'image reste contenue sans rognage */
 }
+
 
 .btn {
 	position: absolute;
