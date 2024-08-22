@@ -7,6 +7,10 @@ window.onload = function() {
         const dataPageName = slider.getAttribute('data-page-name') || 'index';
         const jsonFile = `/json/${dataPageName}_images.json`;
 
+        // Afficher la hauteur de `.wrapper` avant le chargement des images
+        const initialWrapperHeight = document.querySelector('.wrapper').offsetHeight;
+        console.log("Wrapper Height (before images loaded):", initialWrapperHeight);
+
         fetch(jsonFile)
             .then(response => response.json())
             .then(images => {
