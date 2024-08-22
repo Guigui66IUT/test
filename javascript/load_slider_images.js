@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+window.onload = function() {
     // Charger les images dynamiquement
     const sliders = document.querySelectorAll('.slider-container');
 
@@ -62,13 +62,13 @@ document.addEventListener('DOMContentLoaded', function() {
         updateImg(); // Initialize the carousel
     }
 
-    // Ajuster la hauteur des cartes (si nécessaire)
+    // Ajuster la hauteur des cartes
     const wrapperHeight = document.querySelector('.wrapper').offsetHeight;
     const cards = document.querySelectorAll('.card');
     cards.forEach(function(card) {
         card.style.height = wrapperHeight + 'px';
     });
-});
+};
 
 // Fonction pour afficher/masquer le texte
 function toggleText(element) {
