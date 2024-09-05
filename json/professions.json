@@ -1,28 +1,4 @@
-{
-    "Chiropracteur": [
-        {
-            "name": "Amandine MINAUD",
-            "image": "Amandine MINAUD\\logo-med.png",
-            "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/amandine-minaud",
-            "texts": [
-                {
-                    "filename": "Spécialisations, compétences et services",
-                    "content": [],
-                    "order": 1
-                },
-                {
-                    "filename": "Rendez-vous",
-                    "content": [],
-                    "order": 2
-                },
-                {
-                    "filename": "Horaires au cabinet",
-                    "content": [],
-                    "order": 3
-                }
-            ],
-            "pdf": null
-        }
-    ],
-    "Orthodontiste": []
-}
+[
+    "Chiropracteur",
+    "Orthodontiste"
+]
