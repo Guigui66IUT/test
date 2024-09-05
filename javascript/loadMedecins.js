@@ -52,12 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 });
 
-// Fonction pour afficher/masquer le texte
+// Fonction pour afficher/masquer le texte avec gestion du premier clic
 function toggleText(element) {
-    var content = element.parentElement.nextElementSibling;
-    if (content.style.display === "none" || content.style.display === "") {
-        content.style.display = "block";
-    } else {
-        content.style.display = "none";
-    }
+    const content = element.parentElement.nextElementSibling;
+    content.classList.toggle('show');
 }
