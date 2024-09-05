@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .then(data => {
                 if (data[profession] && data[profession].length > 0) {
                     const professionals = data[profession];
-                    const container = document.getElementById('professionals-container');
+                    const container = document.getElementById('new-professions'); // Utilisation de "new-professions" ici
                     professionals.forEach(professional => {
                         const pdf = professional.pdf ? `<a href="/ajoutprofession/${profession}/${professional.pdf.path}" download="${professional.pdf.name}" class="download-link">Autre</a>` : '';
                         const textsHTML = professional.texts.map(text => `
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     });
                 } else {
                     // Avertir si aucun professionnel n'est trouvé
-                    const container = document.getElementById('professionals-container');
+                    const container = document.getElementById('new-professions'); // Utilisation de "new-professions" ici
                     container.innerHTML = `<p>Aucun professionnel trouvé pour la profession "${profession}".</p>`;
                 }
             })
