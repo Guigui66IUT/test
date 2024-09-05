@@ -11,8 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
             return response.json();
         })
         .then(data => {
-            console.log("Professions loaded:", data);  // Debugging: voir les données chargées
-
             if (profession) {
                 // Trouver la profession dans le JSON
                 const professionData = data.find(prof => prof.profession.toLowerCase() === profession.toLowerCase());
@@ -21,9 +19,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     console.error("Profession non trouvée.");
                 }
-            } else {
-                // Si aucune profession n'est spécifiée, afficher toutes les professions
-                displayAllProfessions(data);
             }
         })
         .catch(error => {
@@ -31,48 +26,27 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 });
 
-// Fonction pour afficher toutes les professions
-function displayAllProfessions(professions) {
-    const professionContainer = document.getElementById('professions-container');
-    professionContainer.innerHTML = '';  // Nettoyer le contenu
-
-    professions.forEach(professionData => {
-        const professionDiv = document.createElement('div');
-        professionDiv.classList.add('profession-card');
-
-        const professionTitle = document.createElement('h3');
-        professionTitle.textContent = professionData.profession;
-        professionDiv.appendChild(professionTitle);
-
-        // Ajouter une liste de personnel
-        if (professionData.personnel.length > 0) {
-            const personnelList = document.createElement('ul');
-            professionData.personnel.forEach(personnel => {
-                const listItem = document.createElement('li');
-                listItem.textContent = personnel.name;
-                personnelList.appendChild(listItem);
-            });
-            professionDiv.appendChild(personnelList);
-        } else {
-            const noPersonnel = document.createElement('p');
-            noPersonnel.textContent = "Aucun personnel disponible.";
-            professionDiv.appendChild(noPersonnel);
-        }
-
-        professionContainer.appendChild(professionDiv);
-    });
-}
-
-// Fonction pour afficher une profession spécifique avec ses personnels
 function displayProfessionData(professionData) {
     const professionTitle = document.getElementById('profession-title');
     const personnelContainer = document.getElementById('personnel-container');
 
+    // Vérifier que les éléments DOM existent
+    if (!professionTitle || !personnelContainer) {
+        console.error("Les éléments DOM pour l'affichage des professionnels ne sont pas trouvés.");
+        return;
+    }
+
     // Titre de la profession
     professionTitle.textContent = professionData.profession;
 
-    // Afficher les personnels et leurs documents
-    personnelContainer.innerHTML = '';  // Nettoyer le contenu
+    // Vérifier s'il y a du personnel pour cette profession
+    if (professionData.personnel.length === 0) {
+        personnelContainer.innerHTML = "<p>Aucun professionnel disponible pour cette profession.</p>";
+        return;
+    }
+
+    // Afficher les professionnels et leurs documents
+    personnelContainer.innerHTML = '';  // Nettoyer le contenu précédent
 
     professionData.personnel.forEach(personnel => {
         const personnelCard = document.createElement('div');
