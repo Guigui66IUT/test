@@ -35,11 +35,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 return response.json();
             })
             .then(data => {
-                if (data[profession]) {
+                if (data[profession] && data[profession].length > 0) {
                     const professionals = data[profession];
                     const container = document.getElementById('professionals-container');
                     professionals.forEach(professional => {
-                        const pdf = professional.pdf ? `<a href="../../${professional.pdf.path}" download="${professional.pdf.name}" class="download-link">Autre</a>` : '';
+                        const pdf = professional.pdf ? `<a href="/ajoutprofession/${profession}/${professional.pdf.path}" download="${professional.pdf.name}" class="download-link">Autre</a>` : '';
                         const textsHTML = professional.texts.map(text => `
                             <h4>${text.filename}</h4>
                             <ul>
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 </div>
                                 <div class="collapsible-content">
                                     <div class="content-wrapper">
-                                        <img src="../../../${professional.image}" alt="Profile Image" />
+                                        <img src="/ajoutprofession/${profession}/${professional.image}" alt="Profile Image" />
                                         <div class="text-content">
                                             ${textsHTML}
                                             ${pdf}
@@ -70,7 +70,9 @@ document.addEventListener("DOMContentLoaded", function() {
                         container.innerHTML += professionalHTML;
                     });
                 } else {
-                    console.error(`No professionals found for the profession: ${profession}`);
+                    // Avertir si aucun professionnel n'est trouvé
+                    const container = document.getElementById('professionals-container');
+                    container.innerHTML = `<p>Aucun professionnel trouvé pour la profession "${profession}".</p>`;
                 }
             })
             .catch(error => {
