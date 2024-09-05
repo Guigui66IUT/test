@@ -35,17 +35,26 @@ document.addEventListener("DOMContentLoaded", function() {
                 return response.json();
             })
             .then(data => {
+                console.log("Profession data loaded: ", data); // Log les données chargées
+
                 if (data[profession] && data[profession].length > 0) {
                     const professionals = data[profession];
-                    const container = document.getElementById('professionals-container');
+                    const container = document.getElementById('new-professions'); // Remplacer ici
+
                     professionals.forEach(professional => {
+                        console.log("Processing professional: ", professional); // Log chaque professionnel
+
                         const pdf = professional.pdf ? `<a href="/ajoutprofession/${profession}/${professional.pdf.path}" download="${professional.pdf.name}" class="download-link">Autre</a>` : '';
+                        
                         const textsHTML = professional.texts.map(text => `
                             <h4>${text.filename}</h4>
                             <ul>
                                 ${text.content.map(line => `<li>${line}</li>`).join('')}
                             </ul>
                         `).join('');
+
+                        const imagePath = `/ajoutprofession/${profession}/${professional.image}`;
+                        console.log("Image path: ", imagePath);
 
                         const professionalHTML = `
                             <div class="button-section">
@@ -58,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 </div>
                                 <div class="collapsible-content">
                                     <div class="content-wrapper">
-                                        <img src="/ajoutprofession/${profession}/${professional.image}" alt="Profile Image" />
+                                        <img src="${imagePath}" alt="Profile Image" />
                                         <div class="text-content">
                                             ${textsHTML}
                                             ${pdf}
@@ -70,8 +79,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         container.innerHTML += professionalHTML;
                     });
                 } else {
-                    // Avertir si aucun professionnel n'est trouvé
-                    const container = document.getElementById('professionals-container');
+                    console.error(`No professionals found for the profession: ${profession}`);
+                    const container = document.getElementById('new-professions'); // Remplacer ici
                     container.innerHTML = `<p>Aucun professionnel trouvé pour la profession "${profession}".</p>`;
                 }
             })
