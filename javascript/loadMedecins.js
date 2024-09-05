@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             console.log("Data loaded:", data); // Ajout de journalisation
             const container = document.getElementById('medecins-container');
-            data.forEach(medecin => {
+            
+            data.forEach((medecin, index) => {
                 console.log("Processing:", medecin); // Ajout de journalisation
                 const pdf = medecin.pdf ? `<a href="../../${medecin.pdf.path}" download="${medecin.pdf.name}" class="download-link">Autre</a>` : '';
                 const textsHTML = medecin.texts.map(text => `
@@ -18,6 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${text.content.map(line => `<li>${line}</li>`).join('')}
                     </ul>
                 `).join('');
+
+                // Si un seul médecin est trouvé, ajouter la classe pour dérouler automatiquement
+                const isSingleMedecin = data.length === 1;
+                const collapsibleContentClass = isSingleMedecin ? 'collapsible-content show' : 'collapsible-content';
 
                 const medecinHTML = `
                     <div class="button-section">
@@ -28,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <button class="book-appointment">Prendre rendez-vous</button>
                             </a>
                         </div>
-                        <div class="collapsible-content">
+                        <div class="${collapsibleContentClass}">
                             <div class="content-wrapper">
                                 <img src="../../../medecins/${medecin.image}" alt="Profile Image" />
                                 <div class="text-content">
@@ -46,3 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error loading medecins_content.json:', error);
         });
 });
+
+// Fonction pour afficher/masquer le texte
+function toggleText(element) {
+    var content = element.parentElement.nextElementSibling;
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+    } else {
+        content.style.display = "none";
+    }
+}

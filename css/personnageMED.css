@@ -58,6 +58,10 @@
 	overflow: hidden;
 }
 
+.collapsible-content.show {
+    display: block;
+}
+
 .collapsible-content .content-wrapper {
 	display: flex;
 	align-items: center;
