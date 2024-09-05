@@ -1,4 +1,21 @@
 [
-    "Chiropracteur",
-    "Orthodontiste"
+    {
+        "profession": "Chiropracteur",
+        "personnel": [
+            {
+                "name": "Amandine MINAUD",
+                "documents": [
+                    "doctolib.txt",
+                    "Horaires au cabinet3.txt",
+                    "logo-med.png",
+                    "Rendez-vous2.txt",
+                    "Sp\u00e9cialisations, comp\u00e9tences et services1.txt"
+                ]
+            }
+        ]
+    },
+    {
+        "profession": "Orthodontiste",
+        "personnel": []
+    }
 ]
