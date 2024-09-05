@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function displayProfessionData(professionData) {
     const professionTitle = document.getElementById('profession-title');
-    const personnelContainer = document.getElementById('personnel-container');
+    const personnelContainer = document.getElementById('profession-container');
 
     // Vérifier que les éléments DOM existent
     if (!professionTitle || !personnelContainer) {
