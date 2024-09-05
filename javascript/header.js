@@ -26,15 +26,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 .then(response => response.json())
                 .then(professions => {
                     const newProfessionsContainer = document.getElementById('new-professions');
-                    professions.forEach(profession => {
+                    professions.forEach(prof => {
+                        // `prof` est un objet avec une propriété `profession`
+                        const professionName = prof.profession;
                         const li = document.createElement('li');
                         const a = document.createElement('a');
-                        a.href = `/ajoutprofession/modele.html?profession=${profession}`;
-                        a.textContent = profession.charAt(0).toUpperCase() + profession.slice(1);
+                        a.href = `/ajoutprofession/modele.html?profession=${professionName}`;
+                        a.textContent = professionName.charAt(0).toUpperCase() + professionName.slice(1);
                         li.appendChild(a);
                         newProfessionsContainer.appendChild(li);
 
-                        if (window.location.search.includes(`profession=${profession}`)) {
+                        if (window.location.search.includes(`profession=${professionName}`)) {
                             a.classList.add('active');
                         }
                     });
