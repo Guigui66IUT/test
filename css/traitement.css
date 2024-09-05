@@ -1,8 +1,9 @@
 :root {
 	/*========== Colors ==========*/
 	/*Color mode HSL(hue, saturation, lightness)*/
-	--text-color: hsl(0, 0%, 35%);
-
+	/* --text-color: hsl(0, 0%, 35%); */
+	--text-color: #1E3F66;
+	
 }
 
 
