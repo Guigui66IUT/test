@@ -49,12 +49,28 @@ function displayProfessionData(professionData) {
     personnelContainer.innerHTML = '';  // Nettoyer le contenu précédent
 
     professionData.personnel.forEach(personnel => {
-        const pdf = personnel.documents.filter(doc => doc.endsWith('.pdf')).map(pdfFile => {
-            return `<p>Document PDF: ${pdfFile}</p>`;
+        // Trier les fichiers texte par numéro
+        const sortedTexts = personnel.documents
+            .filter(doc => doc.endsWith('.txt') && !doc.includes('doctolib')) // Exclure doctolib.txt
+            .sort((a, b) => {
+                const numA = parseInt(a.match(/\d+/));
+                const numB = parseInt(b.match(/\d+/));
+                return numA - numB;
+            });
+
+        const textsHTML = sortedTexts.map(textFile => {
+            const title = textFile.replace(/\d+\.txt$/, '').replace(/_/g, ' ').trim();
+            const content = personnel.textContents ? personnel.textContents[textFile] : 'Contenu introuvable.';
+            return `
+                <h4>${title}</h4>
+                <p>${content}</p>
+            `;
         }).join('');
 
-        const textsHTML = personnel.documents.filter(doc => doc.endsWith('.txt')).map(textFile => {
-            return `<h4>${textFile}</h4><p>Contenu de ${textFile}</p>`;
+        // Si doctolib.txt existe, afficher le bouton pour "Prendre rendez-vous"
+        const doctolib = personnel.documents.find(doc => doc === 'doctolib.txt') ? personnel.doctolib : null;
+        const pdf = personnel.documents.filter(doc => doc.endsWith('.pdf')).map(pdfFile => {
+            return `<p>Document PDF: ${pdfFile}</p>`;
         }).join('');
 
         const isSinglePersonnel = professionData.personnel.length === 1;
@@ -65,6 +81,7 @@ function displayProfessionData(professionData) {
                 <div class="button-row">
                     <div class="left-text">${personnel.name}</div>
                     <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
+                    ${doctolib ? `<a href="${doctolib}" target="_blank"><button class="book-appointment">Prendre rendez-vous</button></a>` : ''}
                 </div>
                 <div class="${collapsibleContentClass}">
                     <div class="content-wrapper">
