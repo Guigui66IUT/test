@@ -60,7 +60,27 @@ function displayProfessionData(professionData) {
         const documentList = document.createElement('ul');
         personnel.documents.forEach(doc => {
             const listItem = document.createElement('li');
-            listItem.textContent = doc;
+
+            // Vérifier le type de fichier
+            if (doc.endsWith('.pdf') || doc.endsWith('.txt')) {
+                // Créer un lien pour télécharger les PDF ou TXT
+                const link = document.createElement('a');
+                link.href = `/ajoutprofession/${professionData.profession}/${personnel.name}/${doc}`;
+                link.textContent = `Télécharger ${doc}`;
+                link.target = '_blank';  // Ouvre le document dans un nouvel onglet
+                listItem.appendChild(link);
+            } else if (doc.endsWith('.png') || doc.endsWith('.jpg') || doc.endsWith('.jpeg')) {
+                // Afficher une image pour les fichiers PNG/JPG
+                const img = document.createElement('img');
+                img.src = `/ajoutprofession/${professionData.profession}/${personnel.name}/${doc}`;
+                img.alt = doc;
+                img.style.maxWidth = '150px';  // Limiter la taille de l'image
+                listItem.appendChild(img);
+            } else {
+                // Pour tout autre type de fichier (par exemple, doc inconnu)
+                listItem.textContent = doc;
+            }
+
             documentList.appendChild(listItem);
         });
         personnelCard.appendChild(documentList);
