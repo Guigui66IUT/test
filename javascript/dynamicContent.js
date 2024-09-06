@@ -45,46 +45,44 @@ function displayProfessionData(professionData) {
         return;
     }
 
-    // Afficher les professionnels et leurs documents
+    // Afficher les professionnels et leurs informations
     personnelContainer.innerHTML = '';  // Nettoyer le contenu précédent
 
     professionData.personnel.forEach(personnel => {
-        const personnelCard = document.createElement('div');
-        personnelCard.classList.add('personnel-card');
+        const pdf = personnel.documents.filter(doc => doc.endsWith('.pdf')).map(pdfFile => {
+            return `<p>Document PDF: ${pdfFile}</p>`;
+        }).join('');
 
-        const personnelName = document.createElement('h3');
-        personnelName.textContent = personnel.name;
-        personnelCard.appendChild(personnelName);
+        const textsHTML = personnel.documents.filter(doc => doc.endsWith('.txt')).map(textFile => {
+            return `<h4>${textFile}</h4><p>Contenu de ${textFile}</p>`;
+        }).join('');
 
-        // Liste des documents
-        const documentList = document.createElement('ul');
-        personnel.documents.forEach(doc => {
-            const listItem = document.createElement('li');
+        const isSinglePersonnel = professionData.personnel.length === 1;
+        const collapsibleContentClass = isSinglePersonnel ? 'collapsible-content show' : 'collapsible-content';
 
-            // Vérifier le type de fichier
-            if (doc.endsWith('.pdf') || doc.endsWith('.txt')) {
-                // Créer un lien pour télécharger les PDF ou TXT
-                const link = document.createElement('a');
-                link.href = `/ajoutprofession/${professionData.profession}/${personnel.name}/${doc}`;
-                link.textContent = `Télécharger ${doc}`;
-                link.target = '_blank';  // Ouvre le document dans un nouvel onglet
-                listItem.appendChild(link);
-            } else if (doc.endsWith('.png') || doc.endsWith('.jpg') || doc.endsWith('.jpeg')) {
-                // Afficher une image pour les fichiers PNG/JPG
-                const img = document.createElement('img');
-                img.src = `/ajoutprofession/${professionData.profession}/${personnel.name}/${doc}`;
-                img.alt = doc;
-                img.style.maxWidth = '150px';  // Limiter la taille de l'image
-                listItem.appendChild(img);
-            } else {
-                // Pour tout autre type de fichier (par exemple, doc inconnu)
-                listItem.textContent = doc;
-            }
-
-            documentList.appendChild(listItem);
-        });
-        personnelCard.appendChild(documentList);
-
-        personnelContainer.appendChild(personnelCard);
+        const personnelHTML = `
+            <div class="button-section">
+                <div class="button-row">
+                    <div class="left-text">${personnel.name}</div>
+                    <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
+                </div>
+                <div class="${collapsibleContentClass}">
+                    <div class="content-wrapper">
+                        <img src="/ajoutprofession/${professionData.profession}/${personnel.name}/logo-${personnel.name}.png" alt="Profile Image" />
+                        <div class="text-content">
+                            ${textsHTML}
+                            ${pdf}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        personnelContainer.innerHTML += personnelHTML;
     });
+}
+
+// Fonction pour afficher/masquer le texte avec gestion du premier clic
+function toggleText(element) {
+    const content = element.parentElement.nextElementSibling;
+    content.classList.toggle('show');
 }
