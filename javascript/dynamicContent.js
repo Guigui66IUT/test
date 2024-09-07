@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const profession = urlParams.get('profession');
 
@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(data => {
             console.log("Données chargées :", data);
             if (profession) {
-                // Trouver la profession dans le JSON
                 const professionData = data.find(prof => prof.profession.toLowerCase() === profession.toLowerCase());
                 console.log("Données de la profession trouvée :", professionData);
                 if (professionData) {
@@ -33,11 +32,6 @@ function displayProfessionData(professionData) {
     const professionLogo = document.getElementById('profession-logo');
     const personnelContainer = document.getElementById('profession-container');
 
-    // Débogage : Vérifier les éléments DOM
-    console.log('Profession Title Element:', professionTitle);
-    console.log('Personnel Container Element:', personnelContainer);
-    console.log('Profession Logo Element:', professionLogo);
-
     if (!professionTitle || !personnelContainer || !professionLogo) {
         console.error("Les éléments DOM pour l'affichage des professionnels ne sont pas trouvés.");
         return;
@@ -48,22 +42,22 @@ function displayProfessionData(professionData) {
 
     // Afficher le logo de la profession
     if (professionData.logo) {
-        console.log('Logo de la profession:', professionData.logo);
-        professionLogo.src = encodeURIComponent(professionData.logo).replace(/%2F/g, '/'); // Encodage de l'URL + remplacement des barres obliques
+        professionLogo.src = encodeURIComponent(professionData.logo).replace(/%2F/g, '/');
         professionLogo.alt = `Logo ${professionData.profession}`;
-        professionLogo.style.display = 'block';  // Afficher le logo après le chargement
+        professionLogo.style.display = 'block';
     } else {
         console.warn("Aucun logo trouvé pour la profession.");
     }
 
-    // Afficher les professionnels et leurs informations
-    personnelContainer.innerHTML = '';  // Nettoyer le contenu précédent
+    personnelContainer.innerHTML = '';
 
+    // Si aucun personnel n'est disponible
     if (professionData.personnel.length === 0) {
         personnelContainer.innerHTML = "<p>Aucun professionnel disponible pour cette profession.</p>";
         return;
     }
 
+    // Traiter chaque personnel
     professionData.personnel.forEach(personnel => {
         console.log("Traitement du personnel :", personnel);
 
@@ -85,8 +79,16 @@ function displayProfessionData(professionData) {
             `;
         }).join('');
 
-        // Si doctolib.txt existe, afficher le bouton pour "Prendre rendez-vous"
-        const doctolib = personnel.documents.find(doc => doc === 'doctolib.txt') ? personnel.doctolib : null;
+        if (textsHTML === '') {
+            console.warn("Aucun texte disponible pour ce professionnel.");
+        }
+
+        const doctolibLink = personnel.doctolib ? `
+            <a href="${personnel.doctolib}" target="_blank">
+                <button class="book-appointment">Prendre rendez-vous</button>
+            </a>
+        ` : '';
+
         const pdf = personnel.documents.filter(doc => doc.endsWith('.pdf')).map(pdfFile => {
             return `<p>Document PDF: ${pdfFile}</p>`;
         }).join('');
@@ -94,18 +96,19 @@ function displayProfessionData(professionData) {
         const isSinglePersonnel = professionData.personnel.length === 1;
         const collapsibleContentClass = isSinglePersonnel ? 'collapsible-content show' : 'collapsible-content';
 
+        // Construction du HTML avec le lien Doctolib sous "En savoir +"
         const personnelHTML = `
             <div class="button-section">
                 <div class="button-row">
                     <div class="left-text">${personnel.name}</div>
                     <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
-                    ${doctolib ? `<a href="${doctolib}" target="_blank"><button class="book-appointment">Prendre rendez-vous</button></a>` : ''}
                 </div>
                 <div class="${collapsibleContentClass}">
                     <div class="content-wrapper">
                         <img src="/ajoutprofession/${encodeURIComponent(professionData.profession)}/${encodeURIComponent(personnel.name)}/logo-${encodeURIComponent(personnel.name)}.png" alt="Profile Image" />
                         <div class="text-content">
                             ${textsHTML}
+                            ${doctolibLink}  <!-- Le lien Doctolib s'affiche ici -->
                             ${pdf}
                         </div>
                     </div>
@@ -113,7 +116,7 @@ function displayProfessionData(professionData) {
             </div>
         `;
 
-        console.log("HTML injecté pour le personnel :", personnelHTML);  // Débogage : Afficher le HTML généré
+        console.log("HTML injecté pour le personnel :", personnelHTML);
         personnelContainer.innerHTML += personnelHTML;
     });
 }
