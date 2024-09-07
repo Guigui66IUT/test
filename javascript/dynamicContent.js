@@ -79,22 +79,41 @@ function displayProfessionData(professionData) {
                 return numA - numB;
             });
 
-        // Génération du HTML pour les textes
-        const textsHTML = sortedTexts.map(textFile => {
-            const title = textFile.replace(/\d+\.txt$/, '').replace(/_/g, ' ').trim();
-            const content = personnel.textContents ? personnel.textContents[textFile] : 'Contenu introuvable.';
-            console.log(`Fichier texte: ${textFile}, Contenu: ${content}`);
-            return `
-                <h4>${title}</h4>
-                <p>${content}</p>
-            `;
-        }).join('');
+        
+        // Vérification des fichiers PDF et génération des liens de téléchargement
+        const pdf = personnel.pdf ? `<a href="../../${personnel.pdf.path}" download="${personnel.pdf.name}" class="download-link">Autre</a>` : '';
+
+        // Génération du HTML pour les fichiers textes
+        const textsHTML = personnel.texts.map(text => `
+            <h4>${text.filename}</h4>
+            <ul>
+                ${text.content.map(line => `<li>${line}</li>`).join('')}
+            </ul>
+        `).join('');
+
+
+        // // Génération du HTML pour les textes
+        // const textsHTML = sortedTexts.map(textFile => {
+        //     const title = textFile.replace(/\d+\.txt$/, '').replace(/_/g, ' ').trim();
+        //     const content = personnel.textContents ? personnel.textContents[textFile] : 'Contenu introuvable.';
+        //     console.log(`Fichier texte: ${textFile}, Contenu: ${content}`);
+        //     return `
+        //         <h4>${title}</h4>
+        //         <p>${content}</p>
+        //     `;
+        // }).join('');
 
         // Si doctolib.txt existe, afficher le bouton pour "Prendre rendez-vous"
         const doctolib = personnel.doctolib ? personnel.doctolib : null;
-        const pdf = personnel.documents.filter(doc => doc.endsWith('.pdf')).map(pdfFile => {
-            return `<p>Document PDF: ${pdfFile}</p>`;
-        }).join('');
+        // const pdf = personnel.documents.filter(doc => doc.endsWith('.pdf')).map(pdfFile => {
+        //     return `<p>Document PDF: ${pdfFile}</p>`;
+        // }).join('');
+
+
+
+
+
+        
 
         const isSinglePersonnel = professionData.personnel.length === 1;
         const collapsibleContentClass = isSinglePersonnel ? 'collapsible-content show' : 'collapsible-content';
