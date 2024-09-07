@@ -1,21 +1,41 @@
 [
     {
         "profession": "Chiropracteur",
+        "logo": "Chiropracteur/logo-chiropracteur.png",
         "personnel": [
             {
                 "name": "Amandine MINAUD",
-                "documents": [
-                    "doctolib.txt",
-                    "Horaires au cabinet3.txt",
-                    "logo-med.png",
-                    "Rendez-vous2.txt",
-                    "Sp\u00e9cialisations, comp\u00e9tences et services1.txt"
-                ]
+                "documents": [],
+                "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/amandine-minaud",
+                "texts": [
+                    {
+                        "filename": "Spécialisations, compétences et services",
+                        "content": [],
+                        "order": 1
+                    },
+                    {
+                        "filename": "Rendez-vous",
+                        "content": [
+                            "mmmhh"
+                        ],
+                        "order": 2
+                    },
+                    {
+                        "filename": "Horaires au cabinet",
+                        "content": [
+                            "test"
+                        ],
+                        "order": 3
+                    }
+                ],
+                "pdf": null,
+                "image": "Amandine MINAUD/logo-med.png"
             }
         ]
     },
     {
         "profession": "Orthodontiste",
+        "logo": null,
         "personnel": []
     }
 ]

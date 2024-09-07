@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const pdf = medecin.pdf ? `<a href="../../${medecin.pdf.path}" download="${medecin.pdf.name}" class="download-link">Autre</a>` : '';
                 const textsHTML = medecin.texts.map(text => `
                     <h4>${text.filename}</h4>
-                    <ul>
+                    <ul>   
                         ${text.content.map(line => `<li>${line}</li>`).join('')}
                     </ul>
                 `).join('');
