@@ -33,7 +33,7 @@ function displayProfessionData(professionData) {
     const professionLogo = document.getElementById('profession-logo');
     const personnelContainer = document.getElementById('profession-container');
 
-    // Débogage : Vérifier les éléments DOM
+    // Vérifier les éléments DOM
     console.log('Profession Title Element:', professionTitle);
     console.log('Personnel Container Element:', personnelContainer);
     console.log('Profession Logo Element:', professionLogo);
@@ -49,9 +49,9 @@ function displayProfessionData(professionData) {
     // Afficher le logo de la profession
     if (professionData.logo) {
         console.log('Logo de la profession:', professionData.logo);
-        professionLogo.src = encodeURIComponent(professionData.logo).replace(/%2F/g, '/'); // Encodage de l'URL + remplacement des barres obliques
+        professionLogo.src = encodeURIComponent(professionData.logo).replace(/%2F/g, '/');
         professionLogo.alt = `Logo ${professionData.profession}`;
-        professionLogo.style.display = 'block';  // Afficher le logo après le chargement
+        professionLogo.style.display = 'block';
     } else {
         console.warn("Aucun logo trouvé pour la profession.");
     }
@@ -67,6 +67,9 @@ function displayProfessionData(professionData) {
     professionData.personnel.forEach(personnel => {
         console.log("Traitement du personnel :", personnel);
 
+        // Vérification du contenu de textContents
+        console.log("Contenu des fichiers textes du personnel:", personnel.textContents);
+
         // Trier les fichiers texte par numéro
         const sortedTexts = personnel.documents
             .filter(doc => doc.endsWith('.txt') && !doc.includes('doctolib'))
@@ -76,9 +79,11 @@ function displayProfessionData(professionData) {
                 return numA - numB;
             });
 
+        // Génération du HTML pour les textes
         const textsHTML = sortedTexts.map(textFile => {
             const title = textFile.replace(/\d+\.txt$/, '').replace(/_/g, ' ').trim();
             const content = personnel.textContents ? personnel.textContents[textFile] : 'Contenu introuvable.';
+            console.log(`Fichier texte: ${textFile}, Contenu: ${content}`);
             return `
                 <h4>${title}</h4>
                 <p>${content}</p>
@@ -86,7 +91,7 @@ function displayProfessionData(professionData) {
         }).join('');
 
         // Si doctolib.txt existe, afficher le bouton pour "Prendre rendez-vous"
-        const doctolib = personnel.documents.find(doc => doc === 'doctolib.txt') ? personnel.doctolib : null;
+        const doctolib = personnel.doctolib ? personnel.doctolib : null;
         const pdf = personnel.documents.filter(doc => doc.endsWith('.pdf')).map(pdfFile => {
             return `<p>Document PDF: ${pdfFile}</p>`;
         }).join('');
@@ -104,10 +109,6 @@ function displayProfessionData(professionData) {
                     </a>
                 </div>
                 <div class="${collapsibleContentClass}">
-
-
- 
-
                     <div class="content-wrapper">
                         <img src="../../../ajoutprofession/${encodeURIComponent(professionData.profession)}/${personnel.image}" alt="Profile Image" />
                         <div class="text-content">
@@ -115,14 +116,11 @@ function displayProfessionData(professionData) {
                             ${pdf}
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         `;
 
-        console.log("HTML injecté pour le personnel :", personnelHTML);  // Débogage : Afficher le HTML généré
+        console.log("HTML injecté pour le personnel :", personnelHTML);
         personnelContainer.innerHTML += personnelHTML;
     });
 }
