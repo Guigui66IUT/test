@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(window.location.search);
     const profession = urlParams.get('profession');
 
-    // Charger le fichier JSON des professions
     fetch('/json/professions.json')
         .then(response => {
             if (!response.ok) {
@@ -13,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(data => {
             console.log("Données chargées :", data);
             if (profession) {
-                // Trouver la profession dans le JSON
                 const professionData = data.find(prof => prof.profession.toLowerCase() === profession.toLowerCase());
                 console.log("Données de la profession trouvée :", professionData);
                 if (professionData) {
@@ -33,31 +31,22 @@ function displayProfessionData(professionData) {
     const professionLogo = document.getElementById('profession-logo');
     const personnelContainer = document.getElementById('profession-container');
 
-    // Débogage : Vérifier les éléments DOM
-    console.log('Profession Title Element:', professionTitle);
-    console.log('Personnel Container Element:', personnelContainer);
-    console.log('Profession Logo Element:', professionLogo);
-
     if (!professionTitle || !personnelContainer || !professionLogo) {
         console.error("Les éléments DOM pour l'affichage des professionnels ne sont pas trouvés.");
         return;
     }
 
-    // Titre de la profession
     professionTitle.textContent = professionData.profession;
 
-    // Afficher le logo de la profession
     if (professionData.logo) {
-        console.log('Logo de la profession:', professionData.logo);
-        professionLogo.src = encodeURIComponent(professionData.logo).replace(/%2F/g, '/'); // Encodage de l'URL + remplacement des barres obliques
+        professionLogo.src = encodeURIComponent(professionData.logo).replace(/%2F/g, '/');
         professionLogo.alt = `Logo ${professionData.profession}`;
-        professionLogo.style.display = 'block';  // Afficher le logo après le chargement
+        professionLogo.style.display = 'block';
     } else {
         console.warn("Aucun logo trouvé pour la profession.");
     }
 
-    // Afficher les professionnels et leurs informations
-    personnelContainer.innerHTML = '';  // Nettoyer le contenu précédent
+    personnelContainer.innerHTML = '';
 
     if (professionData.personnel.length === 0) {
         personnelContainer.innerHTML = "<p>Aucun professionnel disponible pour cette profession.</p>";
@@ -67,7 +56,6 @@ function displayProfessionData(professionData) {
     professionData.personnel.forEach(personnel => {
         console.log("Traitement du personnel :", personnel);
 
-        // Trier les fichiers texte par numéro
         const sortedTexts = personnel.documents
             .filter(doc => doc.endsWith('.txt') && !doc.includes('doctolib'))
             .sort((a, b) => {
@@ -76,16 +64,23 @@ function displayProfessionData(professionData) {
                 return numA - numB;
             });
 
+        // Vérification du contenu des fichiers texte
+        console.log("Fichiers texte triés :", sortedTexts);
+
         const textsHTML = sortedTexts.map(textFile => {
             const title = textFile.replace(/\d+\.txt$/, '').replace(/_/g, ' ').trim();
             const content = personnel.textContents ? personnel.textContents[textFile] : 'Contenu introuvable.';
+            console.log("Titre du texte :", title, "Contenu :", content);  // Journaliser le titre et le contenu
             return `
                 <h4>${title}</h4>
                 <p>${content}</p>
             `;
         }).join('');
 
-        // Si doctolib.txt existe, afficher le bouton pour "Prendre rendez-vous"
+        if (textsHTML === '') {
+            console.warn("Aucun texte disponible pour ce professionnel.");
+        }
+
         const doctolib = personnel.documents.find(doc => doc === 'doctolib.txt') ? personnel.doctolib : null;
         const pdf = personnel.documents.filter(doc => doc.endsWith('.pdf')).map(pdfFile => {
             return `<p>Document PDF: ${pdfFile}</p>`;
@@ -113,12 +108,11 @@ function displayProfessionData(professionData) {
             </div>
         `;
 
-        console.log("HTML injecté pour le personnel :", personnelHTML);  // Débogage : Afficher le HTML généré
+        console.log("HTML injecté pour le personnel :", personnelHTML);
         personnelContainer.innerHTML += personnelHTML;
     });
 }
 
-// Fonction pour afficher/masquer le texte
 function toggleText(element) {
     const content = element.parentElement.nextElementSibling;
     content.classList.toggle('show');
