@@ -1,7 +1,8 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const profession = urlParams.get('profession');
 
+    // Charger le fichier JSON des professions
     fetch('/json/professions.json')
         .then(response => {
             if (!response.ok) {
@@ -36,8 +37,10 @@ function displayProfessionData(professionData) {
         return;
     }
 
+    // Titre de la profession
     professionTitle.textContent = professionData.profession;
 
+    // Afficher le logo de la profession
     if (professionData.logo) {
         professionLogo.src = encodeURIComponent(professionData.logo).replace(/%2F/g, '/');
         professionLogo.alt = `Logo ${professionData.profession}`;
@@ -48,14 +51,17 @@ function displayProfessionData(professionData) {
 
     personnelContainer.innerHTML = '';
 
+    // Si aucun personnel n'est disponible
     if (professionData.personnel.length === 0) {
         personnelContainer.innerHTML = "<p>Aucun professionnel disponible pour cette profession.</p>";
         return;
     }
 
+    // Traiter chaque personnel
     professionData.personnel.forEach(personnel => {
         console.log("Traitement du personnel :", personnel);
 
+        // Trier les fichiers texte par numéro
         const sortedTexts = personnel.documents
             .filter(doc => doc.endsWith('.txt') && !doc.includes('doctolib'))
             .sort((a, b) => {
@@ -64,13 +70,9 @@ function displayProfessionData(professionData) {
                 return numA - numB;
             });
 
-        // Vérification du contenu des fichiers texte
-        console.log("Fichiers texte triés :", sortedTexts);
-
         const textsHTML = sortedTexts.map(textFile => {
             const title = textFile.replace(/\d+\.txt$/, '').replace(/_/g, ' ').trim();
             const content = personnel.textContents ? personnel.textContents[textFile] : 'Contenu introuvable.';
-            console.log("Titre du texte :", title, "Contenu :", content);  // Journaliser le titre et le contenu
             return `
                 <h4>${title}</h4>
                 <p>${content}</p>
@@ -81,7 +83,14 @@ function displayProfessionData(professionData) {
             console.warn("Aucun texte disponible pour ce professionnel.");
         }
 
+        // Si doctolib.txt existe, afficher le lien pour "Prendre rendez-vous"
         const doctolib = personnel.documents.find(doc => doc === 'doctolib.txt') ? personnel.doctolib : null;
+        const doctolibLink = doctolib ? `
+            <a href="${doctolib}" target="_blank">
+                <button class="book-appointment">Prendre rendez-vous</button>
+            </a>
+        ` : '';
+
         const pdf = personnel.documents.filter(doc => doc.endsWith('.pdf')).map(pdfFile => {
             return `<p>Document PDF: ${pdfFile}</p>`;
         }).join('');
@@ -89,18 +98,19 @@ function displayProfessionData(professionData) {
         const isSinglePersonnel = professionData.personnel.length === 1;
         const collapsibleContentClass = isSinglePersonnel ? 'collapsible-content show' : 'collapsible-content';
 
+        // Construction du HTML avec le lien Doctolib sous "En savoir +"
         const personnelHTML = `
             <div class="button-section">
                 <div class="button-row">
                     <div class="left-text">${personnel.name}</div>
                     <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
-                    ${doctolib ? `<a href="${doctolib}" target="_blank"><button class="book-appointment">Prendre rendez-vous</button></a>` : ''}
                 </div>
                 <div class="${collapsibleContentClass}">
                     <div class="content-wrapper">
                         <img src="/ajoutprofession/${encodeURIComponent(professionData.profession)}/${encodeURIComponent(personnel.name)}/logo-${encodeURIComponent(personnel.name)}.png" alt="Profile Image" />
                         <div class="text-content">
                             ${textsHTML}
+                            ${doctolibLink}  <!-- Le lien Doctolib s'affiche ici -->
                             ${pdf}
                         </div>
                     </div>
@@ -113,6 +123,7 @@ function displayProfessionData(professionData) {
     });
 }
 
+// Fonction pour afficher/masquer le texte
 function toggleText(element) {
     const content = element.parentElement.nextElementSibling;
     content.classList.toggle('show');
