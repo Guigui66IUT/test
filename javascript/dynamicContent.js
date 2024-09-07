@@ -50,7 +50,8 @@ function displayProfessionData(professionData) {
     // Afficher le logo de la profession
     if (professionData.logo) {
         console.log('Logo de la profession:', professionData.logo);  // Débogage : Vérifier le chemin du logo
-        professionLogo.src = professionData.logo;
+        // Utiliser encodeURIComponent pour éviter les problèmes avec les espaces dans les URLs
+        professionLogo.src = encodeURIComponent(professionData.logo).replace(/%2F/g, '/'); // Remplacer les %2F par des /
         professionLogo.alt = `Logo ${professionData.profession}`;
         professionLogo.style.display = 'block';  // Afficher le logo lorsque chargé
     } else {
@@ -104,7 +105,7 @@ function displayProfessionData(professionData) {
                 </div>
                 <div class="${collapsibleContentClass}">
                     <div class="content-wrapper">
-                        <img src="/ajoutprofession/${professionData.profession}/${encodeURIComponent(personnel.name)}/logo-${encodeURIComponent(personnel.name)}.png" alt="Profile Image" />
+                        <img src="/ajoutprofession/${encodeURIComponent(professionData.profession)}/${encodeURIComponent(personnel.name)}/logo-${encodeURIComponent(personnel.name)}.png" alt="Profile Image" />
                         <div class="text-content">
                             ${textsHTML}
                             ${pdf}
