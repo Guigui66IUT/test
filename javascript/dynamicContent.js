@@ -33,7 +33,7 @@ function displayProfessionData(professionData) {
     const professionLogo = document.getElementById('profession-logo');
     const personnelContainer = document.getElementById('profession-container');
 
-    // Débogage : Vérifier les éléments DOM
+    // Vérifier les éléments DOM
     console.log('Profession Title Element:', professionTitle);
     console.log('Personnel Container Element:', personnelContainer);
     console.log('Profession Logo Element:', professionLogo);
@@ -49,9 +49,9 @@ function displayProfessionData(professionData) {
     // Afficher le logo de la profession
     if (professionData.logo) {
         console.log('Logo de la profession:', professionData.logo);
-        professionLogo.src = encodeURIComponent(professionData.logo).replace(/%2F/g, '/'); // Encodage de l'URL + remplacement des barres obliques
+        professionLogo.src = encodeURIComponent(professionData.logo).replace(/%2F/g, '/');
         professionLogo.alt = `Logo ${professionData.profession}`;
-        professionLogo.style.display = 'block';  // Afficher le logo après le chargement
+        professionLogo.style.display = 'block';
     } else {
         console.warn("Aucun logo trouvé pour la profession.");
     }
@@ -67,51 +67,50 @@ function displayProfessionData(professionData) {
     professionData.personnel.forEach(personnel => {
         console.log("Traitement du personnel :", personnel);
 
+        // Vérification du contenu de textContents
+        console.log("Contenu des fichiers textes du personnel:", personnel.textContents);
+
         // Trier les fichiers texte par numéro
         const sortedTexts = personnel.documents
-            .filter(doc => doc.endsWith('.txt') && !doc.includes('doctolib'))  // Exclure doctolib.txt
+            .filter(doc => doc.endsWith('.txt') && !doc.includes('doctolib'))
             .sort((a, b) => {
                 const numA = parseInt(a.match(/\d+/));
                 const numB = parseInt(b.match(/\d+/));
                 return numA - numB;
             });
 
+        // Génération du HTML pour les textes
         const textsHTML = sortedTexts.map(textFile => {
-            const title = textFile.replace(/\d+\.txt$/, '').replace(/_/g, ' ').trim();  // Retirer le numéro et formater le nom du fichier en titre
-            const content = personnel.textContents ? personnel.textContents[textFile] : 'Contenu introuvable.';  // Récupérer le contenu du fichier texte
+            const title = textFile.replace(/\d+\.txt$/, '').replace(/_/g, ' ').trim();
+            const content = personnel.textContents ? personnel.textContents[textFile] : 'Contenu introuvable.';
+            console.log(`Fichier texte: ${textFile}, Contenu: ${content}`);
             return `
                 <h4>${title}</h4>
-                <ul>
-                    ${content.split('\n').map(line => `<li>${line}</li>`).join('')}  <!-- Séparer chaque ligne et l'envelopper dans un <li> -->
-                </ul>
+                <p>${content}</p>
             `;
         }).join('');
 
         // Si doctolib.txt existe, afficher le bouton pour "Prendre rendez-vous"
-        const doctolib = personnel.documents.find(doc => doc === 'doctolib.txt') ? personnel.doctolib : null;
-
-        // Récupérer et afficher le PDF s'il existe
+        const doctolib = personnel.doctolib ? personnel.doctolib : null;
         const pdf = personnel.documents.filter(doc => doc.endsWith('.pdf')).map(pdfFile => {
-            return `<a href="../../ajoutprofession/${encodeURIComponent(professionData.profession)}/${encodeURIComponent(personnel.name)}/${pdfFile}" download="${pdfFile}" class="download-link">Autre</a>`;
+            return `<p>Document PDF: ${pdfFile}</p>`;
         }).join('');
-
-        // Afficher l'image du professionnel (avec fallback si aucune image n'est trouvée)
-        const personnelImage = personnel.documents.find(doc => doc.endsWith('.png') || doc.endsWith('.jpg')) || 'default-image.png';
 
         const isSinglePersonnel = professionData.personnel.length === 1;
         const collapsibleContentClass = isSinglePersonnel ? 'collapsible-content show' : 'collapsible-content';
 
-        // Générer le HTML pour chaque professionnel
         const personnelHTML = `
             <div class="button-section">
                 <div class="button-row">
                     <div class="left-text">${personnel.name}</div>
                     <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
-                    ${doctolib ? `<a href="${doctolib}" target="_blank"><button class="book-appointment">Prendre rendez-vous</button></a>` : ''}
+                    <a href=" ${personnel.doctolib}" target="_blank">
+                        <button class="book-appointment">Prendre rendez-vous</button>
+                    </a>
                 </div>
                 <div class="${collapsibleContentClass}">
                     <div class="content-wrapper">
-                        <img src="../../../ajoutprofession/${encodeURIComponent(professionData.profession)}/${personnelImage}" alt="Profile Image" />
+                        <img src="../../../ajoutprofession/${encodeURIComponent(professionData.profession)}/${personnel.image}" alt="Profile Image" />
                         <div class="text-content">
                             ${textsHTML}
                             ${pdf}
@@ -121,7 +120,7 @@ function displayProfessionData(professionData) {
             </div>
         `;
 
-        console.log("HTML injecté pour le personnel :", personnelHTML);  // Débogage : Afficher le HTML généré
+        console.log("HTML injecté pour le personnel :", personnelHTML);
         personnelContainer.innerHTML += personnelHTML;
     });
 }
