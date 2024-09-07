@@ -2,6 +2,13 @@ import os
 import json
 import re
 
+def get_last_name(full_name):
+    # Supposer que le deuxième nom est le nom de famille
+    names = full_name.split()
+    if len(names) > 1:
+        return names[1]  # Retourner le deuxième nom comme nom de famille
+    return names[0]  # Si seulement un nom, retourner celui-ci
+
 def update_professions_with_personnel():
     base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
     ajoutprofession_path = os.path.join(base_path, 'ajoutprofession')
@@ -76,6 +83,9 @@ def update_professions_with_personnel():
                     personnel_dict['texts'] = sorted(personnel_dict['texts'], key=lambda x: x['order'])
 
                     personnel_list.append(personnel_dict)
+
+            # Trier les personnes par nom de famille (le deuxième nom)
+            personnel_list = sorted(personnel_list, key=lambda x: get_last_name(x['name']))
 
             professions.append({
                 'profession': profession.replace('_', ' '),

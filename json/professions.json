@@ -4,34 +4,6 @@
         "logo": "Chiropracteur/logo-chiropracteur.png",
         "personnel": [
             {
-                "name": "Amandine MINAUD",
-                "documents": [],
-                "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/amandine-minaud",
-                "texts": [
-                    {
-                        "filename": "Spécialisations, compétences et services",
-                        "content": [],
-                        "order": 1
-                    },
-                    {
-                        "filename": "Rendez-vous",
-                        "content": [
-                            "mmmhh"
-                        ],
-                        "order": 2
-                    },
-                    {
-                        "filename": "Horaires au cabinet",
-                        "content": [
-                            "test"
-                        ],
-                        "order": 3
-                    }
-                ],
-                "pdf": null,
-                "image": "Amandine MINAUD/logo-med.png"
-            },
-            {
                 "name": "Theo BERTOGNA",
                 "documents": [],
                 "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/amandine-minaud",
@@ -60,6 +32,34 @@
                 ],
                 "pdf": null,
                 "image": "Theo BERTOGNA/logo-med.png"
+            },
+            {
+                "name": "Amandine MINAUD",
+                "documents": [],
+                "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/amandine-minaud",
+                "texts": [
+                    {
+                        "filename": "Spécialisations, compétences et services",
+                        "content": [],
+                        "order": 1
+                    },
+                    {
+                        "filename": "Rendez-vous",
+                        "content": [
+                            "mmmhh"
+                        ],
+                        "order": 2
+                    },
+                    {
+                        "filename": "Horaires au cabinet",
+                        "content": [
+                            "test"
+                        ],
+                        "order": 3
+                    }
+                ],
+                "pdf": null,
+                "image": "Amandine MINAUD/logo-med.png"
             }
         ]
     },

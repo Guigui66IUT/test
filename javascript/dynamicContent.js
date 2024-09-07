@@ -92,22 +92,7 @@ function displayProfessionData(professionData) {
         `).join('');
 
 
-        // // Génération du HTML pour les textes
-        // const textsHTML = sortedTexts.map(textFile => {
-        //     const title = textFile.replace(/\d+\.txt$/, '').replace(/_/g, ' ').trim();
-        //     const content = personnel.textContents ? personnel.textContents[textFile] : 'Contenu introuvable.';
-        //     console.log(`Fichier texte: ${textFile}, Contenu: ${content}`);
-        //     return `
-        //         <h4>${title}</h4>
-        //         <p>${content}</p>
-        //     `;
-        // }).join('');
-
-        // Si doctolib.txt existe, afficher le bouton pour "Prendre rendez-vous"
         const doctolib = personnel.doctolib ? personnel.doctolib : null;
-        // const pdf = personnel.documents.filter(doc => doc.endsWith('.pdf')).map(pdfFile => {
-        //     return `<p>Document PDF: ${pdfFile}</p>`;
-        // }).join('');
 
 
 
