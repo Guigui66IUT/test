@@ -93,6 +93,7 @@ function displayProfessionData(professionData) {
 
         const isSinglePersonnel = professionData.personnel.length === 1;
         const collapsibleContentClass = isSinglePersonnel ? 'collapsible-content show' : 'collapsible-content';
+        const personnelPngImage = personnel.documents.find(doc => doc.endsWith('.png')) || 'default-image.png';  // Mettre une image par défaut au cas où
 
         const personnelHTML = `
             <div class="button-section">
@@ -109,7 +110,7 @@ function displayProfessionData(professionData) {
  
 
                     <div class="content-wrapper">
-                        <img src="../../../ajoutprofession/${encodeURIComponent(professionData.profession)}/${encodeURIComponent(personnel.name)}/logo-${encodeURIComponent(personnel.name)}.png" alt="Profile Image" />
+                        <img src="../../../ajoutprofession/${encodeURIComponent(professionData.profession)}/${encodeURIComponent(personnel.name)}/${personnelPngImage}" alt="Profile Image" />
                         <div class="text-content">
                             ${textsHTML}
                             ${pdf}
