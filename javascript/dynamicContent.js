@@ -52,6 +52,7 @@ function displayProfessionData(professionData) {
         console.log('Logo de la profession:', professionData.logo);  // Débogage : Vérifier le chemin du logo
         professionLogo.src = professionData.logo;
         professionLogo.alt = `Logo ${professionData.profession}`;
+        professionLogo.style.display = 'block';  // Afficher le logo lorsque chargé
     } else {
         console.warn("Aucun logo trouvé pour la profession.");
     }
@@ -103,7 +104,7 @@ function displayProfessionData(professionData) {
                 </div>
                 <div class="${collapsibleContentClass}">
                     <div class="content-wrapper">
-                        <img src="/ajoutprofession/${professionData.profession}/${personnel.name}/logo-${personnel.name}.png" alt="Profile Image" />
+                        <img src="/ajoutprofession/${professionData.profession}/${encodeURIComponent(personnel.name)}/logo-${encodeURIComponent(personnel.name)}.png" alt="Profile Image" />
                         <div class="text-content">
                             ${textsHTML}
                             ${pdf}
