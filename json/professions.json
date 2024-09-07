@@ -4,7 +4,7 @@
         "logo": "Chiropracteur/logo-chiropracteur.png",
         "personnel": [
             {
-                "name": "Amandine MINAUD",
+                "name": "AmandineMINAUD",
                 "documents": [],
                 "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/amandine-minaud",
                 "texts": [
@@ -29,7 +29,7 @@
                     }
                 ],
                 "pdf": null,
-                "image": "Amandine_MINAUD/logo-med.png"
+                "image": "AmandineMINAUD/logo-med.png"
             }
         ]
     },
