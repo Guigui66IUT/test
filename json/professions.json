@@ -30,6 +30,36 @@
                 ],
                 "pdf": null,
                 "image": "Amandine MINAUD/logo-med.png"
+            },
+            {
+                "name": "Theo BERTOGNA",
+                "documents": [],
+                "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/amandine-minaud",
+                "texts": [
+                    {
+                        "filename": "Spécialisations, compétences et services",
+                        "content": [
+                            "neuille bien humide"
+                        ],
+                        "order": 1
+                    },
+                    {
+                        "filename": "Rendez-vous",
+                        "content": [
+                            "bing chilling"
+                        ],
+                        "order": 2
+                    },
+                    {
+                        "filename": "Horaires au cabinet",
+                        "content": [
+                            "ching chong"
+                        ],
+                        "order": 3
+                    }
+                ],
+                "pdf": null,
+                "image": "Theo BERTOGNA/logo-med.png"
             }
         ]
     },
