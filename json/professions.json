@@ -1,7 +1,7 @@
 [
     {
         "profession": "Chiropracteur",
-        "logo": "Chiropracteur\\logo-chiropracteur.png",
+        "logo": "Chiropracteur/logo-chiropracteur.png",
         "personnel": [
             {
                 "name": "Amandine MINAUD",
@@ -29,7 +29,7 @@
                     }
                 ],
                 "pdf": null,
-                "image": "Amandine MINAUD\\logo-med.png"
+                "image": "Amandine MINAUD/logo-med.png"
             }
         ]
     },
