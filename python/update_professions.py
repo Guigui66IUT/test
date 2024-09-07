@@ -20,7 +20,7 @@ def update_professions_with_personnel():
             # Rechercher un logo de profession
             for file in os.listdir(profession_path):
                 if file.startswith('logo') and (file.endswith('.png') or file.endswith('.jpg')):
-                    profession_logo = os.path.join(profession, file).replace('\\', '/')  # Corriger les chemins pour les URLs
+                    profession_logo = os.path.join(profession, file).replace('/', '\\')  # Utiliser les barres obliques inverses
                     break
 
             # Parcourir les dossiers de personnel dans chaque profession
@@ -48,7 +48,7 @@ def update_professions_with_personnel():
 
                         # Lire et stocker les fichiers d'images
                         elif filename.endswith('.jpg') or filename.endswith('.png'):
-                            personnel_dict['image'] = os.path.join(personnel, filename).replace('\\', '/')
+                            personnel_dict['image'] = os.path.join(personnel, filename).replace('/', '\\')
 
                         # Traiter les fichiers texte numérotés (1.txt, 2.txt, etc.)
                         elif re.match(r'.*\d+\.txt$', filename):
@@ -68,7 +68,7 @@ def update_professions_with_personnel():
                         # Lire les fichiers PDF
                         elif filename.endswith('.pdf'):
                             personnel_dict['pdf'] = {
-                                'path': os.path.join(personnel, filename).replace('\\', '/'),
+                                'path': os.path.join(personnel, filename).replace('/', '\\'),
                                 'name': filename
                             }
 
