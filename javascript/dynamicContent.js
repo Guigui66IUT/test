@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const profession = urlParams.get('profession');
 
@@ -49,9 +49,9 @@ function displayProfessionData(professionData) {
     // Afficher le logo de la profession
     if (professionData.logo) {
         console.log('Logo de la profession:', professionData.logo);
-        professionLogo.src = encodeURIComponent(professionData.logo).replace(/%2F/g, '/'); // Encodage de l'URL + remplacement des barres obliques
+        professionLogo.src = encodeURIComponent(professionData.logo).replace(/%2F/g, '/');
         professionLogo.alt = `Logo ${professionData.profession}`;
-        professionLogo.style.display = 'block';  // Afficher le logo après le chargement
+        professionLogo.style.display = 'block';
     } else {
         console.warn("Aucun logo trouvé pour la profession.");
     }
@@ -86,39 +86,42 @@ function displayProfessionData(professionData) {
         }).join('');
 
         // Si doctolib.txt existe, afficher le bouton pour "Prendre rendez-vous"
-        const doctolib = personnel.documents.find(doc => doc === 'doctolib.txt') ? personnel.doctolib : null;
+        const doctolib = personnel.doctolib ? personnel.doctolib : null;
         const pdf = personnel.documents.filter(doc => doc.endsWith('.pdf')).map(pdfFile => {
             return `<p>Document PDF: ${pdfFile}</p>`;
         }).join('');
 
         const isSinglePersonnel = professionData.personnel.length === 1;
         const collapsibleContentClass = isSinglePersonnel ? 'collapsible-content show' : 'collapsible-content';
-        const personnelPngImage = personnel.documents.find(doc => doc.endsWith('.png')) || 'default-image.png';  // Mettre une image par défaut au cas où
+
+        // Vérifier la présence d'une image PNG ou JPG
+        let imageFile = '';
+        const pngImage = personnel.documents.find(doc => doc.endsWith('.png'));
+        const jpgImage = personnel.documents.find(doc => doc.endsWith('.jpg'));
+
+        if (pngImage) {
+            imageFile = `../../../ajoutprofession/${encodeURIComponent(professionData.profession)}/${encodeURIComponent(personnel.name)}/${pngImage}`;
+        } else if (jpgImage) {
+            imageFile = `../../../ajoutprofession/${encodeURIComponent(professionData.profession)}/${encodeURIComponent(personnel.name)}/${jpgImage}`;
+        } else {
+            imageFile = '/path/to/default-image.png';  // Mettre une image par défaut si aucune image n'est trouvée
+        }
 
         const personnelHTML = `
             <div class="button-section">
                 <div class="button-row">
                     <div class="left-text">${personnel.name}</div>
                     <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
-                    <a href=" ${personnel.doctolib}" target="_blank">
-                        <button class="book-appointment">Prendre rendez-vous</button>
-                    </a>
+                    ${doctolib ? `<a href="${doctolib}" target="_blank"><button class="book-appointment">Prendre rendez-vous</button></a>` : ''}
                 </div>
                 <div class="${collapsibleContentClass}">
-
-
- 
-
                     <div class="content-wrapper">
-                        <img src="../../../ajoutprofession/${encodeURIComponent(professionData.profession)}/${encodeURIComponent(personnel.name)}/${personnelPngImage}" alt="Profile Image" />
+                        <img src="${imageFile}" alt="Profile Image" />
                         <div class="text-content">
                             ${textsHTML}
                             ${pdf}
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         `;
