@@ -11,13 +11,13 @@ document.addEventListener("DOMContentLoaded", function() {
             return response.json();
         })
         .then(data => {
-            console.log("Données chargées :", data);  // Débogage : Afficher les données JSON chargées
+            console.log("Données chargées :", data);
             if (profession) {
                 // Trouver la profession dans le JSON
                 const professionData = data.find(prof => prof.profession.toLowerCase() === profession.toLowerCase());
-                console.log("Données de la profession trouvée :", professionData);  // Débogage : Afficher la profession trouvée
+                console.log("Données de la profession trouvée :", professionData);
                 if (professionData) {
-                    displayProfessionData(professionData);  // Afficher les données de la profession sélectionnée
+                    displayProfessionData(professionData);
                 } else {
                     console.error("Profession non trouvée.");
                 }
@@ -38,7 +38,6 @@ function displayProfessionData(professionData) {
     console.log('Personnel Container Element:', personnelContainer);
     console.log('Profession Logo Element:', professionLogo);
 
-    // Vérifier que les éléments DOM existent
     if (!professionTitle || !personnelContainer || !professionLogo) {
         console.error("Les éléments DOM pour l'affichage des professionnels ne sont pas trouvés.");
         return;
@@ -49,11 +48,10 @@ function displayProfessionData(professionData) {
 
     // Afficher le logo de la profession
     if (professionData.logo) {
-        console.log('Logo de la profession:', professionData.logo);  // Débogage : Vérifier le chemin du logo
-        // Utiliser encodeURIComponent pour éviter les problèmes avec les espaces dans les URLs
-        professionLogo.src = encodeURIComponent(professionData.logo).replace(/%2F/g, '/'); // Remplacer les %2F par des /
+        console.log('Logo de la profession:', professionData.logo);
+        professionLogo.src = encodeURIComponent(professionData.logo).replace(/%2F/g, '/'); // Encodage de l'URL + remplacement des barres obliques
         professionLogo.alt = `Logo ${professionData.profession}`;
-        professionLogo.style.display = 'block';  // Afficher le logo lorsque chargé
+        professionLogo.style.display = 'block';  // Afficher le logo après le chargement
     } else {
         console.warn("Aucun logo trouvé pour la profession.");
     }
@@ -67,11 +65,11 @@ function displayProfessionData(professionData) {
     }
 
     professionData.personnel.forEach(personnel => {
-        console.log("Traitement du personnel :", personnel);  // Débogage : Afficher le personnel traité
+        console.log("Traitement du personnel :", personnel);
 
         // Trier les fichiers texte par numéro
         const sortedTexts = personnel.documents
-            .filter(doc => doc.endsWith('.txt') && !doc.includes('doctolib'))  // Exclure doctolib.txt
+            .filter(doc => doc.endsWith('.txt') && !doc.includes('doctolib'))
             .sort((a, b) => {
                 const numA = parseInt(a.match(/\d+/));
                 const numB = parseInt(b.match(/\d+/));
@@ -115,12 +113,12 @@ function displayProfessionData(professionData) {
             </div>
         `;
 
-        // Ajouter le HTML du personnel dans le conteneur
+        console.log("HTML injecté pour le personnel :", personnelHTML);  // Débogage : Afficher le HTML généré
         personnelContainer.innerHTML += personnelHTML;
     });
 }
 
-// Fonction pour afficher/masquer le texte avec gestion du premier clic
+// Fonction pour afficher/masquer le texte
 function toggleText(element) {
     const content = element.parentElement.nextElementSibling;
     content.classList.toggle('show');
