@@ -99,7 +99,7 @@ function displayProfessionData(professionData) {
                 <div class="button-row">
                     <div class="left-text">${personnel.name}</div>
                     <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
-                    <a href=" ${doctolib}" target="_blank">
+                    <a href=" ${personnel.doctolib}" target="_blank">
                         <button class="book-appointment">Prendre rendez-vous</button>
                     </a>
                 </div>
