@@ -11,7 +11,10 @@
             },
             {
                 "filename": "Rendez-vous",
-                "content": [],
+                "content": [
+                    "Consultation sur rendez-vous",
+                    "Visites à domicile"
+                ],
                 "order": 2
             },
             {
@@ -29,12 +32,18 @@
         "texts": [
             {
                 "filename": "Spécialisations, compétences et services",
-                "content": [],
+                "content": [
+                    "Posturologie",
+                    "Posologie pédiatrique"
+                ],
                 "order": 1
             },
             {
                 "filename": "Rendez-vous",
-                "content": [],
+                "content": [
+                    "Consultation sur rendez-vous",
+                    "Visites à domicile"
+                ],
                 "order": 2
             },
             {
