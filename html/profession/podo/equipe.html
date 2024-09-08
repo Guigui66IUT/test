@@ -6,9 +6,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>Maison de Santé Pluridisciplinaire</title>
-	<link href="../../../css/test.css" rel="stylesheet" type="text/css" />
+	<!-- <link href="../../../css/test.css" rel="stylesheet" type="text/css" />
 	<link href="../../../css/reset.css" rel="stylesheet" type="text/css" />
-	<link href="../../../css/equipe.css" rel="stylesheet" type="text/css" />
+	<link href="../../../css/equipe.css" rel="stylesheet" type="text/css" /> -->
+
+	
+	<link href="../../../css/test.css" rel="stylesheet" type="text/css" />
+	<link href="../../../css/personnageMED.css" rel="stylesheet" type="text/css" />
+	<!-- <link href="../../../css/reset.css" rel="stylesheet" type="text/css" /> -->
 
 
 	<!-- <link rel="icon" href="../../../img/logo.jpg" type="image/png"> -->
@@ -54,49 +59,12 @@
 
 
 
-	<div class="container">
-		<div class="card__container">
-			<article class="card__article">
-				<img src="../../../img/kine/bouclette.jpg" alt="image" class="card__img">
-
-				<div class="card__data">
-					<h2 class="card__title">Nicole<br>KIRCHGÄSSNER</h2>
-					<span class="card__description">Masseur – Kinésithérapeute (DE)</span>
-					<div class="text">
-						<ul>
-							<li>Concept Sohier</li>
-							<li>Thérapie Manuelle</li>
-							<li>Mc Kenzie</li>
-							<li>Périnéologie féminine</li>
-							<li>Cancer du Sein</li>
-							<li>Drainage lymphatique manuel et bandages</li>
-							<li>Cicatrices de l'adulte</li>
-							<li>K-Taping</li>
-							<li>Prise en charge des déséquilibres posturaux</li>
-							<li>Scoliose et Hypercyphose</li>
-							<li>Vertige positionnel paroxystique bénin "VPPB"</li>
-							<li>Kinésithérapie respiratoire</li>
-						</ul>
-					</div>
-				</div>
-			</article>
-
-			<article class="card__article">
-				<img src="../../../img/kine/bouclette.jpg" alt="image" class="card__img">
-
-				<div class="card__data">
-					<h2 class="card__title">Marc<br>FONDECAVE</h2>
-					<span class="card__description">Masseur – Kinésithérapeute (DE)</span>
-					<div class="text">
-						<ul>							
-							<li>Concept Sohier</li>
-							<li>Kinésithérapie respiratoire</li>
-						</ul>
-					</div>
-				</div>
-			</article>
-		</div>
+	
+	<div class="personnage">
+		<!-- Conteneur pour les podologues -->
+		<div id="podologues-container"></div>
 	</div>
+	
 
 
 
@@ -107,10 +75,16 @@
 
 
 
+	<!-- <script src="../../../javascript/script.js"></script>
+	<script src="/javascript/header.js"></script> -->
 
 
-	<script src="../../../javascript/script.js"></script>
+
 	<script src="/javascript/header.js"></script>
+    <!-- <script src="../../../javascript/toggle.js"></script> Assurez-vous que ce chemin est correct -->
+    <script src="../../../javascript/loadPodologues.js"></script> <!-- Assurez-vous que ce chemin est correct -->
+
+
 </body>
 
 </html>
