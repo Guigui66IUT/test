@@ -31,12 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="left-text">${podologue.name}</div>
                             <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
                             <a href="${podologue.doctolib}" target="_blank">
-                                <button class="book-appointment">Prendre rendez-vous</button>
+                                <button class="rendezvous">Prendre rendez-vous</button>
                             </a>
                         </div>
                         <div class="${collapsibleContentClass}">
                             <div class="content-wrapper">
-                                <img src="../../../podologues/${podologue.image}" alt="Profile Image" />
+                                <img src="../../../podologues/equipe/${podologue.image}" alt="Profile Image" />
                                 <div class="text-content">
                                     ${textsHTML}
                                     ${pdf}
