@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Florence RIDDE",
+        "image": "Florence RIDDE\\logo-med.png",
+        "doctolib": "https://www.pagesjaunes.fr/pros/62320766",
+        "texts": [
+            {
+                "filename": "Spécialisations, compétences et services",
+                "content": [],
+                "order": 1
+            },
+            {
+                "filename": "Rendez-vous",
+                "content": [],
+                "order": 2
+            },
+            {
+                "filename": "Horaires au cabinet",
+                "content": [],
+                "order": 3
+            }
+        ],
+        "pdf": null
+    },
+    {
+        "name": "Marie WILS",
+        "image": "Marie WILS\\logo-med.png",
+        "doctolib": null,
+        "texts": [
+            {
+                "filename": "Spécialisations, compétences et services",
+                "content": [],
+                "order": 1
+            },
+            {
+                "filename": "Rendez-vous",
+                "content": [],
+                "order": 2
+            },
+            {
+                "filename": "Horaires au cabinet",
+                "content": [
+                    "Lundi\t09h00 - 19h00",
+                    "Mardi\t09h00 - 16h00",
+                    "Mercredi\t13h45 - 19h00",
+                    "Jeudi\t09h00 - 17h00",
+                    "Vendredi\t09h00 - 13h00",
+                    "Samedi\tFermé",
+                    "Dimanche\tFermé"
+                ],
+                "order": 3
+            }
+        ],
+        "pdf": null
+    }
+]
