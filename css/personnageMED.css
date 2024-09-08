@@ -99,7 +99,7 @@
 	margin: 10px 0;
 	background-color: var(--blue);
 	/* Couleur de fond */
-	color: --white;
+	color: var(--white);
 	/* Couleur du texte */
 	text-decoration: none;
 	/* Enlever la soulignement */
