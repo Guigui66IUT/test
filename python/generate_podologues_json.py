@@ -14,12 +14,6 @@ def generate_podologues_json(directory=None, output=None):
     directory = directory or os.path.join(script_directory, '../podologues/equipe')  # Modifier pour 'podologues'
     output = output or os.path.join(script_directory, '../../json/podologues_content.json')
 
-    # Vérifier si le répertoire de sortie existe, sinon le créer
-    output_dir = os.path.dirname(output)
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-        print(f"Création du répertoire : {output_dir}")
-
     podologues = []
 
     for podologue_name in os.listdir(directory):
@@ -28,16 +22,16 @@ def generate_podologues_json(directory=None, output=None):
             podologue = {
                 'name': podologue_name.replace('_', ' '),
                 'image': None,
-                'pagesjaunes': None,
+                'doctolib': None,
                 'texts': [],
                 'pdf': None
             }
 
             for filename in os.listdir(podologue_path):
                 file_path = os.path.join(podologue_path, filename)
-                if filename == 'pagesjaunes.txt':
+                if filename == 'doctolib.txt':
                     with open(file_path, 'r', encoding='utf-8') as f:
-                        podologue['pagesjaunes'] = f.read().strip()
+                        podologue['doctolib'] = f.read().strip()
                 elif filename.endswith('.jpg') or filename.endswith('.png'):
                     podologue['image'] = os.path.join(podologue_name, filename)
                 elif re.match(r'.*\d+\.txt$', filename):
