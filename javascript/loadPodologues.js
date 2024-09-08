@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             data.forEach((podologue, index) => {
                 console.log("Traitement du podologue :", podologue); // Journalisation
 
-                const pdf = podologue.pdf ? `<a href="../../${podologue.pdf.path}" download="${podologue.pdf.name}" class="download-link">Autre</a>` : '';
+                const pdf = podologue.pdf ? `<a href="../../../podologues/equipe/${podologue.pdf.path}" download="${podologue.pdf.name}" class="download-link">Autre</a>` : '';
                 const textsHTML = podologue.texts.map(text => `
                     <h4>${text.filename}</h4>
                     <ul>   
