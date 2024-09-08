@@ -1,1 +1,27 @@
-[]
+[
+    {
+        "name": "SOIN DE PÉDICURIE",
+        "image": "Soin de pédicurie_1.jpg",
+        "order": 1
+    },
+    {
+        "name": "ORTHOPLASTIE",
+        "image": "Orthoplastie_2.jpg",
+        "order": 2
+    },
+    {
+        "name": "SEMELLES ORTHOPÉDIQUES",
+        "image": "Semelles orthopédiques_3.jpg",
+        "order": 3
+    },
+    {
+        "name": "VERRUE PLANTAIRE",
+        "image": "Verrue plantaire_4.jpg",
+        "order": 4
+    },
+    {
+        "name": "ORTHOPLASTIE",
+        "image": "Orthoplastie_5.jpg",
+        "order": 5
+    }
+]
