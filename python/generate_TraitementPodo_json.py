@@ -7,7 +7,7 @@ def generate_TraitementPodo_json(directory=None, output=None):
     script_directory = os.path.dirname(os.path.abspath(__file__))
 
     # Définir les chemins par défaut si aucun n'est spécifié
-    directory = directory or os.path.join(script_directory, '../traitementpodo')  # Modifié pour 'traitementpodo'
+    directory = directory or os.path.join(script_directory, '../podologues/traitement/')  # Modifié pour 'traitementpodo'
     output = output or os.path.join(script_directory, '../json/traitementpodo_content.json')  # Modifié pour 'traitementpodo'
 
     traitements = []

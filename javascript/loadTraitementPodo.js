@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(data => {
             console.log("Data loaded:", data);
-            const container = document.querySelector('.grid');
+            const container = document.querySelector('.grate');
             data.forEach(traitement => {
                 const traitementHTML = `
                     <div class="card">
                         <div class="img-box">
-                            <img src="../../../traitementpodo/${traitement.image}" alt="${traitement.name}">
+                            <img src="../../../podologues/traitement/${traitement.image}" alt="${traitement.name}">
                         </div>
                         <div class="card-content">
                             <h1 class="card-heading">${traitement.name}</h1>
