@@ -2,7 +2,7 @@
     {
         "name": "Florence RIDDE",
         "image": "Florence RIDDE\\logo-med.png",
-        "doctolib": "https://www.pagesjaunes.fr/pros/62320766",
+        "pagesjaunes": null,
         "texts": [
             {
                 "filename": "Spécialisations, compétences et services",
@@ -25,7 +25,7 @@
     {
         "name": "Marie WILS",
         "image": "Marie WILS\\logo-med.png",
-        "doctolib": null,
+        "pagesjaunes": "https://www.pagesjaunes.fr/pros/53812294",
         "texts": [
             {
                 "filename": "Spécialisations, compétences et services",

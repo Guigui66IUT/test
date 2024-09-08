@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="button-row">
                             <div class="left-text">${podologue.name}</div>
                             <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
-                            <a href="${podologue.doctolib}" target="_blank">
+                            <a href="${podologue.pagesjaunes}" target="_blank">
                                 <button class="rendezvous">Prendre rendez-vous</button>
                             </a>
                         </div>

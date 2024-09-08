@@ -22,16 +22,16 @@ def generate_podologues_json(directory=None, output=None):
             podologue = {
                 'name': podologue_name.replace('_', ' '),
                 'image': None,
-                'doctolib': None,
+                'pagesjaunes': None,
                 'texts': [],
                 'pdf': None
             }
 
             for filename in os.listdir(podologue_path):
                 file_path = os.path.join(podologue_path, filename)
-                if filename == 'doctolib.txt':
+                if filename == 'pagesjaunes.txt':
                     with open(file_path, 'r', encoding='utf-8') as f:
-                        podologue['doctolib'] = f.read().strip()
+                        podologue['pagesjaunes'] = f.read().strip()
                 elif filename.endswith('.jpg') or filename.endswith('.png'):
                     podologue['image'] = os.path.join(podologue_name, filename)
                 elif re.match(r'.*\d+\.txt$', filename):
