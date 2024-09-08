@@ -24,9 +24,9 @@ def update_professions_with_personnel():
             personnel_list = []
             profession_logo = None
 
-            # Rechercher un logo de profession (fichiers .png ou .jpg)
+            # Rechercher un logo de profession
             for file in os.listdir(profession_path):
-                if file.startswith('logo') and (file.endswith('.png') or file.endswith('.jpg')):
+                if (file.endswith('.png') or file.endswith('.jpg')):
                     profession_logo = os.path.join(profession, file).replace('\\', '/')  # Barres obliques pour les URL
                     break
 
@@ -53,7 +53,7 @@ def update_professions_with_personnel():
                             with open(file_path, 'r', encoding='utf-8') as f:
                                 personnel_dict['doctolib'] = f.read().strip()
 
-                        # Lire et stocker les fichiers d'images (.jpg ou .png)
+                        # Lire et stocker les fichiers d'images
                         elif filename.endswith('.jpg') or filename.endswith('.png'):
                             personnel_dict['image'] = os.path.join(personnel, filename).replace('\\', '/')  # Barres obliques pour les URL
 
@@ -73,22 +73,36 @@ def update_professions_with_personnel():
                                 })
 
                         # Lire les fichiers PDF
+                        # elif filename.endswith('.pdf'):
+                        #     personnel_dict['pdf'] = {
+                        #         'path': os.path.join(profession.personnel, filename).replace('\\', '/'),  # Barres obliques pour les URL
+                        #         'name': filename
+                        #     }
+
+                        # # Lire les fichiers PDF
+                        # elif filename.endswith('.pdf'):
+                        #     personnel_dict['pdf'] = {
+                        #         'path': os.path.join(personnel, filename).replace('\\', '/'),  # Barres obliques pour les URL
+                        #         'name': filename
+                        #     }
+
+
+                        # Lire les fichiers PDF
                         elif filename.endswith('.pdf'):
                             personnel_dict['pdf'] = {
-                                'path': os.path.join(personnel, filename).replace('\\', '/'),  # Barres obliques pour les URL
+                                'path': os.path.join('..', '..', '..', 'ajoutprofession', profession, personnel, filename).replace('\\', '/'),  # Chemin complet
                                 'name': filename
                             }
+
 
                     # Trier les fichiers texte par numéro
                     personnel_dict['texts'] = sorted(personnel_dict['texts'], key=lambda x: x['order'])
 
-                    # Ajouter la personne à la liste du personnel
                     personnel_list.append(personnel_dict)
 
             # Trier les personnes par nom de famille (le deuxième nom)
             personnel_list = sorted(personnel_list, key=lambda x: get_last_name(x['name']))
 
-            # Ajouter les données de la profession et son personnel
             professions.append({
                 'profession': profession.replace('_', ' '),
                 'logo': profession_logo,  # Ajouter le logo de la profession

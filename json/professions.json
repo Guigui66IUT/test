@@ -59,7 +59,7 @@
                     }
                 ],
                 "pdf": {
-                    "path": "Amandine MINAUD/diabetes.pdf",
+                    "path": "../../../ajoutprofession/Chiropracteur/Amandine MINAUD/diabetes.pdf",
                     "name": "diabetes.pdf"
                 },
                 "image": "Amandine MINAUD/logo-med.png"
@@ -98,7 +98,7 @@
     },
     {
         "profession": "Orthodontiste",
-        "logo": null,
+        "logo": "Orthodontiste/blanc.png",
         "personnel": []
     }
 ]
