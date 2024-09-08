@@ -26,7 +26,7 @@ def update_professions_with_personnel():
 
             # Rechercher un logo de profession
             for file in os.listdir(profession_path):
-                if file.startswith('logo') and (file.endswith('.png') or file.endswith('.jpg')):
+                if (file.endswith('.png') or file.endswith('.jpg')):
                     profession_logo = os.path.join(profession, file).replace('\\', '/')  # Barres obliques pour les URL
                     break
 
