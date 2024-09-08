@@ -75,7 +75,7 @@ def update_professions_with_personnel():
                         # Lire les fichiers PDF
                         elif filename.endswith('.pdf'):
                             personnel_dict['pdf'] = {
-                                'path': os.path.join(personnel, filename).replace('\\', '/'),  # Barres obliques pour les URL
+                                'path': os.path.join(personnel.pdf, filename).replace('\\', '/'),  # Barres obliques pour les URL
                                 'name': filename
                             }
 
