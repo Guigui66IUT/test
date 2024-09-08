@@ -11,8 +11,8 @@ def generate_podologues_json(directory=None, output=None):
     script_directory = os.path.dirname(os.path.abspath(__file__))
 
     # Définir les chemins par défaut si aucun n'est spécifié
-    directory = directory or os.path.join(script_directory, '../podologues')  # Modifier pour 'podologues'
-    output = output or os.path.join(script_directory, '../json/podologues_content.json')
+    directory = directory or os.path.join(script_directory, '../podologues/equipe')  # Modifier pour 'podologues'
+    output = output or os.path.join(script_directory, '../../json/podologues_content.json')
 
     podologues = []
 
