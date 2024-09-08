@@ -23,6 +23,46 @@
         "pdf": null
     },
     {
+        "name": "Dr Karine MATHON",
+        "image": "Dr Karine MATHON\\logo-med.png",
+        "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/karine-mathon",
+        "texts": [
+            {
+                "filename": "Spécialisations, compétences et services",
+                "content": [
+                    "Frottis",
+                    "Implant contraceptif",
+                    "Médecine de l'enfant et de l'adolescent",
+                    "Pose de stérilet",
+                    "Retrait de stérilet",
+                    "Suivi en gynécologie",
+                    "Vaccination (hors COVID-19)"
+                ],
+                "order": 1
+            },
+            {
+                "filename": "Rendez-vous",
+                "content": [
+                    "Consultation sur rendez-vous",
+                    "Visites à domicile",
+                    "Téléconsultations"
+                ],
+                "order": 2
+            },
+            {
+                "filename": "Horaires au cabinet",
+                "content": [
+                    "Lundi : 09h00 - 12h30, 14h30 - 19h00",
+                    "Mardi : 09h00 - 12h30, 14h30 - 18h00",
+                    "Mercredi : 09h00 - 12h30, 15h00 - 19h00",
+                    "Vendredi : 09h00 - 13h00"
+                ],
+                "order": 3
+            }
+        ],
+        "pdf": null
+    },
+    {
         "name": "Dr Jean-François MERCIER",
         "image": "Dr Jean-François MERCIER\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/jean-francois-mercier",
