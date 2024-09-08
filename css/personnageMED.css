@@ -7,6 +7,7 @@
 	--blue: #007AA9;
 	--skyblue: #6A8A99;
 	--white: #ffffff;
+	--yellow: #FCEB23;
 	
 }
 
@@ -53,6 +54,17 @@
 
 .button-row .book-appointment {
 	background-color: var(--red);
+	border: none;
+	border-radius: 50px;
+	color: white;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 1rem;
+}
+
+.button-row .rendezvous  {
+	background-color: var(--yellow);
 	border: none;
 	border-radius: 50px;
 	color: white;
