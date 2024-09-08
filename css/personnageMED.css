@@ -1,3 +1,17 @@
+:root {
+	/*========== Colors ==========*/
+	/*Color mode HSL(hue, saturation, lightness)*/
+	--red: #FF2A2A;
+	--oceanblue: #0056b3;
+	--darkblue: #1E5478;	
+	--blue: #007AA9;
+	--skyblue: #6A8A99;
+	--white: #ffffff;
+	
+}
+
+
+
 .personnage {
     margin-top: 3vh; 
 }
@@ -14,7 +28,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-color: #1E5478;
+	background-color: --darkblue;
 	border-radius: 50px;
 	padding: 10px 20px;
 	width: 30%;
@@ -38,7 +52,7 @@
 }
 
 .button-row .book-appointment {
-	background-color: #FF2A2A;
+	background-color: --red;
 	border: none;
 	border-radius: 50px;
 	color: white;
@@ -51,7 +65,7 @@
 .collapsible-content {
 	display: none;
 	width: 30%;
-	background-color: #6A8A99;
+	background-color: --skyblue;
 	border-radius: 20px;
 	padding: 20px;
 	margin: 0;
@@ -83,9 +97,9 @@
 	display: inline-block;
 	padding: 10px 20px;
 	margin: 10px 0;
-	background-color: #007AA9;
+	background-color: --blue;
 	/* Couleur de fond */
-	color: #fff;
+	color: --white;
 	/* Couleur du texte */
 	text-decoration: none;
 	/* Enlever la soulignement */
@@ -98,7 +112,7 @@
 }
 
 .download-link:hover {
-	background-color: #0056b3;
+	background-color: --oceanblue;
 	/* Couleur de fond au survol */
 }
 
