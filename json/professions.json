@@ -58,7 +58,10 @@
                         "order": 3
                     }
                 ],
-                "pdf": null,
+                "pdf": {
+                    "path": "Amandine MINAUD/diabetes.pdf",
+                    "name": "diabetes.pdf"
+                },
                 "image": "Amandine MINAUD/logo-med.png"
             },
             {
