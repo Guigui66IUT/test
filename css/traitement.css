@@ -31,7 +31,7 @@ html {
 	margin-top: 2rem;
 }
 
-.grid {
+.grid, .grate {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	justify-content: center;
@@ -73,7 +73,7 @@ html {
 }
 
 @media (max-width: 1024px) {
-	.grid {
+	.grid, .grate {
 		grid-template-columns: repeat(2, 1fr);
 	}
 	.card-content h1 {
@@ -82,7 +82,7 @@ html {
 }
 
 @media (max-width: 767px) {
-	.grid {
+	.grid, .grate {
 		grid-template-columns: repeat(1, 1fr);
 	}
 	.card-content h1 {
