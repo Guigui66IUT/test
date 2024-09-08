@@ -8,6 +8,7 @@
 	--skyblue: #6A8A99;
 	--white: #ffffff;
 	--yellow: #FCEB23;
+	--black: #000000;
 	
 }
 
@@ -56,7 +57,7 @@
 	background-color: var(--red);
 	border: none;
 	border-radius: 50px;
-	color: white;
+	color: var(--white);
 	padding: 10px 20px;
 	cursor: pointer;
 	font-weight: bold;
@@ -67,7 +68,7 @@
 	background-color: var(--yellow);
 	border: none;
 	border-radius: 50px;
-	color: white;
+	color: var(--black);
 	padding: 10px 20px;
 	cursor: pointer;
 	font-weight: bold;
