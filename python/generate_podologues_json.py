@@ -14,6 +14,11 @@ def generate_podologues_json(directory=None, output=None):
     directory = directory or os.path.join(script_directory, '../podologues/equipe')  # Modifier pour 'podologues'
     output = output or os.path.join(script_directory, '../../json/podologues_content.json')
 
+    # S'assurer que le répertoire de sortie existe
+    output_dir = os.path.dirname(output)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)  # Créer le répertoire s'il n'existe pas
+
     podologues = []
 
     for podologue_name in os.listdir(directory):
