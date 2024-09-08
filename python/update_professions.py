@@ -73,11 +73,19 @@ def update_professions_with_personnel():
                                 })
 
                         # Lire les fichiers PDF
+                        # elif filename.endswith('.pdf'):
+                        #     personnel_dict['pdf'] = {
+                        #         'path': os.path.join(profession.personnel, filename).replace('\\', '/'),  # Barres obliques pour les URL
+                        #         'name': filename
+                        #     }
+
+                        # Lire les fichiers PDF
                         elif filename.endswith('.pdf'):
                             personnel_dict['pdf'] = {
                                 'path': os.path.join(personnel, filename).replace('\\', '/'),  # Barres obliques pour les URL
                                 'name': filename
                             }
+
 
                     # Trier les fichiers texte par numéro
                     personnel_dict['texts'] = sorted(personnel_dict['texts'], key=lambda x: x['order'])
