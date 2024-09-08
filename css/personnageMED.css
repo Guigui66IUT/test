@@ -28,7 +28,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-color: --darkblue;
+	background-color: var(--darkblue);
 	border-radius: 50px;
 	padding: 10px 20px;
 	width: 30%;
@@ -36,7 +36,7 @@
 }
 
 .button-row div {
-	color: white;
+	color: var(--white);
 	font-size: 16px;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .button-row .book-appointment {
-	background-color: --red;
+	background-color: var(--red);
 	border: none;
 	border-radius: 50px;
 	color: white;
@@ -65,7 +65,7 @@
 .collapsible-content {
 	display: none;
 	width: 30%;
-	background-color: --skyblue;
+	background-color: var(--skyblue);
 	border-radius: 20px;
 	padding: 20px;
 	margin: 0;
@@ -97,7 +97,7 @@
 	display: inline-block;
 	padding: 10px 20px;
 	margin: 10px 0;
-	background-color: --blue;
+	background-color: var(--blue);
 	/* Couleur de fond */
 	color: --white;
 	/* Couleur du texte */
@@ -112,7 +112,7 @@
 }
 
 .download-link:hover {
-	background-color: --oceanblue;
+	background-color: var(--oceanblue);
 	/* Couleur de fond au survol */
 }
 
