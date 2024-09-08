@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('../../../json/podologues_content.json') // Modifier ici pour charger le fichier JSON des podologues
+    fetch('../../../json/podologues_content.json') // Charger le fichier JSON des podologues
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -7,11 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
-            console.log("Data loaded:", data); // Ajout de journalisation
-            const container = document.getElementById('podologues-container'); // Modifier ici pour les podologues
+            console.log("Données des podologues chargées :", data); // Ajout de journalisation
+            const container = document.getElementById('podologues-container'); // Conteneur pour afficher les podologues
             
             data.forEach((podologue, index) => {
-                console.log("Processing:", podologue); // Ajout de journalisation
+                console.log("Traitement du podologue :", podologue); // Journalisation
+
                 const pdf = podologue.pdf ? `<a href="../../${podologue.pdf.path}" download="${podologue.pdf.name}" class="download-link">Autre</a>` : '';
                 const textsHTML = podologue.texts.map(text => `
                     <h4>${text.filename}</h4>
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </ul>
                 `).join('');
 
+                // Si un seul podologue est trouvé, ajouter la classe pour dérouler automatiquement
                 const isSinglePodologue = data.length === 1;
                 const collapsibleContentClass = isSinglePodologue ? 'collapsible-content show' : 'collapsible-content';
 
@@ -29,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="left-text">${podologue.name}</div>
                             <div class="learn-more" onclick="toggleText(this)">En savoir +</div>
                             <a href="${podologue.doctolib}" target="_blank">
-                                <button class="rendezvous">Prendre rendez-vous</button>
+                                <button class="book-appointment">Prendre rendez-vous</button>
                             </a>
                         </div>
                         <div class="${collapsibleContentClass}">
@@ -47,11 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         })
         .catch(error => {
-            console.error('Error loading podologues_content.json:', error);
+            console.error('Erreur de chargement du fichier JSON des podologues:', error);
         });
 });
 
-// Fonction pour afficher/masquer le texte
+// Fonction pour afficher/masquer le texte avec gestion du premier clic
 function toggleText(element) {
     const content = element.parentElement.nextElementSibling;
     content.classList.toggle('show');
