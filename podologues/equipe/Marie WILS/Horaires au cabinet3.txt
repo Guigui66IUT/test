@@ -1,0 +1,7 @@
+Lundi	09h00 - 19h00
+Mardi	09h00 - 16h00
+Mercredi	13h45 - 19h00
+Jeudi	09h00 - 17h00
+Vendredi	09h00 - 13h00
+Samedi	Fermé
+Dimanche	Fermé
