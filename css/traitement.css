@@ -79,7 +79,7 @@ html {
 
 
 .card-content:hover {
-	background-color: var(--skyblue);
+	background-color: var(--header);
 }
 
 .text-content {
