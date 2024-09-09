@@ -1,0 +1,1 @@
+Here is some description text that will replace the image when clicked.
