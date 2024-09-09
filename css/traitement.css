@@ -64,10 +64,6 @@ html {
 	flex-grow: 1; /* Permettre au contenu de s'étendre pour remplir l'espace disponible */
 }
 
-.card:hover .card-content {
-    height: 100%; /* Recouvre l'image lors du survol */
-}
-
 
 .card-content h1 {
 	font-size: 1rem;
