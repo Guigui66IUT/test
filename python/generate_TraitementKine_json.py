@@ -7,7 +7,7 @@ def generate_TraitementKine_json(directory=None, output=None):
     script_directory = os.path.dirname(os.path.abspath(__file__))
 
     # Définir les chemins par défaut si aucun n'est spécifié
-    directory = directory or os.path.join(script_directory, '../traitementkine')
+    directory = directory or os.path.join(script_directory, '../kinesitherapeutes/traitement')
     output = output or os.path.join(script_directory, '../json/traitementkine_content.json')
 
     medecins = []
