@@ -1,21 +1,50 @@
+:root {
+	/*========== Colors ==========*/
+	/*Color mode HSL(hue, saturation, lightness)*/
+	/* --text-color: hsl(0, 0%, 35%); */
+	--text-color: #1E3F66;
+	
+}
+
+
+
+
+
+
+html {
+	scroll-behavior: smooth;
+}
+
 .img-box {
 	width: 100%;
 	overflow: hidden;
-	transition: all 0.3s ease-in-out; /* Ajout de la transition pour l'effet de survol */
 }
 
 .img-box img {
 	display: block;
-	width: 100%; 
-	height: auto; 
+	width: 100%; /* Adapter la largeur à 100% du conteneur */
+	height: auto; /* Adapter la hauteur à 100% du conteneur */
 	object-fit: cover;
-	transition: transform 0.3s ease-in-out; /* Ajout de la transition pour l'image */
+}
+
+.container {
+	margin-top: 2rem;
+}
+
+.grid, .grate {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-content: center;
+	grid-gap: 2rem;
+	text-align: center;
+	width: 50%;
+	margin: auto;
 }
 
 .card {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	display: flex; /* Utiliser Flexbox pour aligner le contenu */
+	flex-direction: column; /* Aligner le contenu en colonne */
+	justify-content: center; /* Aligner verticalement le contenu au centre */
 	overflow: hidden;
 	border-radius: 0.6rem;
 	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
@@ -24,30 +53,23 @@
 	position: relative;
 }
 
-.card:hover .img-box img {
-	transform: scale(1.1); /* Agrandit l'image lors du survol */
-}
-
 .card-content {  
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	display: flex; /* Utiliser Flexbox pour centrer le contenu */
+	align-items: center; /* Centrer verticalement */
+	justify-content: center; /* Centrer horizontalement */
 	background-color: var(--text-color);
 	color: #fff;
 	padding: 1.2rem 0;
 	transition: height 0.7s ease;
-	flex-grow: 1;
+	flex-grow: 1; /* Permettre au contenu de s'étendre pour remplir l'espace disponible */
 }
 
-.card-content:hover {
-	transform: translateY(-10px); /* Déplace le contenu vers le haut lors du survol */
-}
 
 .card-content h1 {
 	font-size: 1rem;
 	font-weight: 600;
 	text-transform: capitalize;
-	margin: 0;
+	margin: 0; /* Enlever les marges par défaut */
 }
 
 @media (max-width: 1024px) {
@@ -72,4 +94,4 @@
 	.card-content h1 {
 	  font-size: 1rem;
 	}
-}
+  }
