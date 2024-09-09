@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h1 class="card-heading">${traitement.name}</h1>
                         </div>
                         <div class="text-content" style="display: none;">
-                            <p>${traitement.txt}</p>
+                            <p>${traitement.name}</p>
                         </div>
                     </div>
                 `;
