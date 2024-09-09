@@ -31,6 +31,19 @@ html {
     transition: 0.2s;
 }
 
+.img-box {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.img-box img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 .card-content {
     position: absolute;
     bottom: 0;
@@ -46,7 +59,7 @@ html {
 }
 
 .card:hover .card-content {
-    height: 100%; /* Recouvre l'image lors du survol */
+    height: 100%; /* Recouvrir uniquement l'image */
 }
 
 .card-content h1 {
@@ -56,16 +69,7 @@ html {
     margin: 0;
 }
 
-.grid, .grate {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    grid-gap: 2rem;
-    text-align: center;
-    width: 50%;
-    margin: auto;
-}
-
+/* Média queries pour adapter les cartes selon la taille de l'écran */
 @media (max-width: 1024px) {
     .grid, .grate {
         grid-template-columns: repeat(2, 1fr);
@@ -79,12 +83,6 @@ html {
     .grid, .grate {
         grid-template-columns: repeat(1, 1fr);
     }
-    .card-content h1 {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
     .card-content h1 {
         font-size: 1rem;
     }
