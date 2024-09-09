@@ -23,10 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                 `;
-                container.innerHTML += traitementHTML;
+                container.insertAdjacentHTML('beforeend', traitementHTML);
             });
 
-            // Add click event listeners to each card
+            // Re-query to attach events after updating the DOM
             document.querySelectorAll('.card').forEach(card => {
                 card.addEventListener('click', function() {
                     const imgBox = this.querySelector('.img-box');
