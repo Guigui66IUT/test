@@ -3,6 +3,8 @@
 	/*Color mode HSL(hue, saturation, lightness)*/
 	/* --text-color: hsl(0, 0%, 35%); */
 	--text-color: #1E3F66;
+	--black: #000000;
+	--white: #fff;
 	
 }
 
@@ -58,7 +60,7 @@ html {
 	align-items: center; /* Centrer verticalement */
 	justify-content: center; /* Centrer horizontalement */
 	background-color: var(--text-color);
-	color: #fff;
+	color: var(--white);
 	padding: 1.2rem 0;
 	transition: height 0.7s ease;
 	flex-grow: 1; /* Permettre au contenu de s'étendre pour remplir l'espace disponible */
@@ -76,7 +78,7 @@ html {
 .text-content {
     padding: 1.2rem;
     display: none; /* Hidden by default */
-    color: #fff; /* Assuming white text is preferable */
+    color: var(--black); /* Assuming white text is preferable */
     text-align: center;
 }
 
