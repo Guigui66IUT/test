@@ -76,6 +76,10 @@ html {
 }
 
 
+.card-content:hover {
+	background-color: var(--skyblue);
+}
+
 .text-content {
     padding: 1.2rem;
     display: none; /* Hidden by default */
@@ -84,9 +88,6 @@ html {
 	background-color: var(--skyblue);
 }
 
-.text-content:hover {
-	background-color: var(--skyblue);
-}
 
 
 
