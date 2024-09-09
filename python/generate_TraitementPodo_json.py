@@ -1,3 +1,4 @@
+
 import os
 import json
 import re
@@ -8,15 +9,13 @@ def generate_traitement_podo_files(directory=None, output_json=None):
 
     # Set default paths if none are specified
     directory = directory or os.path.join(script_directory, '../podologues/traitement/')
+
+    # Path for the JSON file
     output_json = output_json or os.path.join(script_directory, '../json/traitementpodo_content.json')
 
     traitements = []
 
-    # Ensure the directory exists
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-
-    # Generate text files with descriptions and gather JSON data
+    # Read descriptions from text files and gather JSON data
     for filename in os.listdir(directory):
         if filename.endswith('.jpg'):
             # Extract the treatment name and number
@@ -25,21 +24,22 @@ def generate_traitement_podo_files(directory=None, output_json=None):
                 treatment_name = match.group(1).replace('_', ' ').upper()
                 order = int(match.group(2))
                 text_filename = f"{treatment_name.lower().replace(' ', '_')}.txt"
+                text_filepath = os.path.join(directory, text_filename)
 
-                # Write a placeholder text to the .txt file
-                placeholder_text = "Here is some description text that will replace the image when clicked."
-                description_file = os.path.join(directory, text_filename)
-                if not os.path.exists(description_file):  # Check if file doesn't exist to avoid overwriting
-                    with open(description_file, 'w', encoding='utf-8') as file:
-                        file.write(placeholder_text)
-
+                # Read the content of the text file
+                try:
+                    with open(text_filepath, 'r', encoding='utf-8') as file:
+                        description_text = file.read()
+                except FileNotFoundError:
+                    description_text = "Description not found."
+                
                 # Append data for JSON
                 traitement = {
                     'name': treatment_name,
                     'image': filename,
                     'order': order,
-                    'txt_file': text_filename,  # Adding text file name
-                    'txt': placeholder_text  # Adding placeholder text directly
+                    'txt_file': text_filename,
+                    'txt': description_text
                 }
                 traitements.append(traitement)
 
@@ -51,7 +51,7 @@ def generate_traitement_podo_files(directory=None, output_json=None):
         json.dump(traitements, f, indent=4, ensure_ascii=False)
     
     print(f'JSON file {output_json} successfully generated.')
-    print(f'Description files generated in {directory}.')
+    print(f'Description files confirmed in {directory}.')
 
 if __name__ == "__main__":
     generate_traitement_podo_files()
