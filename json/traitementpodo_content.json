@@ -4,14 +4,14 @@
         "image": "Soin de pédicurie_1.jpg",
         "order": 1,
         "txt_file": "Soin de pédicurie_1.txt",
-        "txt": "Soin de pédicurie = soin médical qui traite les affections touchant à la peau et aux ongles du pied."
+        "txt": "Soin médical qui traite les affections touchant à la peau et aux ongles du pied."
     },
     {
         "name": "ORTHOPLASTIE",
         "image": "Orthoplastie_2.jpg",
         "order": 2,
         "txt_file": "Orthoplastie_2.txt",
-        "txt": "Orthoplastie = orthèse pour orteils. Elle a pour but de compenser une fonction absente ou déficitaire d’un ou plusieurs orteils."
+        "txt": "Orthèse pour orteils. Elle a pour but de compenser une fonction absente ou déficitaire d’un ou plusieurs orteils."
     },
     {
         "name": "SEMELLES ORTHOPÉDIQUES",
@@ -25,13 +25,13 @@
         "image": "Verrue plantaire_4.jpg",
         "order": 4,
         "txt_file": "Verrue plantaire_4.txt",
-        "txt": "Verrue plantaire = depuis le printemps 2024, le traitement de verrues plantaires (au pied) est pris en charge par l’assurance maladie et les mutuelles."
+        "txt": "Depuis le printemps 2024, le traitement de verrues plantaires (au pied) est pris en charge par l’assurance maladie et les mutuelles."
     },
     {
         "name": "ORTHONYXIE",
         "image": "Orthonyxie_5.jpg",
         "order": 5,
         "txt_file": "Orthonyxie_5.txt",
-        "txt": "Orthonyxie = orthèse unguéale par correction de la courbure des ongles. Destinée aux patients souffrant d’ongles incarnés ou déformés."
+        "txt": "Orthèse unguéale par correction de la courbure des ongles. Destinée aux patients souffrant d’ongles incarnés ou déformés."
     }
 ]
