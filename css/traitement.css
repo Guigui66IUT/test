@@ -1,15 +1,6 @@
 :root {
-	/*========== Colors ==========*/
-	/*Color mode HSL(hue, saturation, lightness)*/
-	/* --text-color: hsl(0, 0%, 35%); */
 	--text-color: #1E3F66;
-	
 }
-
-
-
-
-
 
 html {
 	scroll-behavior: smooth;
@@ -22,9 +13,10 @@ html {
 
 .img-box img {
 	display: block;
-	width: 100%; /* Adapter la largeur à 100% du conteneur */
-	height: auto; /* Adapter la hauteur à 100% du conteneur */
+	width: 100%; 
+	height: auto; 
 	object-fit: cover;
+	transition: transform 0.5s ease, opacity 0.5s ease; /* Transition ajoutée ici */
 }
 
 .container {
@@ -42,9 +34,9 @@ html {
 }
 
 .card {
-	display: flex; /* Utiliser Flexbox pour aligner le contenu */
-	flex-direction: column; /* Aligner le contenu en colonne */
-	justify-content: center; /* Aligner verticalement le contenu au centre */
+	display: flex; 
+	flex-direction: column; 
+	justify-content: center; 
 	overflow: hidden;
 	border-radius: 0.6rem;
 	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
@@ -54,30 +46,31 @@ html {
 }
 
 .card-content {  
-	display: flex; /* Utiliser Flexbox pour centrer le contenu */
-	align-items: center; /* Centrer verticalement */
-	justify-content: center; /* Centrer horizontalement */
+	display: flex; 
+	align-items: center; 
+	justify-content: center; 
 	background-color: var(--text-color);
 	color: #fff;
 	padding: 1.2rem 0;
 	transition: height 0.7s ease;
-	flex-grow: 1; /* Permettre au contenu de s'étendre pour remplir l'espace disponible */
+	flex-grow: 1; 
 }
-
 
 .card-content h1 {
 	font-size: 1rem;
 	font-weight: 600;
 	text-transform: capitalize;
-	margin: 0; /* Enlever les marges par défaut */
+	margin: 0; 
+}
+
+.card:hover .img-box img {
+    transform: scale(1.1); /* Zoom avant */
+    opacity: 0.8; /* Diminution de l'opacité */
 }
 
 @media (max-width: 1024px) {
 	.grid, .grate {
 		grid-template-columns: repeat(2, 1fr);
-	}
-	.card-content h1 {
-		font-size: 1rem;
 	}
 }
 
@@ -85,13 +78,10 @@ html {
 	.grid, .grate {
 		grid-template-columns: repeat(1, 1fr);
 	}
-	.card-content h1 {
-		font-size: 1rem;
-	}
 }
 
 @media (max-width: 480px) {
 	.card-content h1 {
 	  font-size: 1rem;
 	}
-  }
+}
