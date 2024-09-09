@@ -1,15 +1,7 @@
 :root {
 	/*========== Colors ==========*/
-	/*Color mode HSL(hue, saturation, lightness)*/
-	/* --text-color: hsl(0, 0%, 35%); */
 	--text-color: #1E3F66;
-	
 }
-
-
-
-
-
 
 html {
 	scroll-behavior: smooth;
@@ -18,13 +10,15 @@ html {
 .img-box {
 	width: 100%;
 	overflow: hidden;
+	position: relative; /* Pour gérer le positionnement de l'image et du contenu */
 }
 
 .img-box img {
 	display: block;
-	width: 100%; /* Adapter la largeur à 100% du conteneur */
-	height: auto; /* Adapter la hauteur à 100% du conteneur */
+	width: 100%;
+	height: auto;
 	object-fit: cover;
+	transition: transform 0.5s ease-in-out; /* Ajouter une transition fluide */
 }
 
 .container {
@@ -42,9 +36,9 @@ html {
 }
 
 .card {
-	display: flex; /* Utiliser Flexbox pour aligner le contenu */
-	flex-direction: column; /* Aligner le contenu en colonne */
-	justify-content: center; /* Aligner verticalement le contenu au centre */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	overflow: hidden;
 	border-radius: 0.6rem;
 	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
@@ -53,23 +47,35 @@ html {
 	position: relative;
 }
 
-.card-content {  
-	display: flex; /* Utiliser Flexbox pour centrer le contenu */
-	align-items: center; /* Centrer verticalement */
-	justify-content: center; /* Centrer horizontalement */
+.card-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: var(--text-color);
 	color: #fff;
 	padding: 1.2rem 0;
-	transition: height 0.7s ease;
-	flex-grow: 1; /* Permettre au contenu de s'étendre pour remplir l'espace disponible */
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	transform: translateY(100%); /* Le contenu est en dehors de la vue au départ */
+	transition: transform 0.5s ease-in-out;
 }
-
 
 .card-content h1 {
 	font-size: 1rem;
 	font-weight: 600;
 	text-transform: capitalize;
-	margin: 0; /* Enlever les marges par défaut */
+	margin: 0;
+}
+
+.card:hover .card-content {
+	transform: translateY(0); /* Le contenu remonte pour couvrir l'image */
+}
+
+.card:hover .img-box img {
+	transform: scale(1.1); /* Agrandir légèrement l'image lors du survol */
 }
 
 @media (max-width: 1024px) {
@@ -94,4 +100,4 @@ html {
 	.card-content h1 {
 	  font-size: 1rem;
 	}
-  }
+}
