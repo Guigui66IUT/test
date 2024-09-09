@@ -72,6 +72,17 @@ html {
 	margin: 0; /* Enlever les marges par défaut */
 }
 
+
+.text-content {
+    padding: 1.2rem;
+    display: none; /* Hidden by default */
+    color: #fff; /* Assuming white text is preferable */
+    text-align: center;
+}
+
+
+
+
 @media (max-width: 1024px) {
 	.grid, .grate {
 		grid-template-columns: repeat(2, 1fr);
