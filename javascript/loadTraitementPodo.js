@@ -12,14 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
             data.forEach(traitement => {
                 const traitementHTML = `
                     <div class="card">
-                        <div class="img-box">
-                            <img src="../../../podologues/traitement/${traitement.image}" alt="${traitement.name}">
-                        </div>
-                        <div class="card-content">
-                            <h1 class="card-heading">${traitement.name}</h1>
-                        </div>
-                        <div class="text-content" style="display: none;">
-                            <p>${traitement.txt}</p>
+                        <div class="trait-podo">
+                            <div class="img-box">
+                                <img src="../../../podologues/traitement/${traitement.image}" alt="${traitement.name}">
+                            </div>
+                            <div class="card-content">
+                                <h1 class="card-heading">${traitement.name}</h1>
+                            </div>
+                            <div class="text-content" style="display: none;">
+                                <p>${traitement.txt}</p>
+                            </div>
                         </div>
                     </div>
                 `;

@@ -75,11 +75,11 @@ html {
 }
 
 
-.grate.card-content:hover {
+.trait-podo .card-content:hover {
 	background-color: var(--header);
 }
 
-.grate.text-content {
+.trait-podo .text-content {
     padding: 1.2rem;
     display: none; /* Hidden by default */
     color: var(--black); /* Assuming white text is preferable */
