@@ -75,11 +75,11 @@ html {
 }
 
 
-.card-content:hover {
+.grate.card-content:hover {
 	background-color: var(--header);
 }
 
-.text-content {
+.grate.text-content {
     padding: 1.2rem;
     display: none; /* Hidden by default */
     color: var(--black); /* Assuming white text is preferable */
