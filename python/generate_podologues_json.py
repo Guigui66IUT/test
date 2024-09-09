@@ -2,9 +2,23 @@ import os
 import json
 import re
 
-def get_last_name(full_name):
-    # Récupérer le dernier mot avant le dernier espace comme nom de famille
-    return full_name.rsplit(' ', 1)[-1]
+def get_folder_number(folder_name):
+    """
+    Récupérer le numéro dans le nom du dossier, s'il existe.
+    Par exemple, pour "Podologue_1", il renverra 1.
+    Si aucun numéro n'est trouvé, renvoyer un nombre élevé pour qu'il soit trié en dernier.
+    """
+    match = re.search(r'(\d+)', folder_name)
+    if match:
+        return int(match.group(1))
+    return float('inf')  # Retourner un grand nombre si aucun numéro n'est trouvé
+
+def remove_number_from_name(folder_name):
+    """
+    Enlever le numéro du nom du podologue.
+    Par exemple, "Podologue_1" devient "Podologue".
+    """
+    return re.sub(r'_\d+', '', folder_name).replace('_', ' ').strip()
 
 def generate_podologues_json(directory=None, output=None):
     # Obtenir le répertoire du script en cours d'exécution
@@ -20,7 +34,7 @@ def generate_podologues_json(directory=None, output=None):
         podologue_path = os.path.join(directory, podologue_name)
         if os.path.isdir(podologue_path):
             podologue = {
-                'name': podologue_name.replace('_', ' '),
+                'name': remove_number_from_name(podologue_name),  # Enlever le numéro du nom
                 'image': None,
                 'pagesjaunes': None,
                 'texts': [],
@@ -55,8 +69,8 @@ def generate_podologues_json(directory=None, output=None):
 
             podologues.append(podologue)
 
-    # Trier les podologues par nom de famille
-    podologues = sorted(podologues, key=lambda x: get_last_name(x['name']))
+    # Trier les podologues par numéro dans le nom du dossier
+    podologues = sorted(podologues, key=lambda x: get_folder_number(x['name']))
 
     with open(output, 'w', encoding='utf-8') as f:
         json.dump(podologues, f, indent=4, ensure_ascii=False)
