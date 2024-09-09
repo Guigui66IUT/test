@@ -1,31 +1,5 @@
 [
     {
-        "name": "Florence RIDDE",
-        "image": "Florence RIDDE_2\\logo-ped copy.jpg",
-        "pagesjaunes": "https://www.pagesjaunes.fr/pros/62320766",
-        "texts": [
-            {
-                "filename": "Spécialisations, compétences et services",
-                "content": [],
-                "order": 1
-            },
-            {
-                "filename": "Rendez-vous",
-                "content": [
-                    "Consultation sur rendez-vous",
-                    "Visites à domicile"
-                ],
-                "order": 2
-            },
-            {
-                "filename": "Horaires au cabinet",
-                "content": [],
-                "order": 3
-            }
-        ],
-        "pdf": null
-    },
-    {
         "name": "Marie WILS",
         "image": "Marie WILS_1\\logo-ped.jpg",
         "pagesjaunes": "https://www.pagesjaunes.fr/pros/53812294",
@@ -57,6 +31,32 @@
                     "Samedi\tFermé",
                     "Dimanche\tFermé"
                 ],
+                "order": 3
+            }
+        ],
+        "pdf": null
+    },
+    {
+        "name": "Florence RIDDE",
+        "image": "Florence RIDDE_2\\logo-ped copy.jpg",
+        "pagesjaunes": "https://www.pagesjaunes.fr/pros/62320766",
+        "texts": [
+            {
+                "filename": "Spécialisations, compétences et services",
+                "content": [],
+                "order": 1
+            },
+            {
+                "filename": "Rendez-vous",
+                "content": [
+                    "Consultation sur rendez-vous",
+                    "Visites à domicile"
+                ],
+                "order": 2
+            },
+            {
+                "filename": "Horaires au cabinet",
+                "content": [],
                 "order": 3
             }
         ],
