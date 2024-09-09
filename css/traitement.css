@@ -18,10 +18,6 @@ html {
 .img-box {
 	width: 100%;
 	overflow: hidden;
-
-
-	transition: all 0.3s ease-in-out; /* Pour une transition douce ttttttttttttttttttttttttttttttttttttttt */
-
 }
 
 .img-box img {
@@ -67,15 +63,6 @@ html {
 	transition: height 0.7s ease;
 	flex-grow: 1; /* Permettre au contenu de s'étendre pour remplir l'espace disponible */
 }
-
-
-
-/* Effet de survol pour agrandir l'image et combler la box */
-.card-content:hover ~ .img-box {
-    height: 300px; /* La nouvelle hauteur de la box au survol */
-    transition: height 0.3s ease-in-out; /* Animation douce de la hauteur */
-}
-
 
 
 .card-content h1 {
