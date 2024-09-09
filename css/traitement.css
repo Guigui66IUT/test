@@ -1,13 +1,9 @@
-.card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 0.6rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
-    cursor: pointer;
-    transition: 0.2s;
+:root {
+    --text-color: #1E3F66;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .img-box {
@@ -21,6 +17,18 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 0.6rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 .card-content {
@@ -38,7 +46,7 @@
 }
 
 .card:hover .card-content {
-    height: 100%; /* Recouvrir uniquement l'image */
+    height: 100%; /* Recouvre l'image lors du survol */
 }
 
 .card-content h1 {
@@ -48,7 +56,16 @@
     margin: 0;
 }
 
-/* Média queries pour adapter les cartes selon la taille de l'écran */
+.grid, .grate {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    grid-gap: 2rem;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
 @media (max-width: 1024px) {
     .grid, .grate {
         grid-template-columns: repeat(2, 1fr);
@@ -62,6 +79,12 @@
     .grid, .grate {
         grid-template-columns: repeat(1, 1fr);
     }
+    .card-content h1 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
     .card-content h1 {
         font-size: 1rem;
     }
