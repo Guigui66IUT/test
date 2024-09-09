@@ -4,34 +4,34 @@
         "image": "Soin de pédicurie_1.jpg",
         "order": 1,
         "txt_file": "soin_de_pédicurie.txt",
-        "txt": "Here is some description text that will replace the image when clicked."
+        "t": "Here is some description text that will replace the image when clicked."
     },
     {
         "name": "ORTHOPLASTIE",
         "image": "Orthoplastie_2.jpg",
         "order": 2,
         "txt_file": "orthoplastie.txt",
-        "txt": "Here is some description text that will replace the image when clicked."
+        "t": "Here is some description text that will replace the image when clicked."
     },
     {
         "name": "SEMELLES ORTHOPÉDIQUES",
         "image": "Semelles orthopédiques_3.jpg",
         "order": 3,
         "txt_file": "semelles_orthopédiques.txt",
-        "txt": "Here is some description text that will replace the image when clicked."
+        "t": "Here is some description text that will replace the image when clicked."
     },
     {
         "name": "VERRUE PLANTAIRE",
         "image": "Verrue plantaire_4.jpg",
         "order": 4,
         "txt_file": "verrue_plantaire.txt",
-        "txt": "Here is some description text that will replace the image when clicked."
+        "t": "Here is some description text that will replace the image when clicked."
     },
     {
         "name": "ORTHONYXIE",
         "image": "Orthonyxie_5.jpg",
         "order": 5,
         "txt_file": "orthonyxie.txt",
-        "txt": "Here is some description text that will replace the image when clicked."
+        "t": "Here is some description text that will replace the image when clicked."
     }
 ]

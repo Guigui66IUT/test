@@ -39,7 +39,7 @@ def generate_traitement_podo_files(directory=None, output_json=None):
                     'image': filename,
                     'order': order,
                     'txt_file': text_filename,
-                    'txt': description_text
+                    't': description_text
                 }
                 traitements.append(traitement)
 
