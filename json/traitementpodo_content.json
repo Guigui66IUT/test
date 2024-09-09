@@ -3,35 +3,35 @@
         "name": "SOIN DE PÉDICURIE",
         "image": "Soin de pédicurie_1.jpg",
         "order": 1,
-        "txt_file": "soin_de_pédicurie.txt",
-        "t": "Here is some description text that will replace the image when clicked."
+        "txt_file": "Soin de pédicurie_1.txt",
+        "txt": "Soin de pédicurie = soin médical qui traite les affections touchant à la peau et aux ongles du pied.\n"
     },
     {
         "name": "ORTHOPLASTIE",
         "image": "Orthoplastie_2.jpg",
         "order": 2,
-        "txt_file": "orthoplastie.txt",
-        "t": "Here is some description text that will replace the image when clicked."
+        "txt_file": "Orthoplastie_2.txt",
+        "txt": "Orthoplastie = orthèse pour orteils. Elle a pour but de compenser une fonction absente ou déficitaire d’un ou plusieurs orteils."
     },
     {
         "name": "SEMELLES ORTHOPÉDIQUES",
         "image": "Semelles orthopédiques_3.jpg",
         "order": 3,
-        "txt_file": "semelles_orthopédiques.txt",
-        "t": "Here is some description text that will replace the image when clicked."
+        "txt_file": "Semelles orthopédiques_3.txt",
+        "txt": "Semelles orthopédiques ou orthèse plantaire sont des dispositifs médicaux réalisés sur mesure et à visée de correction."
     },
     {
         "name": "VERRUE PLANTAIRE",
         "image": "Verrue plantaire_4.jpg",
         "order": 4,
-        "txt_file": "verrue_plantaire.txt",
-        "t": "Here is some description text that will replace the image when clicked."
+        "txt_file": "Verrue plantaire_4.txt",
+        "txt": "Verrue plantaire = depuis le printemps 2024, le traitement de verrues plantaires (au pied) est pris en charge par l’assurance maladie et les mutuelles."
     },
     {
         "name": "ORTHONYXIE",
         "image": "Orthonyxie_5.jpg",
         "order": 5,
-        "txt_file": "orthonyxie.txt",
-        "t": "Here is some description text that will replace the image when clicked."
+        "txt_file": "Orthonyxie_5.txt",
+        "txt": "Orthonyxie = orthèse unguéale par correction de la courbure des ongles. Destinée aux patients souffrant d’ongles incarnés ou déformés."
     }
 ]

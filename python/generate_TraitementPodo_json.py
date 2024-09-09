@@ -23,7 +23,7 @@ def generate_traitement_podo_files(directory=None, output_json=None):
             if match:
                 treatment_name = match.group(1).replace('_', ' ').upper()
                 order = int(match.group(2))
-                text_filename = f"{treatment_name.lower().replace(' ', '_')}.txt"
+                text_filename = filename[:-4] + '.txt'  # Replace .jpg with .txt
                 text_filepath = os.path.join(directory, text_filename)
 
                 # Read the content of the text file
@@ -39,7 +39,7 @@ def generate_traitement_podo_files(directory=None, output_json=None):
                     'image': filename,
                     'order': order,
                     'txt_file': text_filename,
-                    't': description_text
+                    'txt': description_text
                 }
                 traitements.append(traitement)
 
