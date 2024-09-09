@@ -10,12 +10,13 @@ html {
 .img-box {
     width: 100%;
     overflow: hidden;
+    position: relative; /* Pour que les éléments à l'intérieur soient relatifs à la carte */
 }
 
 .img-box img {
     display: block;
     width: 100%; /* Adapter la largeur à 100% du conteneur */
-    height: auto;
+    height: auto; /* Conserver les proportions de l'image */
     object-fit: cover;
     z-index: 1; /* Image en dessous du texte */
 }
@@ -35,8 +36,7 @@ html {
 }
 
 .card {
-    position: relative;
-    width: 100%;
+    position: relative; /* Permettre au contenu absolu d'être basé sur la carte */
     overflow: hidden;
     border-radius: 0.6rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
@@ -48,17 +48,17 @@ html {
     position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
+    width: 100%; /* Fixer la largeur de .card-content à celle de .img-box */
     background-color: var(--text-color);
     color: #fff;
     padding: 1.2rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Occuper toute la largeur de la carte */
     height: 0; /* Hauteur initiale à 0 pour cacher le contenu */
     transition: height 0.3s ease; /* Animation fluide */
     z-index: 2; /* Assurer que le texte est au-dessus de l'image */
+    box-sizing: border-box; /* S'assurer que le padding n'affecte pas la largeur totale */
 }
 
 /* Lors du survol de la carte, le contenu recouvre l'image */
@@ -70,7 +70,7 @@ html {
     font-size: 1rem;
     font-weight: 600;
     text-transform: capitalize;
-    margin: 0; /* Enlever les marges par défaut */
+    margin: 0;
 }
 
 @media (max-width: 1024px) {
