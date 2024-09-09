@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h1 class="card-heading">${traitement.name}</h1>
                         </div>
                         <div class="text-content" style="display: none;">
-                            <p>Here is some description text that will replace the image when clicked.</p>
+                            <p>${traitement.txt}</p>
                         </div>
                     </div>
                 `;
