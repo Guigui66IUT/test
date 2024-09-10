@@ -49,17 +49,6 @@ footer{
     color: white;
 }
 
-.l-list{
-    padding: 0;
-}
-
-.l-list li{
-    display: block;
-    text-align: center;
-    margin: 5px 0px;
-    color: white;
-}
-
 .contact{
     padding: 0;
 }
@@ -98,7 +87,7 @@ footer{
         margin-top: 10px!important;
     }
 
-    .p-list li , .l-list li , .contact li{
+    .p-list li , .contact li{
         text-align: left;
     }
     .social-media{
