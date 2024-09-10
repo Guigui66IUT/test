@@ -8,12 +8,6 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-html, body {
-    height: 100%;   /* Assure que le html et body prennent toute la hauteur */
-    margin: 0;      /* Supprime les marges */
-    padding: 0;     /* Supprime les paddings */
-}
-
 footer {
     width: 100%;
     background: var(--container-color);
@@ -47,14 +41,12 @@ li {
     color: var(--text-color);
 }
 
-.iframe {
-    width: 100vw;    /* Prend toute la largeur de la fenêtre */
-    height: 100vh;   /* Prend toute la hauteur de la fenêtre */
-    position: absolute; /* Supprime les contraintes de l'élément parent */
-    top: 0;           /* Positionné tout en haut */
-    left: 0;          /* Positionné tout à gauche */
-    border: none;     /* Supprime la bordure du cadre */
+.maps{
+    width: 100%;    /* Largeur à 100% de la fenêtre du navigateur */
+    height: 100%;   /* Hauteur à 100% de la fenêtre du navigateur */
+    position: absolute; /* Positionnement absolu pour éviter toute contrainte de l'élément parent */
 }
+
 
 @media (max-width: 767px) {
     .footer-section {
