@@ -1,3 +1,15 @@
+/*=============== VARIABLES CSS ===============*/
+:root {
+	/*========== Colors ==========*/
+	/*Color mode HSL(hue, saturation, lightness)*/
+	--container-color: rgba(202, 234, 244, 0.8);
+
+}
+
+
+
+
+
 *{
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -5,7 +17,7 @@
 footer{
     width: 100%;
     height: auto;
-    background: #282828;
+    background: var(--container-color);
     padding-bottom: 20px;
 }
 
