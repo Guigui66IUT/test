@@ -4,39 +4,9 @@
         "logo": "Diététicienne/logo.png",
         "personnel": [
             {
-                "name": "Theo BERTOGNA",
+                "name": "Sophie MENDEZ",
                 "documents": [],
-                "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/amandine-minaud",
-                "texts": [
-                    {
-                        "filename": "Spécialisations, compétences et services",
-                        "content": [
-                            "neuille bien humide"
-                        ],
-                        "order": 1
-                    },
-                    {
-                        "filename": "Rendez-vous",
-                        "content": [
-                            "bing chilling"
-                        ],
-                        "order": 2
-                    },
-                    {
-                        "filename": "Horaires au cabinet",
-                        "content": [
-                            "ching chong"
-                        ],
-                        "order": 3
-                    }
-                ],
-                "pdf": null,
-                "image": "Theo BERTOGNA/logo-med.png"
-            },
-            {
-                "name": "Amandine MINAUD",
-                "documents": [],
-                "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/amandine-minaud",
+                "doctolib": "https://www.dietetiquenutrition66.com/",
                 "texts": [
                     {
                         "filename": "Spécialisations, compétences et services",
@@ -45,24 +15,17 @@
                     },
                     {
                         "filename": "Rendez-vous",
-                        "content": [
-                            "mmmhh"
-                        ],
+                        "content": [],
                         "order": 2
                     },
                     {
                         "filename": "Horaires au cabinet",
-                        "content": [
-                            "test"
-                        ],
+                        "content": [],
                         "order": 3
                     }
                 ],
-                "pdf": {
-                    "path": "../../../ajoutprofession/Diététicienne/Amandine MINAUD/diabetes.pdf",
-                    "name": "diabetes.pdf"
-                },
-                "image": "Amandine MINAUD/logo-med.png"
+                "pdf": null,
+                "image": "Sophie MENDEZ/sophie-hp.jpg"
             }
         ]
     },
