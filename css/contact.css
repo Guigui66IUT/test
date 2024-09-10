@@ -30,14 +30,6 @@ footer{
     padding-bottom: 20px;
 }
 
-
-
-.about{
-    width: 85%;
-    color: var(--black);
-    margin-top: 5px;
-}
-
 .heading{
     margin-top: 20px;
     font-size: 38px;
@@ -46,27 +38,22 @@ footer{
     text-align: center;
 }
 
-.p-list{
+
+.about, .p-list, .contact{
     padding: 0;
 }
 
-.p-list li{
+
+
+
+.p-list li, .contact li{
     display: block;
     text-align: center;
     margin: 5px 0px;
     color: var(--black);
 }
 
-.contact{
-    padding: 0;
-}
 
-.contact li{
-    display: block;
-    text-align: center;
-    margin: 5px 0px;
-    color: var(--black);
-}
 
 
 .copy{
