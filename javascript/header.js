@@ -21,27 +21,36 @@ document.addEventListener("DOMContentLoaded", function() {
                 professionalDropdown.classList.add('active');
             }
 
-            // Charger dynamiquement les nouvelles professions
+            // Charger dynamiquement les professions générales et spécifiques
             fetch('/json/professions.json')
                 .then(response => response.json())
                 .then(professions => {
-                    const newProfessionsContainer = document.getElementById('para-medical');
+                    const generalProfessionsContainer = document.getElementById('para-medical'); // Conteneur pour les professions générales
+                    const specificProfessionsContainer = document.getElementById('specific-professions'); // Conteneur pour les professions spécifiques
+
                     professions.forEach(prof => {
-                        // `prof` est un objet avec une propriété `profession`
                         const professionName = prof.profession;
                         const li = document.createElement('li');
                         const a = document.createElement('a');
-                        a.href = `/ajout_para-med/modele.html?profession=${professionName}`;
+                        a.href = `/ajoutprofession/modele.html?profession=${professionName}`;
                         a.textContent = professionName.charAt(0).toUpperCase() + professionName.slice(1);
                         li.appendChild(a);
-                        newProfessionsContainer.appendChild(li);
+
+                        // Si la profession est de type 'general', ajouter au conteneur général
+                        if (prof.type === 'general') {
+                            generalProfessionsContainer.appendChild(li);
+                        } 
+                        // Si la profession est de type 'specific', ajouter au conteneur spécifique
+                        else if (prof.type === 'specific') {
+                            specificProfessionsContainer.appendChild(li);
+                        }
 
                         if (window.location.search.includes(`profession=${professionName}`)) {
                             a.classList.add('active');
                         }
                     });
                 })
-                .catch(error => console.error('Error loading new professions:', error));
+                .catch(error => console.error('Error loading professions:', error));
         })
         .catch(error => console.error('Error loading header:', error));
 });
