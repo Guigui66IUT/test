@@ -31,7 +31,37 @@
     },
     {
         "profession": "Psychologue",
-        "logo": "Psychologue/blanc.png",
+        "logo": "Psychologue/transparent.jpg",
+        "personnel": [
+            {
+                "name": "Cristel POVEDA",
+                "documents": [],
+                "doctolib": "",
+                "texts": [
+                    {
+                        "filename": "Spécialisations, compétences et services",
+                        "content": [],
+                        "order": 1
+                    },
+                    {
+                        "filename": "Rendez-vous",
+                        "content": [],
+                        "order": 2
+                    },
+                    {
+                        "filename": "Horaires au cabinet",
+                        "content": [],
+                        "order": 3
+                    }
+                ],
+                "pdf": null,
+                "image": "Cristel POVEDA/cristal.jpg"
+            }
+        ]
+    },
+    {
+        "profession": "Psychologue copy",
+        "logo": "Psychologue copy/3793482-modele-de-grille-transparente-pour-vecteur-de-fond-vectoriel.jpg",
         "personnel": [
             {
                 "name": "Cristel POVEDA",
