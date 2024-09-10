@@ -3,24 +3,19 @@ import json
 import re
 
 def get_last_name(full_name):
-    # Extraire le dernier mot comme nom de famille
     return full_name.rsplit(' ', 1)[-1]
 
 def format_phone_number(phone_number):
-    # Ajouter des espaces tous les deux chiffres
     return ' '.join([phone_number[i:i+2] for i in range(0, len(phone_number), 2)])
 
 def generate_professions_with_personnel(directory=None, output=None):
-    # Obtenir le répertoire du script
     script_directory = os.path.dirname(os.path.abspath(__file__))
 
-    # Définir les chemins par défaut
     directory = directory or os.path.join(script_directory, '../ajoutprofession')
     output = output or os.path.join(script_directory, '../json/professions.json')
 
     professions = []
 
-    # Parcourir les dossiers ajout_med et ajout_para-med
     for subdirectory in ['ajout_med', 'ajout_para-med']:
         subdirectory_path = os.path.join(directory, subdirectory)
 
@@ -31,13 +26,11 @@ def generate_professions_with_personnel(directory=None, output=None):
                 personnel_list = []
                 profession_logo = None
 
-                # Rechercher un logo de profession
                 for file in os.listdir(profession_path):
                     if file.endswith('.png') or file.endswith('.jpg'):
                         profession_logo = os.path.join(subdirectory, profession, file).replace('\\', '/')
                         break
 
-                # Parcourir les dossiers de personnel dans chaque profession
                 for personnel in os.listdir(profession_path):
                     personnel_path = os.path.join(profession_path, personnel)
 
@@ -54,7 +47,6 @@ def generate_professions_with_personnel(directory=None, output=None):
                         for filename in os.listdir(personnel_path):
                             file_path = os.path.join(personnel_path, filename)
 
-                            # Lire le fichier doctolib.txt ou pagesjaunes.txt
                             if filename in ['doctolib.txt', 'pagesjaunes.txt']:
                                 with open(file_path, 'r', encoding='utf-8') as f:
                                     content = f.read().strip()
@@ -88,18 +80,15 @@ def generate_professions_with_personnel(directory=None, output=None):
 
                 personnel_list = sorted(personnel_list, key=lambda x: get_last_name(x['name']))
 
-                # Déterminer le type de profession (général ou spécifique)
                 profession_type = 'general' if subdirectory == 'ajout_med' else 'specific'
 
-                # Ajouter la profession au JSON avec le type
                 professions.append({
                     'profession': profession.replace('_', ' '),
                     'logo': profession_logo,
                     'personnel': personnel_list,
-                    'type': profession_type  # Ajouter le type ici
+                    'type': profession_type
                 })
 
-    # Enregistrer dans le fichier professions.json
     with open(output, 'w', encoding='utf-8') as f:
         json.dump(professions, f, indent=4, ensure_ascii=False)
 

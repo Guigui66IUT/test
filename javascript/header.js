@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(data => {
             document.querySelector('#main-header').innerHTML = data;
 
-            // Activer le lien de navigation correspondant
+            // Ajouter la classe active au lien de navigation correspondant
             const path = window.location.pathname;
+
             const navLinks = document.querySelectorAll('nav a');
             navLinks.forEach(link => {
                 if (link.getAttribute('href') === path) {
@@ -13,12 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
-            if (window.location.pathname.startsWith('/html/profession/') || window.location.pathname.startsWith('/ajoutprofession/')) {
-                const professionalDropdown = document.querySelector('.dropdown > a');
-                professionalDropdown.classList.add('active');
-            }
-
-            // Charger les professions
+            // Charger dynamiquement les professions générales et spécifiques
             fetch('/json/professions.json')
                 .then(response => response.json())
                 .then(professions => {
@@ -33,12 +29,14 @@ document.addEventListener("DOMContentLoaded", function() {
                         a.textContent = professionName.charAt(0).toUpperCase() + professionName.slice(1);
                         li.appendChild(a);
 
+                        // Déterminer si la profession est générale ou spécifique
                         if (prof.type === 'general') {
                             generalProfessionsContainer.appendChild(li);
                         } else if (prof.type === 'specific') {
                             specificProfessionsContainer.appendChild(li);
                         }
 
+                        // Ajouter la classe active si la profession correspond à l'URL
                         if (window.location.search.includes(`profession=${professionName}`)) {
                             a.classList.add('active');
                         }
