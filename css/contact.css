@@ -3,7 +3,6 @@
 	/*========== Colors ==========*/
 	/*Color mode HSL(hue, saturation, lightness)*/
 	--container-color: rgba(202, 234, 244, 0.8);
-	--container-color: rgba(0, 0, 0);
 	--black: rgba(0, 0, 0);
 	--blue: #007AA9;
 }
