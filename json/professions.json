@@ -1,7 +1,7 @@
 [
     {
-        "profession": "Chiropracteur",
-        "logo": "Chiropracteur/logo-chiropracteur.png",
+        "profession": "Diététicienne",
+        "logo": "Diététicienne/logo.png",
         "personnel": [
             {
                 "name": "Theo BERTOGNA",
@@ -59,46 +59,41 @@
                     }
                 ],
                 "pdf": {
-                    "path": "../../../ajoutprofession/Chiropracteur/Amandine MINAUD/diabetes.pdf",
+                    "path": "../../../ajoutprofession/Diététicienne/Amandine MINAUD/diabetes.pdf",
                     "name": "diabetes.pdf"
                 },
                 "image": "Amandine MINAUD/logo-med.png"
-            },
-            {
-                "name": "att nom avec tiret du huit ou espaces ect",
-                "documents": [],
-                "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/amandine-minaud",
-                "texts": [
-                    {
-                        "filename": "Spécialisations, compétences et services",
-                        "content": [
-                            "neuille bien humide"
-                        ],
-                        "order": 1
-                    },
-                    {
-                        "filename": "Rendez-vous",
-                        "content": [
-                            "bing chilling"
-                        ],
-                        "order": 2
-                    },
-                    {
-                        "filename": "Horaires au cabinet",
-                        "content": [
-                            "ching chong"
-                        ],
-                        "order": 3
-                    }
-                ],
-                "pdf": null,
-                "image": "att nom avec tiret du huit ou espaces ect/logo-med.png"
             }
         ]
     },
     {
-        "profession": "Orthodontiste",
-        "logo": "Orthodontiste/blanc.png",
-        "personnel": []
+        "profession": "Psychologue",
+        "logo": "Psychologue/blanc.png",
+        "personnel": [
+            {
+                "name": "Cristel POVEDA",
+                "documents": [],
+                "doctolib": "",
+                "texts": [
+                    {
+                        "filename": "Spécialisations, compétences et services",
+                        "content": [],
+                        "order": 1
+                    },
+                    {
+                        "filename": "Rendez-vous",
+                        "content": [],
+                        "order": 2
+                    },
+                    {
+                        "filename": "Horaires au cabinet",
+                        "content": [],
+                        "order": 3
+                    }
+                ],
+                "pdf": null,
+                "image": "Cristel POVEDA/blanc-Photoroom.png"
+            }
+        ]
     }
 ]
