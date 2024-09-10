@@ -6,16 +6,23 @@ def get_last_name(full_name):
     # Récupérer le dernier mot avant le dernier espace comme nom de famille
     return full_name.rsplit(' ', 1)[-1]
 
-def update_professions_with_personnel():
-    base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    ajoutprofession_path = os.path.join(base_path, 'ajoutprofession')
-    json_path = os.path.join(base_path, 'json', 'professions.json')
+def format_phone_number(phone_number):
+    # Ajouter des espaces après chaque groupe de deux chiffres
+    return ' '.join([phone_number[i:i+2] for i in range(0, len(phone_number), 2)])
+
+def generate_professions_with_personnel(directory=None, output=None):
+    # Obtenir le répertoire du script en cours d'exécution
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+
+    # Définir les chemins par défaut si aucun n'est spécifié
+    directory = directory or os.path.join(script_directory, '../ajoutprofession')
+    output = output or os.path.join(script_directory, '../json/professions.json')
 
     professions = []
 
     # Parcourir les dossiers de profession
-    for profession in os.listdir(ajoutprofession_path):
-        profession_path = os.path.join(ajoutprofession_path, profession)
+    for profession in os.listdir(directory):
+        profession_path = os.path.join(directory, profession)
 
         if os.path.isdir(profession_path):
             personnel_list = []
@@ -24,7 +31,7 @@ def update_professions_with_personnel():
             # Rechercher un logo de profession
             for file in os.listdir(profession_path):
                 if file.endswith('.png') or file.endswith('.jpg'):
-                    profession_logo = os.path.join(profession, file).replace('\\', '/')
+                    profession_logo = os.path.join(profession, file).replace('\\', '/')  # Barres obliques pour les URL
                     break
 
             # Parcourir les dossiers de personnel dans chaque profession
@@ -35,8 +42,7 @@ def update_professions_with_personnel():
                     personnel_dict = {
                         'name': personnel.replace('_', ' '),
                         'documents': [],
-                        'doctolib': None,  # URL ou numéro Doctolib
-                        'phone': None,  # Pour stocker le numéro de téléphone s'il est présent
+                        'doctolib': None,  # URL Doctolib ou numéro de téléphone
                         'texts': [],  # Contiendra les textes triés par numéro
                         'pdf': None,  # Pour stocker les informations sur le PDF
                         'image': None  # Pour stocker les informations sur l'image
@@ -50,14 +56,15 @@ def update_professions_with_personnel():
                         if filename == 'doctolib.txt':
                             with open(file_path, 'r', encoding='utf-8') as f:
                                 content = f.read().strip()
-                                if re.match(r'^\d{10}$', content):  # Vérifier si c'est un numéro de téléphone
-                                    personnel_dict['phone'] = content
+                                # Si le contenu est un numéro de téléphone de 10 chiffres, le formater
+                                if re.match(r'^\d{10}$', content):
+                                    personnel_dict['doctolib'] = format_phone_number(content)
                                 else:
-                                    personnel_dict['doctolib'] = content
+                                    personnel_dict['doctolib'] = content  # Si ce n'est pas un numéro de téléphone, garder tel quel
 
                         # Lire et stocker les fichiers d'images
                         elif filename.endswith('.jpg') or filename.endswith('.png'):
-                            personnel_dict['image'] = os.path.join(personnel, filename).replace('\\', '/')
+                            personnel_dict['image'] = os.path.join(personnel, filename).replace('\\', '/')  # Barres obliques pour les URL
 
                         # Traiter les fichiers texte numérotés (1.txt, 2.txt, etc.)
                         elif re.match(r'.*\d+\.txt$', filename):
@@ -74,7 +81,7 @@ def update_professions_with_personnel():
                         # Lire les fichiers PDF
                         elif filename.endswith('.pdf'):
                             personnel_dict['pdf'] = {
-                                'path': os.path.join('..', '..', '..', 'ajoutprofession', profession, personnel, filename).replace('\\', '/'),
+                                'path': os.path.join('..', '..', '..', 'ajoutprofession', profession, personnel, filename).replace('\\', '/'),  # Chemin complet
                                 'name': filename
                             }
 
@@ -83,7 +90,7 @@ def update_professions_with_personnel():
 
                     personnel_list.append(personnel_dict)
 
-            # Trier les personnes par nom de famille (le deuxième nom)
+            # Trier les personnes par nom de famille
             personnel_list = sorted(personnel_list, key=lambda x: get_last_name(x['name']))
 
             professions.append({
@@ -93,8 +100,8 @@ def update_professions_with_personnel():
             })
 
     # Enregistrer la liste des professions avec leur personnel dans professions.json
-    with open(json_path, 'w', encoding='utf-8') as f:
+    with open(output, 'w', encoding='utf-8') as f:
         json.dump(professions, f, indent=4, ensure_ascii=False)
 
 if __name__ == '__main__':
-    update_professions_with_personnel()
+    generate_professions_with_personnel()
