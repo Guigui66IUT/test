@@ -44,9 +44,7 @@ footer{
 }
 
 
-
-
-.p-list li, .contact li{
+.about, .p-list li, .contact li{
     display: block;
     text-align: center;
     margin: 5px 0px;
