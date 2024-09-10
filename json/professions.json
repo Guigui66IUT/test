@@ -31,7 +31,7 @@
     },
     {
         "profession": "Psychologue",
-        "logo": "Psychologue/logo.png",
+        "logo": "Psychologue/vide.png",
         "personnel": [
             {
                 "name": "Cristel POVEDA",
@@ -40,12 +40,18 @@
                 "texts": [
                     {
                         "filename": "Spécialisations, compétences et services",
-                        "content": [],
+                        "content": [
+                            "Spécialisée en souffrance au travail",
+                            "Psychopracticienne Emdr"
+                        ],
                         "order": 1
                     },
                     {
                         "filename": "Rendez-vous",
-                        "content": [],
+                        "content": [
+                            "06 32 72 41 80",
+                            "cristelpoveda@hotmail.fr"
+                        ],
                         "order": 2
                     },
                     {
@@ -56,36 +62,6 @@
                 ],
                 "pdf": null,
                 "image": "Cristel POVEDA/cristal.jpg"
-            }
-        ]
-    },
-    {
-        "profession": "Psychologue - Copie",
-        "logo": "Psychologue - Copie/logo.png",
-        "personnel": [
-            {
-                "name": "Cristel POVEDA",
-                "documents": [],
-                "doctolib": "",
-                "texts": [
-                    {
-                        "filename": "Spécialisations, compétences et services",
-                        "content": [],
-                        "order": 1
-                    },
-                    {
-                        "filename": "Rendez-vous",
-                        "content": [],
-                        "order": 2
-                    },
-                    {
-                        "filename": "Horaires au cabinet",
-                        "content": [],
-                        "order": 3
-                    }
-                ],
-                "pdf": null,
-                "image": "Cristel POVEDA/logo.png"
             }
         ]
     }
