@@ -1,76 +1,51 @@
-/*=============== VARIABLES CSS ===============*/
 :root {
-	/*========== Colors ==========*/
-	/*Color mode HSL(hue, saturation, lightness)*/
-	--container-color: rgba(202, 234, 244, 0.8);
-	--black: rgba(0, 0, 0);
-	--blue: #007AA9;
+    --container-color: rgba(202, 234, 244, 0.8);
+    --text-color: rgba(0, 0, 0);
+    --blue: #007AA9;
 }
 
-
-
-
-
-*{
+* {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-footer{
+footer {
     width: 100%;
-    height: auto;
     background: var(--container-color);
-    padding-bottom: 20px;
+    padding: 20px 0;
 }
 
-.square{
-    width: 100%;
-    height: auto;
-    margin-top: 48px;
-    padding: 0px !important;
-    padding-bottom: 20px;
+.footer-section {
+    padding: 20px;
+    text-align: center;
 }
 
-.heading{
-    margin-top: 20px;
+.heading {
     font-size: 38px;
     color: var(--blue);
     font-weight: bold;
-    text-align: center;
 }
 
-
-.about, .p-list, .contact{
+ul {
+    list-style: none;
     padding: 0;
+    margin: 5px 0;
 }
 
+li {
+    margin: 5px 0;
+    color: var(--text-color);
+}
 
-.about, .p-list li, .contact li{
-    display: block;
+.copy {
     text-align: center;
-    margin: 5px 0px;
-    color: var(--black);
+    color: var(--text-color);
 }
 
-
-
-
-.copy{
-    text-align: center;
-    color: var(--black);
-    margin-top: 20px;
-}
-
-@media only screen and (max-width:767px){
-    .heading{
+@media (max-width: 767px) {
+    .footer-section {
+        padding: 10px;
+    }
+    .heading, ul li {
         text-align: left;
     }
-    .square{
-        padding: 0px 30px !important;
-        margin-top: 10px!important;
-    }
-
-    .p-list li , .contact li{
-        text-align: left;
-    }
-
 }
