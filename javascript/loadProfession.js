@@ -78,9 +78,9 @@ function displayProfessionData(professionData) {
             </ul>
         `).join('');
 
-        // Si le contenu de doctolib contient un numéro de téléphone formaté, l'afficher tel quel
+        // Si le contenu de doctolib contient un numéro de téléphone formaté, afficher le numéro sur le bouton
         const doctolibOrPhone = personnel.doctolib.match(/^\d{2} \d{2} \d{2} \d{2} \d{2}$/)
-            ? personnel.doctolib  // Afficher le numéro de téléphone
+            ? `<button class="book-appointment" disabled>${personnel.doctolib}</button>`  // Afficher le numéro sur un bouton désactivé
             : `<a href="${personnel.doctolib}" target="_blank">
                 <button class="book-appointment">Prendre rendez-vous</button>
               </a>`;
