@@ -5,7 +5,7 @@
         "pagesjaunes": "https://www.pagesjaunes.fr/pros/53812294",
         "texts": [
             {
-                "filename": "Spécialisations, compétences et services",
+                "filename": "Spécialisations et compétences",
                 "content": [
                     "Posturologie",
                     "Podologie pédiatrique"
@@ -23,13 +23,11 @@
             {
                 "filename": "Horaires au cabinet",
                 "content": [
-                    "Lundi\t09h00 - 19h00",
-                    "Mardi\t09h00 - 16h00",
-                    "Mercredi\t13h45 - 19h00",
-                    "Jeudi\t09h00 - 17h00",
-                    "Vendredi\t09h00 - 13h00",
-                    "Samedi\tFermé",
-                    "Dimanche\tFermé"
+                    "Lundi : 09h00 - 19h00",
+                    "Mardi : 09h00 - 16h00",
+                    "Mercredi : 13h45 - 19h00",
+                    "Jeudi : 09h00 - 17h00",
+                    "Vendredi : 09h00 - 13h00"
                 ],
                 "order": 3
             }
@@ -42,7 +40,7 @@
         "pagesjaunes": "https://www.pagesjaunes.fr/pros/62320766",
         "texts": [
             {
-                "filename": "Spécialisations, compétences et services",
+                "filename": "Spécialisations et compétences",
                 "content": [],
                 "order": 1
             },
@@ -56,7 +54,13 @@
             },
             {
                 "filename": "Horaires au cabinet",
-                "content": [],
+                "content": [
+                    "Lundi :",
+                    "Mardi :",
+                    "Mercredi :",
+                    "Jeudi :",
+                    "Vendredi :"
+                ],
                 "order": 3
             }
         ],
