@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
-            if (window.location.pathname.startsWith('/html/profession/') || window.location.pathname.startsWith('/ajoutprofession/')) {
+            if (window.location.pathname.startsWith('/html/profession/') || window.location.pathname.startsWith('/ajout_para-med/')) {
                 const professionalDropdown = document.querySelector('.dropdown > a');
                 professionalDropdown.classList.add('active');
             }
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         const professionName = prof.profession;
                         const li = document.createElement('li');
                         const a = document.createElement('a');
-                        a.href = `/ajoutprofession/modele.html?profession=${professionName}`;
+                        a.href = `/ajout_para-med/modele.html?profession=${professionName}`;
                         a.textContent = professionName.charAt(0).toUpperCase() + professionName.slice(1);
                         li.appendChild(a);
                         newProfessionsContainer.appendChild(li);
