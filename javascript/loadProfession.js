@@ -77,7 +77,7 @@ function displayProfessionData(professionData) {
                 </div>
                 <div class="${collapsibleContentClass}">
                     <div class="content-wrapper">
-                        <img src="../../../ajoutprofession/${encodeURIComponent(professionData.profession)}/${personnel.image}" alt="Profile Image" />
+                        <img src="/ajoutprofession/${encodeURIComponent(professionData.profession)}/${personnel.image}" alt="Profile Image" />
                         <div class="text-content">
                             ${textsHTML}
                             ${pdf}
