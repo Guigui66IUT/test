@@ -72,17 +72,6 @@ footer{
     color: white;
 }
 
-.social-media{
-    text-align: center;
-    margin-top: 20px;
-}
-
-.social-media li{
-    display: inline-flex;
-    color: white;
-    margin: 5px;
-    font-size: 25px;
-}
 
 .copy{
     text-align: center;
@@ -102,11 +91,5 @@ footer{
     .p-list li , .contact li{
         text-align: left;
     }
-    .social-media{
-        padding-left: 0!important;
-    }
 
-    .social-media li{
-        margin: 5px;
-    }
 }
