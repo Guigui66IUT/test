@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
             fetch('/json/professions.json')
                 .then(response => response.json())
                 .then(professions => {
-                    const newProfessionsContainer = document.getElementById('new-professions');
+                    const newProfessionsContainer = document.getElementById('para-medical');
                     professions.forEach(prof => {
                         // `prof` est un objet avec une propriété `profession`
                         const professionName = prof.profession;
