@@ -1,7 +1,7 @@
 [
     {
         "profession": "Diététicienne",
-        "logo": "Diététicienne/logo.png",
+        "logo": "Diététicienne/logo-med.png",
         "personnel": [
             {
                 "name": "Sophie MENDEZ",
@@ -31,7 +31,7 @@
     },
     {
         "profession": "Psychologue",
-        "logo": "Psychologue/transparent.jpg",
+        "logo": "Psychologue/logo.png",
         "personnel": [
             {
                 "name": "Cristel POVEDA",
