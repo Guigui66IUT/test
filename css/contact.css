@@ -41,7 +41,7 @@ li {
     color: var(--text-color);
 }
 
-.maps{
+.iframe{
     width: 100%;    /* Largeur à 100% de la fenêtre du navigateur */
     height: 100%;   /* Hauteur à 100% de la fenêtre du navigateur */
     position: absolute; /* Positionnement absolu pour éviter toute contrainte de l'élément parent */
