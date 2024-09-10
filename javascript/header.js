@@ -4,29 +4,26 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(data => {
             document.querySelector('#main-header').innerHTML = data;
 
-            // Ajouter la classe active au lien de navigation correspondant
+            // Activer le lien de navigation correspondant
             const path = window.location.pathname;
-
-            // Sélectionner tous les liens de navigation
             const navLinks = document.querySelectorAll('nav a');
-
             navLinks.forEach(link => {
                 if (link.getAttribute('href') === path) {
                     link.classList.add('active');
                 }
             });
 
-            if (window.location.pathname.startsWith('/html/profession/') || window.location.pathname.startsWith('/ajout_para-med/')) {
+            if (window.location.pathname.startsWith('/html/profession/') || window.location.pathname.startsWith('/ajoutprofession/')) {
                 const professionalDropdown = document.querySelector('.dropdown > a');
                 professionalDropdown.classList.add('active');
             }
 
-            // Charger dynamiquement les professions générales et spécifiques
+            // Charger les professions
             fetch('/json/professions.json')
                 .then(response => response.json())
                 .then(professions => {
-                    const generalProfessionsContainer = document.getElementById('para-medical'); // Conteneur pour les professions générales
-                    const specificProfessionsContainer = document.getElementById('specific-professions'); // Conteneur pour les professions spécifiques
+                    const generalProfessionsContainer = document.getElementById('para-medical');
+                    const specificProfessionsContainer = document.getElementById('specific-professions');
 
                     professions.forEach(prof => {
                         const professionName = prof.profession;
@@ -36,12 +33,9 @@ document.addEventListener("DOMContentLoaded", function() {
                         a.textContent = professionName.charAt(0).toUpperCase() + professionName.slice(1);
                         li.appendChild(a);
 
-                        // Si la profession est de type 'general', ajouter au conteneur général
                         if (prof.type === 'general') {
                             generalProfessionsContainer.appendChild(li);
-                        } 
-                        // Si la profession est de type 'specific', ajouter au conteneur spécifique
-                        else if (prof.type === 'specific') {
+                        } else if (prof.type === 'specific') {
                             specificProfessionsContainer.appendChild(li);
                         }
 
