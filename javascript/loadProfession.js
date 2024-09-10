@@ -1,20 +1,32 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('/json/professions.json')
-        .then(response => response.json())
-        .then(professions => {
-            const newProfessionsContainer = document.getElementById('new-professions');
-            professions.forEach(profession => {
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                a.href = `/ajoutprofession/modele.html?profession=${profession}`;
-                a.textContent = profession.charAt(0).toUpperCase() + profession.slice(1);
-                li.appendChild(a);
-                newProfessionsContainer.insertAdjacentElement('beforebegin', li);
-            });
-        })
-        .catch(error => console.error('Error loading new professions:', error));
-});
+    const urlParams = new URLSearchParams(window.location.search);
+    const profession = urlParams.get('profession');
 
+    // Charger le fichier JSON des professions
+    fetch('/json/professions.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erreur lors du chargement des professions.');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Données chargées :", data);
+            if (profession) {
+                // Trouver la profession dans le JSON
+                const professionData = data.find(prof => prof.profession.toLowerCase() === profession.toLowerCase());
+                console.log("Données de la profession trouvée :", professionData);
+                if (professionData) {
+                    displayProfessionData(professionData);
+                } else {
+                    console.error("Profession non trouvée.");
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Erreur de chargement des professions:', error);
+        });
+});
 
 function displayProfessionData(professionData) {
     const professionTitle = document.getElementById('profession-title');
