@@ -47,12 +47,14 @@ li {
     color: var(--text-color);
 }
 
-.iframe{
-    width: 100%;    /* Largeur à 100% de la fenêtre du navigateur */
-    height: 100%;   /* Hauteur à 100% de la fenêtre du navigateur */
-    position: absolute; /* Positionnement absolu pour éviter toute contrainte de l'élément parent */
+.iframe {
+    width: 100vw;    /* Prend toute la largeur de la fenêtre */
+    height: 100vh;   /* Prend toute la hauteur de la fenêtre */
+    position: absolute; /* Supprime les contraintes de l'élément parent */
+    top: 0;           /* Positionné tout en haut */
+    left: 0;          /* Positionné tout à gauche */
+    border: none;     /* Supprime la bordure du cadre */
 }
-
 
 @media (max-width: 767px) {
     .footer-section {
