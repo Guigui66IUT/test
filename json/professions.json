@@ -1,12 +1,12 @@
 [
     {
-        "profession": "Test",
-        "logo": "ajout_med/Test/logo-med.png",
+        "profession": "Endocrinologue",
+        "logo": "ajout_med/Endocrinologue/logo-med.png",
         "personnel": [
             {
-                "name": "Sophie MENDEZ",
+                "name": "DR Roger ROULIER",
                 "documents": [],
-                "doctolib": "https://www.dietetiquenutrition66.com/",
+                "doctolib": "https://www.doctolib.fr/endocrinologue/ille-sur-tet/roger-roulier",
                 "texts": [
                     {
                         "filename": "Spécialisations, compétences et services",
@@ -22,37 +22,51 @@
                         "filename": "Horaires au cabinet",
                         "content": [],
                         "order": 3
+                    },
+                    {
+                        "filename": "Diplômes nationaux et universitaires",
+                        "content": [
+                            "1978 : D.E.S. Gynécologie médicale - Faculté de médecine de Marseille",
+                            "1978 : D.E.S. Endocrinologie, diabétologie, maladies métaboliques et nutrition - Faculté de médecine de Marseille",
+                            "1976 : Diplôme d'État de docteur en médecine - Faculté de médecine de Marseille"
+                        ],
+                        "order": 4
+                    },
+                    {
+                        "filename": "Expériences",
+                        "content": [
+                            "Depuis 2019 : Cabinet - Ille-sur-Têt",
+                            "1978 - 2010 : Cabinet - Marseille",
+                            "1982 - 1983 : Praticien hospitalier - Hôpital de la Conception - Marseille - Endocrinologie et diabétologie",
+                            "1978 - 1982 : Chef de clinique - Hôpital de la Conception - Marseille - Endocrinologie-diabétologie-nutrition",
+                            "1972 - 1982 : Interne assistant des hôpitaux - Hôpital de la Conception - Marseille - Endocrinologie et diabétologie"
+                        ],
+                        "order": 5
                     }
                 ],
                 "pdf": null,
-                "image": "ajout_med/Test/Sophie MENDEZ/sophie-hp.jpg"
+                "image": "ajout_med/Endocrinologue/DR Roger ROULIER/vide.png"
             }
         ],
         "type": "general"
     },
     {
-        "profession": "test2",
-        "logo": "ajout_med/test2/vide.png",
+        "profession": "Sage femme",
+        "logo": "ajout_med/Sage femme/logo-sage.png",
         "personnel": [
             {
-                "name": "Cristel POVEDA",
+                "name": "Marie Luce MERCIER",
                 "documents": [],
-                "doctolib": "06 32 72 41 80",
+                "doctolib": "https://www.pagesjaunes.fr/pros/55397993",
                 "texts": [
                     {
                         "filename": "Spécialisations, compétences et services",
-                        "content": [
-                            "Spécialisée en souffrance au travail",
-                            "Psychopracticienne Emdr"
-                        ],
+                        "content": [],
                         "order": 1
                     },
                     {
                         "filename": "Rendez-vous",
-                        "content": [
-                            "06 32 72 41 80",
-                            "cristelpoveda@hotmail.fr"
-                        ],
+                        "content": [],
                         "order": 2
                     },
                     {
@@ -62,7 +76,7 @@
                     }
                 ],
                 "pdf": null,
-                "image": "ajout_med/test2/Cristel POVEDA/cristal.jpg"
+                "image": "ajout_med/Sage femme/Marie Luce MERCIER/vide.png"
             }
         ],
         "type": "general"
