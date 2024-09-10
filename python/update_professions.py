@@ -3,15 +3,18 @@ import json
 import re
 
 def get_last_name(full_name):
+    # Extraire le dernier mot comme nom de famille
     return full_name.rsplit(' ', 1)[-1]
 
 def format_phone_number(phone_number):
+    # Ajouter des espaces tous les deux chiffres
     return ' '.join([phone_number[i:i+2] for i in range(0, len(phone_number), 2)])
 
 def generate_professions_with_personnel(directory=None, output=None):
+    # Obtenir le répertoire du script
     script_directory = os.path.dirname(os.path.abspath(__file__))
 
-    # Modification des chemins
+    # Définir les chemins par défaut
     directory = directory or os.path.join(script_directory, '../ajoutprofession')
     output = output or os.path.join(script_directory, '../json/professions.json')
 
@@ -88,11 +91,12 @@ def generate_professions_with_personnel(directory=None, output=None):
                 # Déterminer le type de profession (général ou spécifique)
                 profession_type = 'general' if subdirectory == 'ajout_med' else 'specific'
 
+                # Ajouter la profession au JSON avec le type
                 professions.append({
                     'profession': profession.replace('_', ' '),
                     'logo': profession_logo,
                     'personnel': personnel_list,
-                    'type': profession_type
+                    'type': profession_type  # Ajouter le type ici
                 })
 
     # Enregistrer dans le fichier professions.json
