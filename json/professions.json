@@ -91,21 +91,13 @@
                 "doctolib": "https://www.doctolib.fr/dieteticien/perpignan/sophie-mendez/booking/places?specialityId=414&telehealth=false&profile_skipped=true&utm_source=sophie-mendez-website-button&utm_medium=referral&utm_campaign=website-button&utm_content=option-2&bookingFunnelSource=external_referral",
                 "texts": [
                     {
-                        "filename": "Spécialisations, compétences et services",
+                        "filename": "Rendez-vous",
                         "content": [
-                            "https://www.dietetiquenutrition66.com/"
+                            "https://www.dietetiquenutrition66.com/",
+                            "Par téléphone : 06 74 24 67 99",
+                            "Par mail : sophie.mendez@yahoo.fr"
                         ],
                         "order": 1
-                    },
-                    {
-                        "filename": "Rendez-vous",
-                        "content": [],
-                        "order": 2
-                    },
-                    {
-                        "filename": "Horaires au cabinet",
-                        "content": [],
-                        "order": 3
                     }
                 ],
                 "pdf": null,
