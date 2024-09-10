@@ -78,12 +78,16 @@ function displayProfessionData(professionData) {
             </ul>
         `).join('');
 
-        // Si le contenu de doctolib contient un numéro de téléphone formaté, afficher le numéro sur le bouton
-        const doctolibOrPhone = personnel.doctolib.match(/^\d{2} \d{2} \d{2} \d{2} \d{2}$/)
-            ? `<button class="book-appointment" disabled>${personnel.doctolib}</button>`  // Afficher le numéro sur un bouton désactivé
-            : `<a href="${personnel.doctolib}" target="_blank">
+        // Si le contenu de doctolib contient un numéro de téléphone formaté, initialement afficher le bouton "Prendre rendez-vous"
+        const isPhoneNumber = personnel.doctolib.match(/^\d{2} \d{2} \d{2} \d{2} \d{2}$/);
+        let doctolibOrPhone = `<button class="book-appointment" onclick="revealPhoneNumber(this, '${personnel.doctolib}')">Prendre rendez-vous</button>`;
+
+        // Si c'est un lien Doctolib, le bouton reste actif et fonctionnel
+        if (!isPhoneNumber) {
+            doctolibOrPhone = `<a href="${personnel.doctolib}" target="_blank">
                 <button class="book-appointment">Prendre rendez-vous</button>
               </a>`;
+        }
 
         const isSinglePersonnel = professionData.personnel.length === 1;
         const collapsibleContentClass = isSinglePersonnel ? 'collapsible-content show' : 'collapsible-content';
@@ -116,4 +120,10 @@ function displayProfessionData(professionData) {
 function toggleText(element) {
     const content = element.parentElement.nextElementSibling;
     content.classList.toggle('show');
+}
+
+// Fonction pour remplacer le bouton par le numéro de téléphone après clic
+function revealPhoneNumber(button, phoneNumber) {
+    button.innerText = phoneNumber;  // Remplacer le texte du bouton par le numéro de téléphone
+    button.disabled = true;  // Désactiver le bouton après clic
 }
