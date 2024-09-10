@@ -5,19 +5,22 @@
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/veronique-brudy",
         "texts": [
             {
-                "filename": "Spécialisations, compétences et services",
-                "content": [],
+                "filename": "Rendez-vous",
+                "content": [
+                    "Consultation sur rendez-vous",
+                    "Visites à domicile"
+                ],
                 "order": 1
             },
             {
-                "filename": "Rendez-vous",
-                "content": [],
-                "order": 2
-            },
-            {
                 "filename": "Horaires au cabinet",
-                "content": [],
-                "order": 3
+                "content": [
+                    "Lundi : 10h00 - 12h30, 14h30 - 18h00",
+                    "Mardi : 10h00 - 12h30, 14h30 - 19h00",
+                    "Jeudi : 10h00 - 12h30, 14h30 - 18h00",
+                    "Vendredi : 10h00 - 12h30, 14h30 - 19h00"
+                ],
+                "order": 2
             }
         ],
         "pdf": null
@@ -63,47 +66,27 @@
         "pdf": null
     },
     {
-        "name": "Dr Jean-François MERCIER",
-        "image": "Dr Jean-François MERCIER\\logo-med.png",
-        "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/jean-francois-mercier",
-        "texts": [
-            {
-                "filename": "Spécialisations, compétences et services",
-                "content": [],
-                "order": 1
-            },
-            {
-                "filename": "Rendez-vous",
-                "content": [],
-                "order": 2
-            },
-            {
-                "filename": "Horaires au cabinet",
-                "content": [],
-                "order": 3
-            }
-        ],
-        "pdf": null
-    },
-    {
         "name": "Dr Amandine MINAUD",
         "image": "Dr Amandine MINAUD\\logo-med.png",
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/amandine-minaud",
         "texts": [
             {
-                "filename": "Spécialisations, compétences et services",
-                "content": [],
+                "filename": "Rendez-vous",
+                "content": [
+                    "Consultation sur rendez-vous",
+                    "Visites à domicile"
+                ],
                 "order": 1
             },
             {
-                "filename": "Rendez-vous",
-                "content": [],
-                "order": 2
-            },
-            {
                 "filename": "Horaires au cabinet",
-                "content": [],
-                "order": 3
+                "content": [
+                    "Lundi : 09h00 - 12h30, 14h30 - 19h00",
+                    "Mardi : 09h00 - 12h30, 14h30 - 18h00",
+                    "Jeudi : 09h00 - 12h30, 15h00 - 19h00",
+                    "Vendredi : 09h00 - 12h30"
+                ],
+                "order": 2
             }
         ],
         "pdf": null
@@ -114,19 +97,22 @@
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/jarnac/eloise-rouby",
         "texts": [
             {
-                "filename": "Spécialisations, compétences et services",
-                "content": [],
+                "filename": "Rendez-vous",
+                "content": [
+                    "Consultation sur rendez-vous",
+                    "Visites à domicile"
+                ],
                 "order": 1
             },
             {
-                "filename": "Rendez-vous",
-                "content": [],
-                "order": 2
-            },
-            {
                 "filename": "Horaires au cabinet",
-                "content": [],
-                "order": 3
+                "content": [
+                    "Lundi : 08h40 - 12h30, 14h30 - 18h00",
+                    "Mardi : 08h40 - 12h30, 14h30 - 18h00",
+                    "Mercredi : 08h40 - 12h30, 14h30 - 19h00",
+                    "Vendredi : 08h40 - 12h30, 14h30 - 19h00"
+                ],
+                "order": 2
             }
         ],
         "pdf": null
@@ -166,7 +152,12 @@
                     "Mardi 9-12.30 & 15-18.30",
                     "Mercredi 9-12.30",
                     "Jeudi 9-12.30 & 15-18.30",
-                    "Vendredi de 10-12.30"
+                    "Vendredi de 10-12.30",
+                    "",
+                    "Lundi : 09h00 - 12h30, 14h30 - 19h00",
+                    "Mardi : 09h00 - 12h30, 14h30 - 18h00",
+                    "Mercredi : 14h00 - 17h30",
+                    "Jeudi : 09h00 - 12h30, 14h30 - 19h00"
                 ],
                 "order": 3
             }
@@ -182,19 +173,20 @@
         "doctolib": "https://www.doctolib.fr/medecin-generaliste/ille-sur-tet/jean-pascal-sastourne",
         "texts": [
             {
-                "filename": "Spécialisations, compétences et services",
-                "content": [],
+                "filename": "Rendez-vous",
+                "content": [
+                    "Consultation sur rendez-vous",
+                    "Visites à domicile"
+                ],
                 "order": 1
             },
             {
-                "filename": "Rendez-vous",
-                "content": [],
-                "order": 2
-            },
-            {
                 "filename": "Horaires au cabinet",
-                "content": [],
-                "order": 3
+                "content": [
+                    "Lundi : 09h00 - 12h00",
+                    "Mercredi : 09h00 - 12h00"
+                ],
+                "order": 2
             }
         ],
         "pdf": null
