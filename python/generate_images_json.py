@@ -29,10 +29,8 @@ def generate_images_json(html_file, output_dir):
     img_path = extract_image_path_from_html(html_file)
     
     if img_path:
-        # Construire le chemin complet basé sur le répertoire parent du dossier python
-        base_dir = os.path.dirname(os.path.abspath(__file__))  # Dossier 'python'
-        project_root = os.path.dirname(base_dir)  # Remonte au niveau du projet (dossier 'Site')
-        img_path_full = os.path.join(project_root, img_path.replace('/', os.sep))  # Chemin complet vers le dossier d'images
+        # Garder le chemin d'image relatif sans chemin complet du système
+        img_path_full = img_path.replace('/', os.sep)
 
         images = []
 
