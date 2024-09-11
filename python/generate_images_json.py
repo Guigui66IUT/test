@@ -67,7 +67,7 @@ if __name__ == "__main__":
         # os.path.join(base_dir, '..', 'html', 'profession', 'podo', 'podo.html')  # Pour les images de Podo
     ]
     
-    output_dir = os.path.join(base_dir, '..', 'json')
+    output_dir = os.path.join('..', 'json')
 
     for html_file in html_files:
         generate_images_json(html_file, output_dir)
