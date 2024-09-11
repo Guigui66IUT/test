@@ -19,6 +19,7 @@ from bs4 import BeautifulSoup
 
 
 def extract_image_path_from_html(html_file):
+    """ Extrait le chemin des images du fichier HTML. """
     with open(html_file, 'r', encoding='utf-8') as file:
         soup = BeautifulSoup(file, 'html.parser')
         slider_container = soup.find(class_='slider-container')
@@ -26,48 +27,41 @@ def extract_image_path_from_html(html_file):
             return slider_container['data-img-path']
         return None
 
-def generate_images_json(html_file, output_dir):
-    img_path = extract_image_path_from_html(html_file)
-    
-    if img_path:
-        # Construire le chemin relatif au répertoire racine du projet 'Site'
-        project_root = os.path.abspath(os.path.join(__file__, os.pardir, os.pardir))  # Remonter de deux niveaux pour aller à 'Site'
-        img_path_full = os.path.join(project_root, 'img', img_path)  # S'assurer de commencer à partir du dossier 'img'
+def generate_images_json(html_file, output_dir, img_path):
+    """ Génère un fichier JSON contenant les images pour un fichier HTML spécifique. """
+    images = []
 
-        images = []
+    img_path_full = os.path.join(img_path.replace('/', os.sep))  # Utilisation du chemin fourni
 
-        if os.path.exists(img_path_full):
-            for filename in os.listdir(img_path_full):
-                if filename.endswith(('.jpg', '.jpeg', '.png', '.gif')):
-                    images.append(filename)
+    if os.path.exists(img_path_full):
+        for filename in os.listdir(img_path_full):
+            if filename.endswith(('.jpg', '.jpeg', '.png', '.gif')):
+                images.append(filename)
 
-            # Créer le fichier JSON de sortie dans le répertoire 'json'
-            output = os.path.join(output_dir, f'{os.path.basename(html_file).replace(".html", "")}_images.json')
+        # Construire le nom de sortie en fonction du fichier HTML
+        output = os.path.join(output_dir, f'{os.path.basename(html_file).replace(".html", "")}_images.json')
+        
+        # Écrire la liste des fichiers dans un fichier JSON
+        with open(output, 'w', encoding='utf-8') as json_file:
+            json.dump(images, json_file, indent=4)
             
-            # Écrire la liste des fichiers dans un fichier JSON
-            with open(output, 'w', encoding='utf-8') as json_file:
-                json.dump(images, json_file, indent=4)
-                
-            print(f'Fichier {output} généré avec succès.')
-        else:
-            print(f"Le chemin {img_path_full} n'existe pas.")
+        print(f'Fichier {output} généré avec succès.')
     else:
-        print("Chemin des images non trouvé dans le fichier HTML.")
+        print(f"Le chemin {img_path_full} n'existe pas.")
 
 if __name__ == "__main__":
-    # Définir les chemins pour chaque fichier HTML
+    # Définir les chemins absolus pour chaque fichier HTML et leurs images respectives
     base_dir = os.path.dirname(os.path.abspath(__file__))
 
-    html_files = [
-        os.path.join(base_dir, '../index.html'),  # Pour les images de l'index
-        os.path.join(base_dir, '../html/profession/podo/podo.html'),  # Pour les images de Podo
-        os.path.join(base_dir, '../html/profession/kine/kine.html'),  # Pour les images de Kine
-        os.path.join(base_dir, '../html/profession/infi/infi.html')  # Pour les images de Infi
+    html_files_and_images = [
+        (os.path.join(base_dir, '..', 'index.html'), 'img/accueil/slideraccueil/'),  # Images pour l'index
+        (os.path.join(base_dir, '..', 'html', 'profession', 'podo', 'podo.html'), 'img/podo/sliderpodo/'),  # Images pour Podo
+        (os.path.join(base_dir, '..', 'html', 'profession', 'kine', 'kine.html'), 'img/kine/sliderkine/'),  # Images pour Kine
+        (os.path.join(base_dir, '..', 'html', 'profession', 'infi', 'infi.html'), 'img/infi/sliderinfi/')  # Images pour Infi
     ]
     
-    # Définir le répertoire de sortie pour les fichiers JSON
     output_dir = os.path.join(base_dir, '..', 'json')
 
-    # Générer les fichiers JSON pour chaque fichier HTML
-    for html_file in html_files:
-        generate_images_json(html_file, output_dir)
+    # Boucle pour générer les fichiers JSON d'images pour chaque HTML
+    for html_file, img_path in html_files_and_images:
+        generate_images_json(html_file, output_dir, img_path)
