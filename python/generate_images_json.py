@@ -55,19 +55,20 @@ def generate_images_json(html_file, output_dir):
         print("Chemin des images non trouvé dans le fichier HTML.")
 
 if __name__ == "__main__":
-    # Définir les chemins absolus pour chaque fichier HTML
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-
+    # Définir les chemins relatifs pour chaque fichier HTML
     html_files = [
         os.path.join('..', 'index.html'),  # Pour les images de l'index
-        
         os.path.join('..', 'html', 'profession', 'podo', 'podo.html'),  # Pour les images de Podo
         os.path.join('..', 'html', 'profession', 'kine', 'kine.html'),  # Pour les images de Kine
         os.path.join('..', 'html', 'profession', 'infi', 'infi.html')  # Pour les images de Infi
-        # os.path.join(base_dir, '..', 'html', 'profession', 'podo', 'podo.html')  # Pour les images de Podo
     ]
     
+    # Dossier de sortie pour les fichiers JSON
     output_dir = os.path.join('..', 'json')
+    
+    # Créer le dossier de sortie s'il n'existe pas
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
 
     for html_file in html_files:
         generate_images_json(html_file, output_dir)
