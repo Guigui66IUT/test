@@ -61,7 +61,10 @@ function displayProfessionData(professionData) {
         const isPhoneNumber = personnel.doctolib.match(/^\d{2} \d{2} \d{2} \d{2} \d{2}$/);
         let doctolibOrPhone = `<button class="book-appointment" onclick="revealPhoneNumber(this, '${personnel.doctolib}')">Prendre rendez-vous</button>`;
 
-        if (!isPhoneNumber) {
+        // Check if pagesjaunes.txt exists and modify the button accordingly
+        if (personnel.doctolib && personnel.doctolib.includes("pagesjaunes")) {
+            doctolibOrPhone = `<a href="${personnel.doctolib}" target="_blank"><button class="rendezvous">Prendre rendez-vous</button></a>`;
+        } else if (!isPhoneNumber) {
             doctolibOrPhone = `<a href="${personnel.doctolib}" target="_blank"><button class="book-appointment">Prendre rendez-vous</button></a>`;
         }
 
