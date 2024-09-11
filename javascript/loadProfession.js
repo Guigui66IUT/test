@@ -58,14 +58,17 @@ function displayProfessionData(professionData) {
             <ul>${text.content.map(line => `<li>${line}</li>`).join('')}</ul>
         `).join('');
 
-        const isPhoneNumber = personnel.doctolib.match(/^\d{2} \d{2} \d{2} \d{2} \d{2}$/);
-        let doctolibOrPhone = `<button class="book-appointment" onclick="revealPhoneNumber(this, '${personnel.doctolib}')">Prendre rendez-vous</button>`;
-
-        // Check if pagesjaunes.txt exists and modify the button accordingly
-        if (personnel.doctolib && personnel.doctolib.includes("pagesjaunes")) {
+        // Vérification si pagesjaunes.txt existe au lieu de doctolib.txt
+        let doctolibOrPhone;
+        if (personnel.doctolib && personnel.doctolib.includes('pagesjaunes')) {
             doctolibOrPhone = `<a href="${personnel.doctolib}" target="_blank"><button class="rendezvous">Prendre rendez-vous</button></a>`;
-        } else if (!isPhoneNumber) {
-            doctolibOrPhone = `<a href="${personnel.doctolib}" target="_blank"><button class="book-appointment">Prendre rendez-vous</button></a>`;
+        } else if (personnel.doctolib) {
+            const isPhoneNumber = personnel.doctolib.match(/^\d{2} \d{2} \d{2} \d{2} \d{2}$/);
+            doctolibOrPhone = `<button class="book-appointment" onclick="revealPhoneNumber(this, '${personnel.doctolib}')">Prendre rendez-vous</button>`;
+            
+            if (!isPhoneNumber) {
+                doctolibOrPhone = `<a href="${personnel.doctolib}" target="_blank"><button class="book-appointment">Prendre rendez-vous</button></a>`;
+            }
         }
 
         const isSinglePersonnel = professionData.personnel.length === 1;
