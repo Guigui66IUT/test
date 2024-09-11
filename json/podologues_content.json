@@ -23,11 +23,11 @@
             {
                 "filename": "Horaires au cabinet",
                 "content": [
-                    "Lundi : 09h00 - 19h00",
-                    "Mardi : 09h00 - 16h00",
-                    "Mercredi : 13h45 - 19h00",
-                    "Jeudi : 09h00 - 17h00",
-                    "Vendredi : 09h00 - 13h00"
+                    "Lundi : 8h30 à 13h et 14h à 19h",
+                    "Mardi : 8h30 à 13h et 14h à 19h",
+                    "Mercredi : 8h30 à 13h et 14h à 19h",
+                    "Jeudi : 8h30 à 13h et 14h à 17h",
+                    "Vendredi : 8h30 à 13h et 14h à 19h"
                 ],
                 "order": 3
             }
@@ -55,11 +55,11 @@
             {
                 "filename": "Horaires au cabinet",
                 "content": [
-                    "Lundi :",
-                    "Mardi :",
-                    "Mercredi :",
-                    "Jeudi :",
-                    "Vendredi :"
+                    "Lundi : 8h30 à 13h et 14h à 19h",
+                    "Mardi : 8h30 à 13h et 14h à 19h",
+                    "Mercredi : 8h30 à 13h et 14h à 19h",
+                    "Jeudi : 8h30 à 13h et 14h à 17h",
+                    "Vendredi : 8h30 à 13h et 14h à 19h"
                 ],
                 "order": 3
             }
