@@ -60,9 +60,11 @@ if __name__ == "__main__":
 
     html_files = [
         os.path.join(base_dir, '..', 'index.html'),  # Pour les images de l'index
+        
+        os.path.join(base_dir, '..', 'html', 'profession', 'podo', 'podo.html'),  # Pour les images de Podo
         os.path.join(base_dir, '..', 'html', 'profession', 'kine', 'kine.html'),  # Pour les images de Kine
-        os.path.join(base_dir, '..', 'html', 'profession', 'infi', 'infi.html'),  # Pour les images de Infi
-        os.path.join(base_dir, '..', 'html', 'profession', 'podo', 'podo.html')  # Pour les images de Podo
+        os.path.join(base_dir, '..', 'html', 'profession', 'infi', 'infi.html')  # Pour les images de Infi
+        # os.path.join(base_dir, '..', 'html', 'profession', 'podo', 'podo.html')  # Pour les images de Podo
     ]
     
     output_dir = os.path.join(base_dir, '..', 'json')
