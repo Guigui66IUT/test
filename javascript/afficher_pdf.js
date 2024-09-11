@@ -12,7 +12,7 @@ window.onload = function() {
             embed.src = `/projet de sante/${pdfFilename}`;  // Utiliser le nom du fichier PDF récupéré
             embed.type = 'application/pdf';
             embed.width = '100%';
-            embed.height = '600px';  // Hauteur de l'affichage du PDF
+            embed.height = '100%';  
 
             // Ajouter l'élément embed au conteneur
             pdfContainer.appendChild(embed);
