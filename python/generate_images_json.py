@@ -17,6 +17,10 @@ install_and_import('bs4')
 
 from bs4 import BeautifulSoup
 
+import os
+import json
+from bs4 import BeautifulSoup
+
 def extract_image_path_from_html(html_file):
     with open(html_file, 'r', encoding='utf-8') as file:
         soup = BeautifulSoup(file, 'html.parser')
@@ -29,9 +33,10 @@ def generate_images_json(html_file, output_dir):
     img_path = extract_image_path_from_html(html_file)
     
     if img_path:
-        # Garder le chemin d'image relatif sans chemin complet du système
-        img_path_full = img_path.replace('/', os.sep)
-
+        # Construct path from 'img/' directory
+        project_root = os.path.abspath(os.path.join(__file__, os.pardir, os.pardir))  # Navigate to project root
+        img_path_full = os.path.join(project_root, img_path.replace('/', os.sep))  # Full image path
+        
         images = []
 
         if os.path.exists(img_path_full):
@@ -39,10 +44,10 @@ def generate_images_json(html_file, output_dir):
                 if filename.endswith(('.jpg', '.jpeg', '.png', '.gif')):
                     images.append(filename)
 
-            # Construire le nom de sortie en fonction du fichier HTML
+            # Create the output JSON file in the 'json' directory
             output = os.path.join(output_dir, f'{os.path.basename(html_file).replace(".html", "")}_images.json')
             
-            # Écrire la liste des fichiers dans un fichier JSON
+            # Write image filenames to JSON
             with open(output, 'w', encoding='utf-8') as json_file:
                 json.dump(images, json_file, indent=4)
                 
@@ -53,20 +58,19 @@ def generate_images_json(html_file, output_dir):
         print("Chemin des images non trouvé dans le fichier HTML.")
 
 if __name__ == "__main__":
-    # Définir les chemins relatifs pour chaque fichier HTML
+    # Define paths to the HTML files
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+
     html_files = [
-        os.path.join('..', 'index.html'),  # Pour les images de l'index
-        os.path.join('..', 'html', 'profession', 'podo', 'podo.html'),  # Pour les images de Podo
-        os.path.join('..', 'html', 'profession', 'kine', 'kine.html'),  # Pour les images de Kine
-        os.path.join('..', 'html', 'profession', 'infi', 'infi.html')  # Pour les images de Infi
+        os.path.join(base_dir, '..', 'index.html'),  # Images for index.html
+        os.path.join(base_dir, '..', 'html', 'profession', 'podo', 'podo.html'),  # Images for Podo
+        os.path.join(base_dir, '..', 'html', 'profession', 'kine', 'kine.html'),  # Images for Kine
+        os.path.join(base_dir, '..', 'html', 'profession', 'infi', 'infi.html')  # Images for Infi
     ]
     
-    # Dossier de sortie pour les fichiers JSON
-    output_dir = os.path.join('..', 'json')
-    
-    # Créer le dossier de sortie s'il n'existe pas
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+    # Set output directory for JSON files
+    output_dir = os.path.join(base_dir, '..', 'json')
 
+    # Generate JSON for each HTML file
     for html_file in html_files:
         generate_images_json(html_file, output_dir)
