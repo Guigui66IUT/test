@@ -12,7 +12,14 @@ window.onload = function() {
             embed.src = `/projet de sante/${pdfFilename}`;  // Utiliser le nom du fichier PDF récupéré
             embed.type = 'application/pdf';
             embed.width = '100%';
-            embed.height = '100%';  
+            
+            // Ajuster la hauteur pour qu'elle prenne toute la hauteur de l'écran
+            embed.style.height = `${window.innerHeight}px`;
+
+            // Ajouter un écouteur pour redimensionner la hauteur si l'utilisateur redimensionne la fenêtre
+            window.addEventListener('resize', function() {
+                embed.style.height = `${window.innerHeight}px`;
+            });
 
             // Ajouter l'élément embed au conteneur
             pdfContainer.appendChild(embed);
