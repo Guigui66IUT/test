@@ -405,11 +405,18 @@ input {
 	flex: 1;
 }
 
-.info-text {
+.info-text, .info-urgence {
 	margin-top: 20px; /* Ajout d'un espace entre .info et .info-text */
 	color: #333;
 	text-align: center;
 }
+
+
+.info-urgence {
+	color: red;
+
+}
+
 
 .maps iframe {
 	width: 100%;
