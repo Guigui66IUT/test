@@ -375,6 +375,7 @@ input {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	width: 100%;
 }
 
 .info {
@@ -388,6 +389,7 @@ input {
 	color: white;
 	font-weight: bold;
 	font-size: 1.2rem;
+	text-align: center;
 }
 
 .info i {
