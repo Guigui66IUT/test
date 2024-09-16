@@ -384,9 +384,9 @@ input {
 	padding: 10px;
 	border-radius: 5px;
 	display: flex;
-	flex-direction: row;  /* Change to row for horizontal alignment */
+	flex-direction: row;
 	align-items: center;
-	justify-content: space-between;  /* Spreads icon to the left, text stays centered */
+	justify-content: space-between;
 	color: white;
 	font-weight: bold;
 	font-size: 1.2rem;
@@ -396,17 +396,17 @@ input {
 .info i {
 	margin-right: 10px;
 	color: inherit;
-	align-self: flex-start;  /* Aligns the icon to the left */
+	align-self: flex-start;
 }
 
 .info p {
 	margin: 0;
 	text-align: center;
-	flex: 1;  /* Ensures the paragraph takes remaining space */
+	flex: 1;
 }
 
 .info-text {
-	margin-top: 10px;
+	margin-top: 20px; /* Ajout d'un espace entre .info et .info-text */
 	color: #333;
 	text-align: center;
 }
@@ -416,5 +416,5 @@ input {
 	border: none;
 	border-radius: 5px;
 	margin-top: 10px;
-	height: 250px; /* Ajuste la hauteur selon tes besoins */
+	height: 250px;
 }
