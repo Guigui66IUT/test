@@ -1,3 +1,2 @@
 Consultation sur rendez-vous
-Visites à domicile
-Téléconsultations
+Visites à domicile pour patient dans l’incapacité de se déplacer 
