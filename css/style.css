@@ -334,7 +334,7 @@ input {
 
 
 
-  .intro {
+.intro {
 	width: 40%;
 	margin-right: 3%;
 	margin-top: 2.5%;
@@ -381,7 +381,7 @@ input {
 .info {
 	width: 100%;
 	background-color: #1E3F66;
-	padding: 10px;
+	padding: 2%;
 	border-radius: 5px;
 	display: flex;
 	flex-direction: row;
@@ -391,7 +391,7 @@ input {
 	font-weight: bold;
 	font-size: 1.2rem;
 	text-align: center;
-	margin-bottom: 20px;
+	margin-bottom: 5%; 
 }
 
 .info i {
@@ -407,31 +407,33 @@ input {
 }
 
 .info-text {
-	margin-top: 3%;
-	color: black;
-	text-align: left;
-	display: flex;
-	justify-content: space-between; /* Pour séparer le texte et la carte */
-	align-items: center; /* Aligner les éléments verticalement */
-	width: 100%;
+	display: flex;  /* Permet l'alignement horizontal du texte et de la carte */
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%; /* S'assure que .info-text occupe toute la largeur */
+	margin-top: 5%;
+	color: #333;
 }
 
-.info-text .text {
-	width: 60%; /* Le texte occupe 60% de la largeur */
+.info-text p {
+	flex: 1;  /* Le texte prendra tout l'espace disponible */
+	margin-right: 5%;  /* Ajoute un espacement à droite pour éloigner la carte */
 }
 
 .maps {
-	width: 35%; /* La carte occupe 35% de la largeur */
+	flex: 1;  /* La carte prend également l'espace disponible */
+	width: 50%;  /* Ajuste la largeur de la carte à 50% de l'espace */
 }
 
 .maps iframe {
-	width: 100%;
+	width: 100%; /* La carte occupera 100% de la largeur définie par .maps */
+	height: 200px; /* Hauteur ajustable selon tes besoins */
 	border: none;
 	border-radius: 5px;
-	height: 100%; /* Adapte la hauteur de l'iframe */
 }
 
 .info-urgence {
 	color: red;
-}
 
+}
