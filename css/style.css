@@ -412,13 +412,15 @@ input {
 	align-items: center;
 	justify-content: space-between;
 	width: 100%; /* S'assure que .info-text occupe toute la largeur */
-	margin-top: 0%;
+	/* margin-top: 0%; */
 	color: #333;
 }
 
 .info-text p {
 	flex: 1;  /* Le texte prendra tout l'espace disponible */
-	margin-right: 7%;  /* Ajoute un espacement à droite pour éloigner la carte */
+	margin-right: 5%;  /* Ajoute un espacement à droite pour éloigner la carte */
+	margin-bottom: 2%; /* Ajoute un espacement vertical entre les paragraphes */
+
 }
 
 .maps {
@@ -428,7 +430,7 @@ input {
 
 .maps iframe {
 	width: 100%; /* La carte occupera 100% de la largeur définie par .maps */
-	height: 10vh; /* Hauteur ajustable selon tes besoins */
+	height: 12vh; /* Hauteur ajustable selon tes besoins */
 	border: none;
 	border-radius: 5px;
 }
