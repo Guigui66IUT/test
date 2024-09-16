@@ -384,24 +384,25 @@ input {
 	padding: 10px;
 	border-radius: 5px;
 	display: flex;
-	flex-direction: column; /* Ajouté pour s'assurer que le contenu s'empile verticalement */
-	align-items: center;    /* Centre horizontalement le contenu */
-	justify-content: center; /* Centre verticalement le contenu */
+	flex-direction: row;  /* Change to row for horizontal alignment */
+	align-items: center;
+	justify-content: space-between;  /* Spreads icon to the left, text stays centered */
 	color: white;
 	font-weight: bold;
 	font-size: 1.2rem;
 	text-align: center;
 }
 
-.info p {
-	margin: 0; /* Enlève les marges par défaut */
-	text-align: center; /* Centre le texte dans le paragraphe */
-	width: 100%; /* Assure que le texte occupe toute la largeur disponible */
-}
-
 .info i {
 	margin-right: 10px;
 	color: inherit;
+	align-self: flex-start;  /* Aligns the icon to the left */
+}
+
+.info p {
+	margin: 0;
+	text-align: center;
+	flex: 1;  /* Ensures the paragraph takes remaining space */
 }
 
 .info-text {
