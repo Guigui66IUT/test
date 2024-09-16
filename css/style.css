@@ -407,7 +407,7 @@ input {
 }
 
 .info-text, .info-urgence {
-	margin-top: 5%; /* Ajoute de l'espace entre .info et .info-text */
+	margin-top: 3%; /* Ajoute de l'espace entre .info et .info-text */
 	/* padding-top: 10px; Ajoute aussi un padding si nécessaire pour un meilleur espacement */
 	color: black;
 	text-align: center;
