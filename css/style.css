@@ -384,12 +384,19 @@ input {
 	padding: 10px;
 	border-radius: 5px;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	flex-direction: column; /* Ajouté pour s'assurer que le contenu s'empile verticalement */
+	align-items: center;    /* Centre horizontalement le contenu */
+	justify-content: center; /* Centre verticalement le contenu */
 	color: white;
 	font-weight: bold;
 	font-size: 1.2rem;
 	text-align: center;
+}
+
+.info p {
+	margin: 0; /* Enlève les marges par défaut */
+	text-align: center; /* Centre le texte dans le paragraphe */
+	width: 100%; /* Assure que le texte occupe toute la largeur disponible */
 }
 
 .info i {
