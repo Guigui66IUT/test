@@ -391,7 +391,7 @@ input {
 	font-weight: bold;
 	font-size: 1.2rem;
 	text-align: center;
-	margin-bottom: 20px; /* Ajoute de l'espacement sous la classe .info */
+	margin-bottom: 20px;
 }
 
 .info i {
@@ -406,22 +406,32 @@ input {
 	flex: 1;
 }
 
-.info-text, .info-urgence {
-	margin-top: 3%; /* Ajoute de l'espace entre .info et .info-text */
-	/* padding-top: 10px; Ajoute aussi un padding si nécessaire pour un meilleur espacement */
+.info-text {
+	margin-top: 3%;
 	color: black;
-	text-align: center;
+	text-align: left;
+	display: flex;
+	justify-content: space-between; /* Pour séparer le texte et la carte */
+	align-items: center; /* Aligner les éléments verticalement */
+	width: 100%;
 }
 
-
-.info-urgence {
-	color: red;
-
+.info-text .text {
+	width: 60%; /* Le texte occupe 60% de la largeur */
 }
+
+.maps {
+	width: 35%; /* La carte occupe 35% de la largeur */
+}
+
 .maps iframe {
 	width: 100%;
 	border: none;
 	border-radius: 5px;
-	margin-top: 10px;
-	height: 250px;
+	height: 100%; /* Adapte la hauteur de l'iframe */
 }
+
+.info-urgence {
+	color: red;
+}
+
