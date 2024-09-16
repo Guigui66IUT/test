@@ -401,6 +401,8 @@ input {
 	justify-content: center;
 	text-align: center;
 	color: white;
+	font-weight: bold;
+	font-size: 1.2rem; 
 }
 
 .info i {
