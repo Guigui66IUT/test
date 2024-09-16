@@ -4,7 +4,7 @@
         "logo": "ajout_med/Endocrinologue/logo-med.png",
         "personnel": [
             {
-                "name": "DR Roger ROULIER",
+                "name": "Dr Roger ROULIER",
                 "documents": [],
                 "doctolib": "https://www.doctolib.fr/endocrinologue/ille-sur-tet/roger-roulier",
                 "texts": [
@@ -18,11 +18,10 @@
                     {
                         "filename": "Horaires au cabinet",
                         "content": [
-                            "Lundi :",
-                            "Mardi :",
-                            "Mercredi :",
-                            "Jeudi :",
-                            "Vendredi :"
+                            "Mardi :  14h00 - 19h00",
+                            "Mercredi : 14h00 - 16h00 (seulement en visio)",
+                            "Jeudi :  14h00 - 19h00",
+                            "Vendredi : 14h00 - 19h00"
                         ],
                         "order": 2
                     },
@@ -48,7 +47,7 @@
                     }
                 ],
                 "pdf": null,
-                "image": "ajout_med/Endocrinologue/DR Roger ROULIER/logo-med.png"
+                "image": "ajout_med/Endocrinologue/Dr Roger ROULIER/logo-med.png"
             }
         ],
         "type": "general"
