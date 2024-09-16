@@ -418,7 +418,7 @@ input {
 
 .info-text p {
 	flex: 1;  /* Le texte prendra tout l'espace disponible */
-	margin-right: 3%;  /* Ajoute un espacement à droite pour éloigner la carte */
+	margin-right: 7%;  /* Ajoute un espacement à droite pour éloigner la carte */
 }
 
 .maps {
@@ -428,7 +428,7 @@ input {
 
 .maps iframe {
 	width: 100%; /* La carte occupera 100% de la largeur définie par .maps */
-	height: 200px; /* Hauteur ajustable selon tes besoins */
+	height: 10vh; /* Hauteur ajustable selon tes besoins */
 	border: none;
 	border-radius: 5px;
 }
