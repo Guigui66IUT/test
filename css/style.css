@@ -391,6 +391,7 @@ input {
 	font-weight: bold;
 	font-size: 1.2rem;
 	text-align: center;
+	margin-bottom: 20px; /* Ajoute de l'espacement sous la classe .info */
 }
 
 .info i {
@@ -406,8 +407,9 @@ input {
 }
 
 .info-text, .info-urgence {
-	margin-top: 20px; /* Ajout d'un espace entre .info et .info-text */
-	color: #333;
+	margin-top: 20px; /* Ajoute de l'espace entre .info et .info-text */
+	padding-top: 10px; /* Ajoute aussi un padding si nécessaire pour un meilleur espacement */
+	color: black;
 	text-align: center;
 }
 
@@ -416,8 +418,6 @@ input {
 	color: red;
 
 }
-
-
 .maps iframe {
 	width: 100%;
 	border: none;
