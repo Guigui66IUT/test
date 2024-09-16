@@ -7,18 +7,18 @@
         "txt": "Soin médical qui traite les affections touchant à la peau et aux ongles du pied."
     },
     {
-        "name": "ORTHOPLASTIE",
-        "image": "Orthoplastie_2.jpg",
+        "name": "SEMELLES ORTHOPÉDIQUES",
+        "image": "Semelles orthopédiques_2.jpg",
         "order": 2,
-        "txt_file": "Orthoplastie_2.txt",
-        "txt": "Orthèse pour orteils. Elle a pour but de compenser une fonction absente ou déficitaire d’un ou plusieurs orteils."
+        "txt_file": "Semelles orthopédiques_2.txt",
+        "txt": "Semelles orthopédiques ou orthèse plantaire sont des dispositifs médicaux réalisés sur mesure et à visée de correction."
     },
     {
-        "name": "SEMELLES ORTHOPÉDIQUES",
-        "image": "Semelles orthopédiques_3.jpg",
+        "name": "ORTHOPLASTIE",
+        "image": "Orthoplastie_3.jpg",
         "order": 3,
-        "txt_file": "Semelles orthopédiques_3.txt",
-        "txt": "Semelles orthopédiques ou orthèse plantaire sont des dispositifs médicaux réalisés sur mesure et à visée de correction."
+        "txt_file": "Orthoplastie_3.txt",
+        "txt": "Orthèse pour orteils. Elle a pour but de compenser une fonction absente ou déficitaire d’un ou plusieurs orteils."
     },
     {
         "name": "VERRUE PLANTAIRE",
