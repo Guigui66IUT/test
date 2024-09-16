@@ -1,4 +1,4 @@
-Lundi : 09h00 - 12h30, 14h30 - 19h00
-Mardi : 09h00 - 12h30, 14h30 - 18h00
+Lundi : 09h00 - 19h00
+Mardi : 09h00 - 18h00
 Mercredi : 14h00 - 17h30
-Jeudi : 09h00 - 12h30, 14h30 - 19h00
+Jeudi : 09h00 - 19h00
