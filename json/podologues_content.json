@@ -23,11 +23,11 @@
             {
                 "filename": "Horaires au cabinet",
                 "content": [
-                    "Lundi : 8h30 à 13h et 14h à 19h",
-                    "Mardi : 8h30 à 13h et 14h à 19h",
-                    "Mercredi : 8h30 à 13h et 14h à 19h",
-                    "Jeudi : 8h30 à 13h et 14h à 17h",
-                    "Vendredi : 8h30 à 13h et 14h à 19h"
+                    "Lundi : 8h30 - 13h et 14h - 19h",
+                    "Mardi : 8h30 - 13h et 14h - 19h",
+                    "Mercredi : 8h30 - 13h et 14h - 19h",
+                    "Jeudi : 8h30 - 13h et 14h - 17h",
+                    "Vendredi : 8h30 - 13h et 14h - 19h"
                 ],
                 "order": 3
             }
@@ -41,7 +41,9 @@
         "texts": [
             {
                 "filename": "Spécialisations et compétences",
-                "content": [],
+                "content": [
+                    "Prise en charge des effets secondaire au niveau des pieds pour les patients sous traitement anti cancéreux."
+                ],
                 "order": 1
             },
             {
@@ -55,11 +57,11 @@
             {
                 "filename": "Horaires au cabinet",
                 "content": [
-                    "Lundi : 8h30 à 13h et 14h à 19h",
-                    "Mardi : 8h30 à 13h et 14h à 19h",
-                    "Mercredi : 8h30 à 13h et 14h à 19h",
-                    "Jeudi : 8h30 à 13h et 14h à 17h",
-                    "Vendredi : 8h30 à 13h et 14h à 19h"
+                    "Lundi : 8h30 - 13h et 14h - 19h",
+                    "Mardi : 8h30 - 13h et 14h - 19h",
+                    "Mercredi : 8h30 - 13h et 14h - 19h",
+                    "Jeudi : 8h30 - 13h et 14h - 17h",
+                    "Vendredi : 8h30 - 13h et 14h - 19h"
                 ],
                 "order": 3
             }
