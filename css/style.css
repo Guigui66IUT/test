@@ -412,7 +412,7 @@ input {
 	align-items: center;
 	justify-content: space-between;
 	width: 100%; /* S'assure que .info-text occupe toute la largeur */
-	margin-top: 3%;
+	margin-top: 0%;
 	color: #333;
 }
 
