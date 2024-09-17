@@ -44,7 +44,7 @@ function displayProfessionData(professionData) {
         professionLogo.style.display = 'none';
     }
 
-    personnelContainer.innerHTML = ''; 
+    personnelContainer.innerHTML = '';
 
     if (professionData.personnel.length === 0) {
         personnelContainer.innerHTML = "<p>Aucun professionnel disponible pour cette profession.</p>";
@@ -55,10 +55,15 @@ function displayProfessionData(professionData) {
         const pdf = personnel.pdf ? `<a href="../../${personnel.pdf.path}" download="${personnel.pdf.name}" class="download-link">Autre</a>` : '';
         const textsHTML = personnel.texts.map(text => `
             <h4>${text.filename}</h4>
-            <ul>${text.content.map(line => `<li>${line}</li>`).join('')}</ul>
+            <ul>${text.content.map(line => {
+                if (line.startsWith('http')) {
+                    return `<li><a href="${line}" target="_blank">${line}</a></li>`;
+                } else {
+                    return `<li>${line}</li>`;
+                }
+            }).join('')}</ul>
         `).join('');
 
-        // Vérification si pagesjaunes.txt existe au lieu de doctolib.txt
         let doctolibOrPhone;
         if (personnel.doctolib && personnel.doctolib.includes('pagesjaunes')) {
             doctolibOrPhone = `<a href="${personnel.doctolib}" target="_blank"><button class="rendezvous">Prendre rendez-vous</button></a>`;
