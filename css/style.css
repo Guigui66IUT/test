@@ -418,7 +418,7 @@ input {
 
 .info-text p {
 	flex: 1;  /* Le texte prendra tout l'espace disponible */
-	margin-right: 5%;  /* Ajoute un espacement à droite pour éloigner la carte */
+	margin-right: 1%;  /* Ajoute un espacement à droite pour éloigner la carte */
 	margin-bottom: 2%; /* Ajoute un espacement vertical entre les paragraphes */
 
 }
