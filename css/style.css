@@ -432,7 +432,7 @@ input {
 	width: 100%; /* La carte occupera 100% de la largeur définie par .maps */
 	height: 10vh; /* Hauteur ajustable selon tes besoins */
 	border: none;
-	border-radius: 5px;
+	/* border-radius: 5px; */
 }
 
 .info-urgence {
