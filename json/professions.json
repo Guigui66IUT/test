@@ -10,51 +10,39 @@
                 "texts": [
                     {
                         "filename": "Rendez-vous",
-                        "data": {
-                            "type": "text",
-                            "content": [
-                                "Consultation sur rendez-vous"
-                            ]
-                        },
+                        "content": [
+                            "Consultation sur rendez-vous"
+                        ],
                         "order": 1
                     },
                     {
                         "filename": "Horaires au cabinet",
-                        "data": {
-                            "type": "text",
-                            "content": [
-                                "Mardi :  14h00 - 19h00",
-                                "Mercredi : 14h00 - 16h00 (seulement en visio)",
-                                "Jeudi :  14h00 - 19h00",
-                                "Vendredi : 14h00 - 19h00"
-                            ]
-                        },
+                        "content": [
+                            "Mardi :  14h00 - 19h00",
+                            "Mercredi : 14h00 - 16h00 (seulement en visio)",
+                            "Jeudi :  14h00 - 19h00",
+                            "Vendredi : 14h00 - 19h00"
+                        ],
                         "order": 2
                     },
                     {
                         "filename": "Diplômes nationaux et universitaires",
-                        "data": {
-                            "type": "text",
-                            "content": [
-                                "1978 : D.E.S. Gynécologie médicale - Faculté de médecine de Marseille",
-                                "1978 : D.E.S. Endocrinologie, diabétologie, maladies métaboliques et nutrition - Faculté de médecine de Marseille",
-                                "1976 : Diplôme d'État de docteur en médecine - Faculté de médecine de Marseille"
-                            ]
-                        },
+                        "content": [
+                            "1978 : D.E.S. Gynécologie médicale - Faculté de médecine de Marseille",
+                            "1978 : D.E.S. Endocrinologie, diabétologie, maladies métaboliques et nutrition - Faculté de médecine de Marseille",
+                            "1976 : Diplôme d'État de docteur en médecine - Faculté de médecine de Marseille"
+                        ],
                         "order": 3
                     },
                     {
                         "filename": "Expériences",
-                        "data": {
-                            "type": "text",
-                            "content": [
-                                "Depuis 2019 : Cabinet - Ille-sur-Têt",
-                                "1978 - 2010 : Cabinet - Marseille",
-                                "1982 - 1983 : Praticien hospitalier - Hôpital de la Conception - Marseille - Endocrinologie et diabétologie",
-                                "1978 - 1982 : Chef de clinique - Hôpital de la Conception - Marseille - Endocrinologie-diabétologie-nutrition",
-                                "1972 - 1982 : Interne assistant des hôpitaux - Hôpital de la Conception - Marseille - Endocrinologie et diabétologie"
-                            ]
-                        },
+                        "content": [
+                            "Depuis 2019 : Cabinet - Ille-sur-Têt",
+                            "1978 - 2010 : Cabinet - Marseille",
+                            "1982 - 1983 : Praticien hospitalier - Hôpital de la Conception - Marseille - Endocrinologie et diabétologie",
+                            "1978 - 1982 : Chef de clinique - Hôpital de la Conception - Marseille - Endocrinologie-diabétologie-nutrition",
+                            "1972 - 1982 : Interne assistant des hôpitaux - Hôpital de la Conception - Marseille - Endocrinologie et diabétologie"
+                        ],
                         "order": 4
                     }
                 ],
@@ -75,26 +63,17 @@
                 "texts": [
                     {
                         "filename": "Spécialisations et compétences",
-                        "data": {
-                            "type": "text",
-                            "content": []
-                        },
+                        "content": [],
                         "order": 1
                     },
                     {
                         "filename": "Rendez-vous",
-                        "data": {
-                            "type": "text",
-                            "content": []
-                        },
+                        "content": [],
                         "order": 2
                     },
                     {
                         "filename": "Horaires au cabinet",
-                        "data": {
-                            "type": "text",
-                            "content": []
-                        },
+                        "content": [],
                         "order": 3
                     }
                 ],
@@ -115,10 +94,11 @@
                 "texts": [
                     {
                         "filename": "Rendez-vous",
-                        "data": {
-                            "type": "link",
-                            "url": "https://www.dietetiquenutrition66.com/"
-                        },
+                        "content": [
+                            "https://www.dietetiquenutrition66.com/",
+                            "Par téléphone : 06 74 24 67 99",
+                            "Par mail : sophie.mendez@yahoo.fr"
+                        ],
                         "order": 1
                     }
                 ],
@@ -139,24 +119,18 @@
                 "texts": [
                     {
                         "filename": "Spécialisations et compétences",
-                        "data": {
-                            "type": "text",
-                            "content": [
-                                "Spécialisée en souffrance au travail",
-                                "Psychopracticienne Emdr"
-                            ]
-                        },
+                        "content": [
+                            "Spécialisée en souffrance au travail",
+                            "Psychopracticienne Emdr"
+                        ],
                         "order": 1
                     },
                     {
                         "filename": "Rendez-vous",
-                        "data": {
-                            "type": "text",
-                            "content": [
-                                "06 32 72 41 80",
-                                "cristelpoveda@hotmail.fr"
-                            ]
-                        },
+                        "content": [
+                            "06 32 72 41 80",
+                            "cristelpoveda@hotmail.fr"
+                        ],
                         "order": 2
                     }
                 ],
