@@ -413,7 +413,7 @@ input {
 	justify-content: space-between;
 	width: 100%; /* S'assure que .info-text occupe toute la largeur */
 	color: #333;
-	/* margin-bottom: 0.5vh !important;  */
+	margin-bottom: 0.5vh !important; 
 
 }
 
