@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             data.forEach((medecin, index) => {
                 console.log("Processing:", medecin); // Ajout de journalisation
-                const pdf = medecin.pdf ? `<a href="../../${medecin.pdf.path}" download="${medecin.pdf.name}" class="download-link">Autre</a>` : '';
+                const pdf = medecin.pdf ? `<a href="../../../medecins/${medecin.pdf.path}" download="${medecin.pdf.name}" class="download-link">Autre</a>` : '';
                 const textsHTML = medecin.texts.map(text => `
                     <h4>${text.filename}</h4>
                     <ul>   
