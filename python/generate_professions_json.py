@@ -63,9 +63,21 @@ def generate_professions_with_personnel(directory=None, output=None):
                                     lines = f.readlines()
                                     num = int(re.findall(r'\d+', filename)[-1])
                                     text_name = re.sub(r'\d+\.txt$', '', filename).replace('_', ' ').strip()
+                                    text_content = [line.strip() for line in lines]
+                                    # Vérifier si le contenu commence par 'http'
+                                    if text_content and text_content[0].startswith('http'):
+                                        text_data = {
+                                            'type': 'link',
+                                            'url': text_content[0]
+                                        }
+                                    else:
+                                        text_data = {
+                                            'type': 'text',
+                                            'content': text_content
+                                        }
                                     personnel_dict['texts'].append({
                                         'filename': text_name,
-                                        'content': [line.strip() for line in lines],
+                                        'data': text_data,
                                         'order': num
                                     })
 
