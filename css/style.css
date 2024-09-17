@@ -430,7 +430,7 @@ input {
 
 .maps iframe {
 	width: 100%; /* La carte occupera 100% de la largeur définie par .maps */
-	height: 12vh; /* Hauteur ajustable selon tes besoins */
+	height: 10vh; /* Hauteur ajustable selon tes besoins */
 	border: none;
 	border-radius: 5px;
 }
