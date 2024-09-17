@@ -406,7 +406,7 @@ input {
 	flex: 1;
 }
 
-.info-text {
+.info-text, .info-urgence {
 	display: flex;  /* Permet l'alignement horizontal du texte et de la carte */
 	flex-direction: row;
 	align-items: center;
@@ -418,7 +418,7 @@ input {
 
 }
 
-.info-text p {
+.info-text p, .info-urgence p{
 	flex: 1;  /* Le texte prendra tout l'espace disponible */
 	margin-right: 1%;  /* Ajoute un espacement à droite pour éloigner la carte */
 	/* margin-bottom: 20px; Ajoute un espacement vertical entre les paragraphes */
