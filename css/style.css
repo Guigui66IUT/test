@@ -414,13 +414,14 @@ input {
 	width: 100%; /* S'assure que .info-text occupe toute la largeur */
 	color: #333;
 	margin-bottom: 5px !important; 
+	font-size: 1rem;
+
 
 }
 
 .info-text p, .info-urgence p{
 	flex: 1;  /* Le texte prendra tout l'espace disponible */
 	margin-right: 1%;  /* Ajoute un espacement à droite pour éloigner la carte */
-	/* font-size: 1.1rem; */
 }
 
 .maps {
