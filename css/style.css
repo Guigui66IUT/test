@@ -334,7 +334,7 @@ input {
 
 
 
-  .intro {
+.intro {
 	width: 40%;
 	margin-right: 3%;
 	margin-top: 2.5%;
@@ -406,14 +406,23 @@ input {
 	flex: 1;
 }
 
-/* Ajout d'un espacement vertical entre les éléments */
 .info-text, .info-urgence {
-	margin-bottom: 20px; /* Ajoute un espacement vertical de 20px entre les paragraphes */
-	text-align: center; /* Centre le texte */
+	display: flex;  /* Permet l'alignement horizontal du texte et de la carte */
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%; /* S'assure que .info-text occupe toute la largeur */
+	/* margin-top: 0%; */
+	color: #333;
+	margin-bottom: 20px; 
+
 }
 
-.info-urgence {
-	color: red;
+.info-text p, .info-urgence p{
+	flex: 1;  /* Le texte prendra tout l'espace disponible */
+	margin-right: 1%;  /* Ajoute un espacement à droite pour éloigner la carte */
+	/* margin-bottom: 20px; Ajoute un espacement vertical entre les paragraphes */
+
 }
 
 .maps {
@@ -425,4 +434,10 @@ input {
 	width: 100%; /* La carte occupera 100% de la largeur définie par .maps */
 	height: 10vh; /* Hauteur ajustable selon tes besoins */
 	border: none;
+	/* border-radius: 5px; */
+}
+
+.info-urgence {
+	color: red;
+
 }
