@@ -414,7 +414,7 @@ input {
 	width: 100%; /* S'assure que .info-text occupe toute la largeur */
 	color: #333;
 	margin-bottom: 5px !important; 
-	font-size: 1rem;
+	font-size: 1rem !important;
 
 
 }
