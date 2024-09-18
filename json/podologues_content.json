@@ -19,17 +19,6 @@
                     "Visites à domicile"
                 ],
                 "order": 2
-            },
-            {
-                "filename": "Horaires au cabinet",
-                "content": [
-                    "Lundi : 8h30 - 13h et 14h - 19h",
-                    "Mardi : 8h30 - 13h et 14h - 19h",
-                    "Mercredi : 8h30 - 13h et 14h - 19h",
-                    "Jeudi : 8h30 - 13h et 14h - 17h",
-                    "Vendredi : 8h30 - 13h et 14h - 19h"
-                ],
-                "order": 3
             }
         ],
         "pdf": null
@@ -53,17 +42,6 @@
                     "Visites à domicile"
                 ],
                 "order": 2
-            },
-            {
-                "filename": "Horaires au cabinet",
-                "content": [
-                    "Lundi : 8h30 - 13h et 14h - 19h",
-                    "Mardi : 8h30 - 13h et 14h - 19h",
-                    "Mercredi : 8h30 - 13h et 14h - 19h",
-                    "Jeudi : 8h30 - 13h et 14h - 17h",
-                    "Vendredi : 8h30 - 13h et 14h - 19h"
-                ],
-                "order": 3
             }
         ],
         "pdf": null
