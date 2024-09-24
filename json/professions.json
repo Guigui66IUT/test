@@ -62,19 +62,12 @@
                 "doctolib": "https://www.pagesjaunes.fr/pros/55397993",
                 "texts": [
                     {
-                        "filename": "Spécialisations et compétences",
-                        "content": [],
-                        "order": 1
-                    },
-                    {
                         "filename": "Rendez-vous",
-                        "content": [],
-                        "order": 2
-                    },
-                    {
-                        "filename": "Horaires au cabinet",
-                        "content": [],
-                        "order": 3
+                        "content": [
+                            "Présence quotidienne en consultation ou visites à domicile sur rendez-vous",
+                            "Par téléphone : 06 18 51 40 28"
+                        ],
+                        "order": 1
                     }
                 ],
                 "pdf": null,
